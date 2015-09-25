@@ -35,43 +35,83 @@
       1. The command line shell
       2. Directories and Files
       3. Running programs
-      4. Data Streams 
+      4. Input and Output
+
 
       ---
-
       # Introduction
-
+      * UNIX is an environment which give a power interface to running
+      applications and access to data
+      * Strengths are when you build something that can automate your
+      work in data analysis. Challenges are learning your way around
+      thinking on the command line
+      * Even though we'll focus on text-based command line (Command
+      Line Interface-CLI) there are rich graphical tools built in UNIX
+      as well - display is through the X11 system.
+      * Sometimes it feels like _Magic_ because there are special
+      words/incantations you have to use to get something done - but
+      there are tools to help you search for the right tool (including Google)
+      
       ---
       # Command line
 
       1. Breakdown of the syntax
-      2. The prompt
-      3. Running a command
+      2. The prompt - can look like
+      ```$```
+      ```[host]
+      3. Where you run commands
       
       ---
       # Directories and listing
 
       1. ls
-      2. ls command options
+      2. ls has many command options
 
       ---
       # Directories: Creating and Deleting
 
-      1. mkdir
-      2. rmdir
+      1. mkdir - make directory
+      2. rmdir - remove directory
+      3. ls -d will display a directory name only
+      4. ls -F will give a different symbol for directories
 
+      ---
+      # Navigating paths
+
+      1. to go into a directory use 'cd'
+      2. to go back a level use 'cd ..'
+      3. learning to navigate these levels and directories will take
+      some thinking
+      4. On the Mac you can see the same directories and files
+      organized graphically too
+      5. SWCarpentry has a nice intro with graphics [here](https://swcarpentry.github.io/shell-novice/01-filedir.html)
       ---
       # Files
 
-      1. touch
-      2.  
-      
+      1. touch will create an empty file
+      2.
+
+      ---
+      # Permissions
+
+      1. ls -l will show a long version of listing output
+
+      ---
+      # Deleting things (careful!)
+
+      1. rm - for removing files
+      2. rm -r -- _be careful_ removes recursively
+      3. rm -f - removes without prompting you
+      4. rm -rf - removes recurisvely without prompty __Use with care__
       ---
       # File content
 
-      1. cat
-      2. more
-      3. less
+      Want to read the content of a text file you can use these
+      commands 
+      1. cat - will spit out the whole file on the screen
+      2. more - a paginator - will display one page at a time (based
+      on your screen)
+      3. less - similar to more, but has additional options
 
       ---
       # Editors
@@ -84,7 +124,6 @@
       # Other resources
       1. [Introduction to UNIX Shell - Software Carpentry](http://swcarpentry.github.io/shell-novice/)
       2. [UNIX bootcamp - Rescued by Code](http://rescuedbycode.com/linux-bootcamp)
-      3. 
       
     </textarea>
     <script src="js/remark.js" type="text/javascript">
