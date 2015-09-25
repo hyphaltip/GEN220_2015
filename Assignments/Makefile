@@ -1,6 +1,15 @@
-MARKDOWN=pandoc --from markdown --to html5 --standalone --indented-code-classes=perl
+MARKDOWN=pandoc --from markdown --standalone --indented-code-classes=perl
 
-all: $(patsubst %.md,%.html,$(wildcard *.md)) Makefile
+all: htmlall pdfall
+
+pdfall: $(patsubst %.md,%.pdf,$(wildcard *.md)) 
+
+htmlall: $(patsubst %.md,%.html,$(wildcard *.md)) 
+
+
 
 %.html: %.md
-	$(MARKDOWN) $< --output $@
+	$(MARKDOWN) $< --to html5 --output $@
+
+%.pdf: %.md
+	$(MARKDOWN) $< --to latex --output $@
