@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to UNIX</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		      .remark-code, .remark-inline-code { font-family:
+		'Ubuntu Mono'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # Introduction to UNIX (II)
+
+      All about Files and Executing Applications
+
+      ---
+      # Outline
+
+      1. How to copy, rename files in UNIX
+
+      2. How to run programs and UNIX PATH
+
+      3. Redirecting output, creating files
+
+      4. Connecting programs with Pipes
+      
+      5. The power of the commandline: Wildcards
+
+      ---
+      # Copy files
+
+      ```cp``` to make a copy of a file or directory
+      ```shell
+      $ cp one.txt two.txt      # copy one file to another
+      
+      $ mkdir books             # make a directory
+      $ cp one.txt books        # copy into a directory
+      $ ls books                # list the contents
+      one.txt
+      
+      $ cp books more_books     # copy the folder, will fail
+      cp: books is a directory (not copied).
+      
+      $ cp -r books more_books  # recursive copy succeeds
+
+      $ cp one.txt two.txt books # can copy more than one at a time
+                                 # will also OVERWRITE the previous
+                                 # one.txt that was in the folder
+      $ ls books
+
+      $ ls more_books
+      ```
+      
+      ---
+      # Move files
+
+      ```mv``` to move a file
+      
+      This is essentially the same thing as renaming. The absolute path
+      that designates a file is simply being changed when something is
+      moved.
+
+      ```shell
+      $ mv one.txt three.txt     # rename one.txt to three.txt
+      $ mv three.txt books       # relocate three.txt to books folder
+
+      $ cd books
+      $ mv one.txt two.txt three.txt .. # move these files back UP one
+      directory
+      $ ls                       # nothing in the 'books' directory
+      $ cd ..                    # go back
+      $ ls                       # these files are in the current folder
+      one.txt two.txt three.txt books more_books
+      $ ls books                 # is now empty, we moved everything
+                                 # out of there
+      
+      ```
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
+
