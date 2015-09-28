@@ -46,6 +46,7 @@
       # Copy files
 
       ```cp``` to make a copy of a file or directory
+      
       ```shell
       $ cp one.txt two.txt      # copy one file to another
       
@@ -88,9 +89,65 @@
       $ ls                       # these files are in the current folder
       one.txt two.txt three.txt books more_books
       $ ls books                 # is now empty, we moved everything
-                                 # out of there
-      
+                                 # out of there      
       ```
+
+      ---
+      # Running processes
+
+
+      ---
+      # The PATH variable
+
+      How does UNIX determine what program to run when
+
+      * Try to do ```echo $PATH``` to see your search directory
+      * Also do ```env``` to see all environment variables
+      * Open a new terminal window; type
+      ```shell
+      $ set PATH=""
+      # try running any program, eg ls or hostname, etc
+      # will fail because PATH is now empty
+      ```
+            
+      ---
+      # Counting lines with ```wc```
+
+      Word counting with ```wc``` is a simple task.
+
+      ```shell
+      $ echo "hello world" | wc
+            1       2      12
+      # process a file
+      ```
+
+      ---
+      # Setting on the sysytem with .bashrc, .bash_profile, .profile
+
+      How the shell determines what variables to set and load is based
+      on a series of system and local configuration files.
+
+      ---
+      # Back to running programs
+
+      * UNIX gives you control over doing things with the network
+      
+      ```shell
+      $ hostname                   # name of your computer
+      $ ping -c 3 www.ucr.edu      # send 3 packets of info to host,
+                                   # count how long it takes to get back
+      $ ping -c 3 www.bbc.co.uk      
+      ```
+      
+      ---
+      # redirect output
+
+      * '>'
+      * '>>'
+      * '<'
+      * 
+
+      
     </textarea>
     <script src="js/remark.js" type="text/javascript">
     </script>
