@@ -1,0 +1,1260 @@
+LOCUS       AL021106               36401 bp    DNA     linear   INV 16-APR-2005
+DEFINITION  Drosophila melanogaster cosmid clone 63B12.
+ACCESSION   AL021106
+VERSION     AL021106.1  GI:4165197
+KEYWORDS    .
+SOURCE      Drosophila melanogaster (fruit fly)
+  ORGANISM  Drosophila melanogaster
+            Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda; Insecta;
+            Pterygota; Neoptera; Endopterygota; Diptera; Brachycera;
+            Muscomorpha; Ephydroidea; Drosophilidae; Drosophila; Sophophora.
+REFERENCE   1  (bases 1 to 36401)
+  AUTHORS   Ferraz,C., Vidal,S., Brun,C., Bucheton,A. and Demaille,J.G.
+  TITLE     Sequencing the distal X chromosome of Drosophila melanogaster
+  JOURNAL   Unpublished
+  REMARK    Institut de Genetique Humaine -UPR 1142- CNRS, 141,rue de la
+            Cardonille, 34396 Montpellier Cedex 5, France
+REFERENCE   2  (bases 1 to 36401)
+  AUTHORS   Benos,P.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-APR-1999) European Drosophila Genome Sequencing
+            Consortium
+COMMENT     On Jan 21, 1999 this sequence version replaced gi:3256103.
+            Sequence submitted by Takis Benos, EMBL Outstation - The EBI,
+            Hinxton, Cambridge, CB10 1SD, U.K.
+            E-mail: benos@ebi.ac.uk on behalf of the European Drosophila Genome
+            Sequencing Consortium. For further information see the European
+            Drosophila Genome Sequencing Consortium's web site:
+            http://edgp.ebi.ac.uk/.
+            
+            Coding sequences are predicted from computer analysis, using both
+            gene and CDS prediction programs and matches to other sequences.
+            These predictions and matches have been evaluated by the annotators
+            and may have been refined by hand (in which case a Genefinder
+            prediction will have no score. The annotators have also used their
+            judgement on what matches to represent in this record. A far more
+            complete annotation record is available from FlyBase
+            (http://flybase.bio.indiana.edu/) through the FlyBase Annotation
+            Object linked by the db_xref qualifier in the Feature Table.
+            
+            IMPORTANT:  This sequence is NOT necessarily the entire insert of
+            clone 63B12.  It may be shorter, since we are minimising the
+            overlap between clones to 100 bases, by trimming them.
+            
+            Clone 63B12 overlaps to the left with clone 131F2
+            The true left end of clone 63B12 is at position 21753 of clone
+            131F2 Clone 63B12 overlaps to the right with clone 86E4
+            The true right end of clone 63B12 is at position 775 of clone 86E4
+            
+            Sequence in absolute orientation with respect to chromosome
+            
+            The syntax for the representation of annotation used in this record
+            is documented at:
+            ftp://ftp.ebi.ac.uk/pub/databases/edgp/sequence_annotation.README
+            
+            Clone=63B12; Contig ID=1; Length=36401; Status=Finished.
+FEATURES             Location/Qualifiers
+     source          1..36401
+                     /organism="Drosophila melanogaster"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:7227"
+                     /clone="cosmid 63B12"
+     gene            complement(563..3785)
+                     /gene="EG:63B12.6"
+     CDS             complement(join(563..878,938..1195,1262..1940,2004..2342,
+                     2405..3785))
+                     /gene="EG:63B12.6"
+                     /note="/prediction=(method:''genefinder'',
+                     version:''084'', score:''117.56'');
+                     /prediction=(method:''genscan'', version:''1.0'',
+                     score:''302.14'');
+                     /match=(desc:''LEUCANIA SEPERATA NUCLEAR POLYHEDROSIS
+                     VIRUS DNA FOR P13, XE, ENVELOPE PROTEIN, COMPLETE CDS'',
+                     species:''LEUCANIA SEPARATA NUCLEAR POLYHEDROSIS VIRUS'',
+                     ranges:(query:1264..1326, target:SPTREMBL::P90233:61..41,
+                     score:''53.00''), (query:1075..1191,
+                     target:SPTREMBL::P90233:100..62, score:''65.00'')),
+                     method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''GM12676.5prime GM Drosophila melanogaster
+                     ovary pOT2 Drosophila melanogaster cDNA clone GM12676
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:3479..3841,
+                     target:EMBL::AA804055:518..156, score:''1761.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''LD23296.5prime LD Drosophila melanogaster
+                     embryo pOT2 Drosophila melanogaster cDNA clone LD23296
+                     5prime similar to AL021106: Drosophila melanogaster cosmid
+                     63B12. CDS:join(32617. .33997,34060. .34398,34462.
+                     .35140,35207. .35464,, mRNA sequence'',
+                     species:''Drosophila melanogaster (fruit fly)'',
+                     ranges:(query:3510..3592, target:EMBL::AA940949:83..1,
+                     score:''415.00''), (query:3368..3511,
+                     target:EMBL::AA940949:226..83, score:''711.00''),
+                     (query:3136..3366, target:EMBL::AA940949:457..227,
+                     score:''1074.00''), (query:2800..3134,
+                     target:EMBL::AA940949:792..458, score:''1648.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GM09077.5prime GM Drosophila melanogaster
+                     ovary BlueScript Drosophila melanogaster cDNA clone
+                     GM09077 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:2398..2745,
+                     target:EMBL::AA697096:348..1, score:''1713.00''),
+                     (query:2201..2344, target:EMBL::AA697096:483..340,
+                     score:''711.00'')), method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GM06768.3prime GM Drosophila melanogaster
+                     ovary BlueScript Drosophila melanogaster cDNA clone
+                     GM06768 3prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:1262..1358,
+                     target:EMBL::AA803007:188..92, score:''467.00''),
+                     (query:934..1199, target:EMBL::AA803007:450..185,
+                     score:''1312.00''), (query:859..878,
+                     target:EMBL::AA803007:466..447, score:''100.00'')),
+                     method:''blastn'', version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAA15936.1"
+                     /db_xref="GI:2832772"
+                     /db_xref="FLYBASE:FBgn0023515"
+                     /db_xref="InterPro:IPR006640"
+                     /db_xref="UniProtKB/TrEMBL:Q8MZ30"
+                     /translation="MRANVGAPAPSCGANTEDTELDNSDYMEALQLSADGCSQDVANV
+                     GDVELLSAGISNLKVQPINEEHSAKPEISICISSTTEENVSGDDDAASCITISDSSED
+                     EQEPLPPDSMAVSEREIVANPGQEDIPQPMLTTEKVQRIEAFLRDVSIERREMEWNGP
+                     LTPPPLSSSQRQSRLADADTESMSPTDEDWQPPTTRPIYNSTQLANNDTQVNTICSAD
+                     ATRLDSSKRLADDETEANTLGSEELEPTYSSKRLADNDTEPNTLCSDSSETHNSTIHN
+                     NEPVPDESIEIPETSSEGELTPQKASSGSSTSGGDEHGSIQVSSINISAKINIKISIP
+                     TMESSSAEDDDEHYSSPRATKSLPSSEEVQHQEHQQQDPQSHQKSMLSVDDASEDEQF
+                     LTHAEKLLNQLYGKSWQTPDVIRTLKRSSGSGGKQAPLRPRNIQATAVTTAKKKKPKP
+                     DESVLGDFSIFTKPLRTNQTPLNSTRLPPMRAVQTERRPRTQKPLTRPRTNHIDEDRW
+                     RKLIDSDSGTDASDDEDADATFSESGSDSDSDKDKENKQKRGDLTYLDLSKDEVEVIS
+                     NPDQDSPSPKCHRRLDDILRSCRASVKAKLPATPVQQPNIRRQLFTPNAGFENDNQAK
+                     EIVNRALDLDMLDELESDYLPGTPVHRRVQEVKKKLGIGQQGQTTPHESPILKLLTPK
+                     TAPPKGTAPPKTSAPPKVSTPPKSTKQIPKPRKQKDLSPVASGGKCGFLKSLEGQVSR
+                     DRADNEAFFYRENFARNKDQLAQHLYKMYNAQVFNNELDVPITWSKLLRNTAGRCMNK
+                     RKLNQRSSVVELSVKVLTTADRLRCTLIHELCHAAAWVFNGEGGHGRVWKMWAQRAND
+                     KFPDLPQIKVCHNYSIEFKYTYKCLSCDKASHAHSRSRKVEDLRCRICRGPITLFLNK
+                     KDKQGNTVSTPAGEAKGFAKFVKDNFQRHKRDNMTAAQVMRILSVEYAKQKGQPAEET
+                     AASIASRVETLTLDESSN"
+     gene            4248..5038
+                     /gene="EG:63B12.13"
+     CDS             join(4248..4372,4443..4729,4797..5038)
+                     /gene="EG:63B12.13"
+                     /note="/prediction=(method:''genscan'', version:''1.0'',
+                     score:''53.36'');
+                     /prediction=(method:''genefinder'', version:''084'');
+                     /match=(desc:''GH20211.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH20211
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:4156..4372,
+                     target:EMBL::AI389118:1..217, score:''1085.00''),
+                     (query:4440..4905, target:EMBL::AI389118:215..680,
+                     score:''2303.00''), (query:4440..4905,
+                     target:EMBL::AI389118:215..680, score:''2303.00'')),
+                     method:''blastn'', version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAB41707.1"
+                     /db_xref="GI:4725973"
+                     /db_xref="FLYBASE:FBgn0026873"
+                     /db_xref="GOA:Q9XZT1"
+                     /db_xref="InterPro:IPR019095"
+                     /db_xref="UniProtKB/Swiss-Prot:Q9XZT1"
+                     /translation="MAIVSSARESLSHAMNNRFLPNLEYLLQGSILDSAVEHLMHRLK
+                     GLCDNVDTSPEPFHDLEVCMSLRQPNANQPLLLRVRRALGRDAPFQMRYLGNPEVDLR
+                     RPTLVRSCMDCACTNGILEFLTEMGFRLEFEYIAKGYMFRKGRMKITVSKLIKIVPGK
+                     QQDMANEPISQSYIVELSVVAPTGQENVGEEMRVFAEQLKPLVQLEKIDYKRLGGMP"
+     gene            complement(5242..6921)
+                     /gene="EG:63B12.5"
+     CDS             complement(5242..6921)
+                     /gene="EG:63B12.5"
+                     /note="/prediction=(method:''genefinder'',
+                     version:''084'', score:''100.96'');
+                     /prediction=(method:''genscan'', version:''1.0'',
+                     score:''237.38'');
+                     /match=(desc:''PEROXISOMAL TARGETING SIGNAL 1 RECEPTOR
+                     (PEROXISMORE RECEPTOR 1) (PEROXISOMAL C-TERMINAL TARGETING
+                     SIGNAL IMPORT RECEPTOR) (PTS1-BP) (PEROXIN-5) (PTS1
+                     RECEPTOR)'', species:''HOMO SAPIENS (HUMAN)'',
+                     ranges:(query:6820..6921, target:SWISS-PROT::P50542:34..1,
+                     score:''109.00''), (query:6691..6750,
+                     target:SWISS-PROT::P50542:94..75, score:''55.00''),
+                     (query:6226..6264, target:SWISS-PROT::P50542:277..265,
+                     score:''54.00''), (query:5839..6210,
+                     target:SWISS-PROT::P50542:408..285, score:''318.00''),
+                     (query:5410..5817, target:SWISS-PROT::P50542:556..421,
+                     score:''385.00''), (query:5251..5361,
+                     target:SWISS-PROT::P50542:598..562, score:''84.00'')),
+                     method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''GH08708.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH08708
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:6617..6951,
+                     target:EMBL::AI109490:607..273, score:''1666.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GM06974.5prime GM Drosophila melanogaster
+                     ovary BlueScript Drosophila melanogaster cDNA clone
+                     GM06974 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:6873..6981,
+                     target:EMBL::AA803093:114..6, score:''401.00''),
+                     (query:6479..6885, target:EMBL::AA803093:509..103,
+                     score:''1909.00''), (query:6366..6482,
+                     target:EMBL::AA803093:623..507, score:''585.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /motif=(desc:''TPR Domain'', dbase:''PFAM'',
+                     acc:''PF00515'', method:''hmmer'', version:''2.1.1'',
+                     score:''71.8'')"
+                     /codon_start=1
+                     /protein_id="CAA15937.1"
+                     /db_xref="GI:2832771"
+                     /db_xref="FLYBASE:FBgn0023516"
+                     /db_xref="GOA:Q7KW08"
+                     /db_xref="InterPro:IPR001440"
+                     /db_xref="InterPro:IPR011990"
+                     /db_xref="InterPro:IPR013026"
+                     /db_xref="InterPro:IPR019734"
+                     /db_xref="UniProtKB/TrEMBL:Q7KW08"
+                     /translation="MSFRPLVEGDCGGVNPLMQLGGQFTRDVAHKDEGYVQRHFERAA
+                     RPEDQLINEFLGQVTAPPQSFQMDTLLQEMRDINIHGNPQQQMHSQQAEQWGQDFARG
+                     LAPALPNKMIHMQAQQQDLQHAQEFFDEPLISSQNFRSLPPLRQPLMPIAAGQQQDPF
+                     FDSAMETIITDHLPQAPQGESLDDWISDYQRSTEQKEQTAANFNEKFWERLQDEWQKL
+                     ADENEHPWLSEYNDNMDAYKEYEFAEGNPMSDVENPFEKGKEYLSKGDIPSAVLCFEV
+                     AAKKQPERAEVWQLLGTSQTENEMDPQAIAALKRAYDLQPDNQQVLMALAACYTNEGL
+                     QNNAVRMLCNWLTVHPKYQHLVAAHPELQAEGTSLASSLIGPSKLRDLQQIYLEAVRQ
+                     HPSEVDAEVQDALGVLYNLSGEFDKAVDCYQSALQVDPQNAKTWNRLGASLANGSRSV
+                     EAVEAYQQALQLQPGFIRVRYNVGVCCMNLKAYKEAVEHLLTALTMQAHTNAARELPN
+                     AAMAATFRGQNQMSESIWSTLKMVISLMGRSDLQSYVSDRNLAALNEAFKD"
+     gene            7157..10585
+                     /gene="EG:63B12.9"
+     CDS             join(7157..7476,7532..8112,8178..10585)
+                     /gene="EG:63B12.9"
+                     /note="/prediction=(method:''genscan'', version:''1.0'',
+                     score:''273.78'');
+                     /match=(desc:''LD13889.5prime LD Drosophila melanogaster
+                     embryo BlueScript Drosophila melanogaster cDNA clone
+                     LD13889 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:7149..7378,
+                     target:EMBL::AA439344:1..230, score:''1123.00''),
+                     (query:7372..7476, target:EMBL::AA439344:223..327,
+                     score:''525.00''), (query:7529..7627,
+                     target:EMBL::AA439344:325..423, score:''468.00''),
+                     (query:7629..7779, target:EMBL::AA439344:424..574,
+                     score:''683.00''), (query:7768..7837,
+                     target:EMBL::AA439344:562..631, score:''350.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GH14172.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH14172
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:7626..8121,
+                     target:EMBL::AI238171:1..496, score:''2462.00''),
+                     (query:8177..8290, target:EMBL::AI238171:487..600,
+                     score:''570.00'')), method:''blastn'', version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAA15938.1"
+                     /db_xref="GI:4038537"
+                     /db_xref="FLYBASE:FBgn0023513"
+                     /db_xref="GOA:O46089"
+                     /db_xref="UniProtKB/TrEMBL:O46089"
+                     /translation="MDYDLFQSDDEEILATFIQATQKQETLSAQIDVDDSEEDLVDGL
+                     HLPEFNCSGRDTLKSQLCEGGFLGNGYAQLDPPRSRLDYLCFDFAPAQLAVGAVRNYL
+                     YGEACKNVQKLLTVVMGQQHLQATAASMNSGWYRVRQQVTHFYHLMLLLRGNELLPSH
+                     FLDGFRQLLNDQLDADTWKVLYFAEHNKGNDCQAPAYHLYHGVLEWRFLDLHILYASG
+                     NDQAFLGQLERTLDDLIVCAGHHYRSKHRSELIHSSPFMCRCNKELWLLLKRLIPKWL
+                     GERELDFWTLFHKAMQRHKSLHFQGESNAISLAYHELYSWLRLGLARLDEYNSEGWYQ
+                     PDHSPLTAAPESFQTASLLKQFLASQPDEQQRRVYLIQLSPLQLQLGKPDTDVLCQLW
+                     EYFHRSLNCNFSVGTELDQLPLTCSNGSAYVDRYNKLLSKSHIEDLNLSSFTMYAWML
+                     GKTLKLLPSQGRSNQRQKLLGRIFSKFSAAKLLALNEPGIHHVIELFLCLLLCHEDLS
+                     ELAPKLREMLLCLALEKLPPVRRILVAKGHMALLLLHAQHRLSMDDYVSKLLNQLATI
+                     RNDAEVGAIYVGSLQAIFNLADDFNRGEQQLLGPWLAHYVEKCGQASQDRVWQTLHNL
+                     ILRLSERRAVAGNASGIKEALQQHIMPLVRTQYVSSHSSWLPKLAANFIALENNGDKL
+                     LLGFLQGPEPINMAASAQLLLQVLEDGGRPASSTILQVWVKSLVLLNAQHESVLALMP
+                     HVTQLEEFRLLAIDPTSLEGGREPLCAFFGALGRRAQQEEAAAHVRMQLSHKLHAYVN
+                     HFELWLPPDRSRSELGSRFYSFLAIVIYNCSTLAYVRSKPSCFFHLAMVRFLLTTQLQ
+                     AGVPPEGRLPQVVHKIFPVLLQGIGRLPYRTDAYVAKTLEQLVQHWTPHFSFSSNAKL
+                     VARPYATLLQADVDGELAQFVLQLLVTQFLVVQRRRAGQHAGLVITIMQQLIESTGKE
+                     QEEQLLTVLRGVHIPLLEHVMFVDEVDLSRNQVFGLYKVLISHDAYKRSQAVRDMCSN
+                     HLRSLAEKHLAHCTYFYFQMLINLAELAPDLVAPILSFIREQAEQVELKRGAGEDVGI
+                     RKCLQRLQKVLSRV"
+     gene            complement(10829..11764)
+                     /gene="EG:63B12.4"
+     CDS             complement(join(10829..11140,11207..11764))
+                     /gene="EG:63B12.4"
+                     /note="/prediction=(method:''genscan'', version:''1.0'',
+                     score:''113.71'');
+                     /prediction=(method:''genefinder'', version:''084'');
+                     /match=(desc:''LD30851.5prime LD Drosophila melanogaster
+                     embryo pOT2 Drosophila melanogaster cDNA clone LD30851
+                     5prime similar to AL021106: Drosophila melanogaster cosmid
+                     63B12. CDS:join(24638. .25195,25262. .25573), mRNA
+                     sequence'', species:''Drosophila melanogaster (fruit
+                     fly)'', ranges:(query:11207..11738,
+                     target:EMBL::AA950742:532..1, score:''2642.00''),
+                     (query:10961..11140, target:EMBL::AA950742:712..533,
+                     score:''864.00'')), method:''blastn'', version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAA15939.1"
+                     /db_xref="GI:2832770"
+                     /db_xref="FLYBASE:FBgn0023517"
+                     /db_xref="GOA:O46084"
+                     /db_xref="InterPro:IPR013078"
+                     /db_xref="UniProtKB/Swiss-Prot:O46084"
+                     /translation="MRKLTSFVCGTGAGLAAYYLQRLRDPQTVVQNSWTHSDKPVDPW
+                     ALWDTNWDCREPRALVRPLRNSQPEEENRYNAELEKAKAKKARHIILVRHGEYLDVGD
+                     SDDTHHLTERGRKQAEFTGKRLCELGIKWDKVVASTMVRAQETSDIILKQIDFEKEKV
+                     VNCAFLREGAPIPPQPPVGHWKPEASQFLRDGSRIEAGFRRYFHRAYPDQEKESYTLI
+                     VGHGNVIRYFVCRALQFPAEGWLRININHASITWLTISPSGNVSIKYLGDSGFMPAEL
+                     LTNRIPRDVKNVV"
+     gene            12372..13887
+                     /gene="EG:63B12.8"
+     CDS             join(12372..12515,12595..13887)
+                     /gene="EG:63B12.8"
+                     /note="/prediction=(method:''genscan'', version:''1.0'',
+                     score:''193.75'');
+                     /prediction=(method:''genefinder'', version:''084'');
+                     /match=(desc:''H<BETA>58 PROTEIN'', species:''MUS MUSCULUS
+                     (MOUSE)'', ranges:(query:12420..12518,
+                     target:SWISS-PROT::P40336:20..52, score:''118.00''),
+                     (query:12592..13335, target:SWISS-PROT::P40336:51..298,
+                     score:''965.00'')), method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''PEPA'', species:''DICTYOSTELIUM DISCOIDEUM
+                     (SLIME MOLD)'', ranges:(query:12435..12518,
+                     target:SPTREMBL::Q23920:25..52, score:''71.00''),
+                     (query:12580..12855, target:SPTREMBL::Q23920:47..138,
+                     score:''276.00''), (query:12862..13332,
+                     target:SPTREMBL::Q23920:142..298, score:''601.00'')),
+                     method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''LD10891.5prime LD Drosophila melanogaster
+                     embryo BlueScript Drosophila melanogaster cDNA clone
+                     LD10891 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:12105..12518,
+                     target:EMBL::AA391957:1..414, score:''2070.00''),
+                     (query:12591..12632, target:EMBL::AA391957:408..449,
+                     score:''201.00'')), method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''LD30486.5prime LD Drosophila melanogaster
+                     embryo pOT2 Drosophila melanogaster cDNA clone LD30486
+                     5prime similar to AL021106: Drosophila melanogaster cosmid
+                     63B12. CDS:complement(join(22515. .23807,23887. .24030)),
+                     mRNA sequence'', species:''Drosophila melanogaster (fruit
+                     fly)'', ranges:(query:12257..12518,
+                     target:EMBL::AA950622:95..356, score:''1301.00''),
+                     (query:12591..12911, target:EMBL::AA950622:350..670,
+                     score:''1587.00'')), method:''blastn'',
+                     version:''1.4.9'');
+                     /match=(desc:''GH14230.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH14230
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:12591..13167,
+                     target:EMBL::AI238219:5..581, score:''2867.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GM02143.5prime GM Drosophila melanogaster
+                     ovary BlueScript Drosophila melanogaster cDNA clone
+                     GM02143 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:13320..13361,
+                     target:EMBL::AA695102:13..54, score:''210.00''),
+                     (query:13363..14030, target:EMBL::AA695102:55..722,
+                     score:''3322.00'')), method:''blastn'',
+                     version:''1.4.9'');
+                     /match=(desc:''GH05947.3prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH05947
+                     3prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:14277..14715,
+                     target:EMBL::AI108023:439..1, score:''2177.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     EST embl|AI108023|AI108023 comes from the 3' UTR"
+                     /codon_start=1
+                     /protein_id="CAA15940.1"
+                     /db_xref="GI:2832773"
+                     /db_xref="FLYBASE:FBgn0014411"
+                     /db_xref="GOA:Q9W552"
+                     /db_xref="InterPro:IPR005377"
+                     /db_xref="UniProtKB/Swiss-Prot:Q9W552"
+                     /translation="MNFLGFGQSADIEIVFDGAEHKTAEVKGEDGKVEKMLLFYDGET
+                     VSGKVNVTLKKPGSKLEHQGIKIEFIGQIELYYDRGNHHEFKCLAKALAGPGDLIQNN
+                     SYPFDFPKVEKQFEVYAGSNVRLRYFLRATIVRRISDITKEVDIAVHTLCSYPEMNNP
+                     IKMEVGIEDCLHIEFEYNKSKYHLRDTIIGKIYFLLVRIKIKHMEIAIIKKESTGTGP
+                     TMFNENETIAKYEIMDGAPVKGESIPIRVFLAGYNLTPTMRDINKKFSVKYFLNLVLM
+                     DTEDRRYFKQQEITLWRKADKPRYHGAQQHQQQQHQHVPLHAPPHLVSGPAAPTVAHS
+                     LISSSTDSGEVGGAPTAPGTAGSESKMGLFTRESPNQEFSQQQMDSPPLTPTPSTASV
+                     AVAVPTAASSVSEPAPERGIGDGAAAATTSASPVAMLSSSPPPLLPVSPLSRSETEAS
+                     EQVQPEDEDLDAITPNTKKTGATPLATD"
+     gene            complement(14996..15373)
+                     /gene="EG:63B12.11"
+     CDS             complement(join(14996..15145,15203..15373))
+                     /gene="EG:63B12.11"
+                     /note="/prediction=(method:''genefinder'',
+                     version:''084'', score:''25.78'');
+                     /prediction=(method:''genscan'', version:''1.0'',
+                     score:''48.73'');
+                     /match=(desc:''GH01621.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH01621
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:15202..15457,
+                     target:EMBL::AI062424:256..1, score:''1235.00''),
+                     (query:15033..15146, target:EMBL::AI062424:368..255,
+                     score:''561.00''), (query:14913..15033,
+                     target:EMBL::AI062424:487..367, score:''587.00'')),
+                     method:''blastn'', version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAA15941.1"
+                     /db_xref="GI:3947670"
+                     /db_xref="FLYBASE:FBgn0026089"
+                     /db_xref="InterPro:IPR016576"
+                     /db_xref="UniProtKB/TrEMBL:O97419"
+                     /translation="MHLTLINLFKKTVPGHIFRGKRRLVKPVSQRAMDTLTREYERQE
+                     QVMLLLRHPYLTMEQSFGHAKELQKREKLVARWTDEQTLRKMKPHVTIEERLNQLKIK
+                     EAWD"
+     gene            15661..17238
+                     /gene="EG:63B12.7"
+     CDS             15661..17238
+                     /gene="EG:63B12.7"
+                     /note="/prediction=(method:''genscan'', version:''1.0'',
+                     score:''200.58'');
+                     /prediction=(method:''genefinder'', version:''084'');
+                     /match=(desc:''LD02447.5prime LD Drosophila melanogaster
+                     embryo BlueScript Drosophila melanogaster cDNA clone
+                     LD02447 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:15593..16282,
+                     target:EMBL::AA202295:1..690, score:''3441.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /motif=(desc:''Trp-Asp (WD) repeats signature'',
+                     dbase:''PROSITE'', acc:''PS00678'', method:''ppsearch'');
+                     /motif=(desc:''WD domain, G-beta repeat'', dbase:''PFAM'',
+                     acc:''PF00400'', method:''hmmer'', version:''2.1.1'',
+                     score:''50.0'')"
+                     /codon_start=1
+                     /protein_id="CAA15942.2"
+                     /db_xref="GI:4725974"
+                     /db_xref="FLYBASE:FBgn0023514"
+                     /db_xref="HSSP:1G4I"
+                     /db_xref="InterPro:IPR001680"
+                     /db_xref="InterPro:IPR011046"
+                     /db_xref="InterPro:IPR015943"
+                     /db_xref="InterPro:IPR017986"
+                     /db_xref="InterPro:IPR019775"
+                     /db_xref="InterPro:IPR019781"
+                     /db_xref="InterPro:IPR019782"
+                     /db_xref="UniProtKB/TrEMBL:O46087"
+                     /translation="MEDAVEALFISTSSEDNTTCSVQDLRTGTDLMRYKGGGCAQHHS
+                     LNMIHLNYVMAANSAKPLLHVWPINKQEQMAGLRFVVPGKVNALALTPDGNFLVAGIQ
+                     ENIYLWHMSSGRMLNTLSKHYQAITCLRFTDNGEHFISGGKDGAVLVWDLTFSAAPLD
+                     TGGGKDSTEPLYSFNDHGLAVTDLYSGIGGIRSYLYTVSLDRCCKVYDLCGGVLLLSV
+                     VFPVALHSVIVSKMETRVYVGSSDGKVFVFNMENAPRMKVSPDFVYPLLCQLIPLLTQ
+                     EYYLEGEEIQAFVGHTYGKAITCLALNISATTLVSGGEDNQVCVWDVGSRQLIKSLSQ
+                     KGSVTNLHIRLLSPAIFLPEHKQPQMFADSLKRMISPWDENDCIELFDPDYSGGRKTP
+                     ELDYTQSHPGTDEEIILKLIASMSSGKNEDDEGIEAETKATDVEDSEVEEEEPASEPM
+                     ETASKEAESEKSYAEYQPDSAQTSDERVQELQAENARLKAQSMRLFQIAFKYITSDTN
+                     GQAEITEKTKRKKARKT"
+     gene            complement(17373..17724)
+                     /gene="EG:63B12.12"
+     CDS             complement(join(17373..17584,17646..17724))
+                     /gene="EG:63B12.12"
+                     /note="/prediction=(method:''genefinder'',
+                     version:''084'', score:''19.65'');
+                     /prediction=(method:''genscan'', version:''1.0'',
+                     score:''32.86'');
+                     /match=(desc:''LP05103.5prime LP Drosophila melanogaster
+                     larval-early pupal pOT2 Drosophila melanogaster cDNA clone
+                     LP05103 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:17646..17765,
+                     target:EMBL::AI261035:120..1, score:''600.00''),
+                     (query:17251..17586, target:EMBL::AI261035:454..119,
+                     score:''1680.00'')), method:''blastn'',
+                     version:''1.4.9'')"
+                     /codon_start=1
+                     /protein_id="CAA15943.1"
+                     /db_xref="GI:4165198"
+                     /db_xref="FLYBASE:FBgn0026088"
+                     /db_xref="GOA:O97420"
+                     /db_xref="InterPro:IPR005374"
+                     /db_xref="InterPro:IPR022788"
+                     /db_xref="UniProtKB/Swiss-Prot:O97420"
+                     /translation="MSPKNNHDPSSSGDSGNTNVQEADLQEMEDVNNSLDALSCALDA
+                     VEQRTDDIMSQLRELLNSNREIRRLIAEENDNAPESGDDNMDGQAGSEAAPK"
+     gene            complement(20387..28005)
+                     /gene="EG:63B12.3"
+     CDS             complement(join(20387..20479,20550..20732,20787..20916,
+                     20973..21568,21648..22172,22238..26594,26621..28005))
+                     /gene="EG:63B12.3"
+                     /note="/prediction=(method:''genscan'', version:''1.0'');
+                     /prediction=(method:''genefinder'', version:''084'');
+                     /match=(desc:''ZINC FINGER PROTEIN HRX (ALL-1)'',
+                     species:''HOMO SAPIENS (HUMAN)'',
+                     ranges:(query:22223..22333,
+                     target:SWISS-PROT::Q03164:1903..1867, score:''75.00''),
+                     (query:21936..22169, target:SWISS-PROT::Q03164:1977..1900,
+                     score:''185.00''), (query:21236..21409,
+                     target:SWISS-PROT::Q03164:3747..3690, score:''67.00''),
+                     (query:20787..20918, target:SWISS-PROT::Q03164:3878..3835,
+                     score:''106.00''), (query:20547..20726,
+                     target:SWISS-PROT::Q03164:3940..3881, score:''205.00''),
+                     (query:20390..20479, target:SWISS-PROT::Q03164:3969..3940,
+                     score:''121.00'')), method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''TRITHORAX PROTEIN'', species:''DROSOPHILA
+                     MELANOGASTER (FRUIT FLY)'', ranges:(query:22223..22327,
+                     target:SWISS-PROT::P20659:1767..1733, score:''81.00''),
+                     (query:21936..22172, target:SWISS-PROT::P20659:1841..1763,
+                     score:''186.00''), (query:21236..21337,
+                     target:SWISS-PROT::P20659:3503..3470, score:''60.00''),
+                     (query:20787..20918, target:SWISS-PROT::P20659:3670..3627,
+                     score:''117.00''), (query:20547..20726,
+                     target:SWISS-PROT::P20659:3732..3673, score:''175.00''),
+                     (query:20426..20479, target:SWISS-PROT::P20659:3749..3732,
+                     score:''54.00''), (query:20390..20467,
+                     target:SWISS-PROT::P20659:3759..3734, score:''79.00'')),
+                     method:''blastx'', version:''1.4.9'');
+                     /motif=(desc:''Cytochrome c family heme-binding site
+                     signature'', dbase:''PROSITE'', acc:''PS00190'',
+                     method:''ppsearch'');
+                     /match=(desc:''GM10003.5prime GM Drosophila melanogaster
+                     ovary BlueScript Drosophila melanogaster cDNA clone
+                     GM10003 5prime, mRNA sequence'', species:''Drosophila
+                     melanogaster (fruit fly)'', ranges:(query:21883..22007,
+                     target:EMBL::AA735869:125..1, score:''625.00''),
+                     (query:21648..21881, target:EMBL::AA735869:358..125,
+                     score:''1116.00''), (query:21429..21569,
+                     target:EMBL::AA735869:498..358, score:''678.00''),
+                     (query:21417..21436, target:EMBL::AA735869:511..492,
+                     score:''100.00'')), method:''blastn'', version:''1.4.9'');
+                     /match=(desc:''GH25802.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH25802
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:20971..21569,
+                     target:EMBL::AI405692:613..15, score:''2986.00''),
+                     (query:20839..20933, target:EMBL::AI405692:689..595,
+                     score:''412.00'')), method:''blastn'', version:''1.4.9'');
+                     /motif=(desc:''SET domain'', dbase:''PFAM'',
+                     acc:''PF00856'', method:''hmmer'', version:''2.1.1'',
+                     score:''199.2'')"
+                     /codon_start=1
+                     /protein_id="CAA15944.1"
+                     /db_xref="GI:3256105"
+                     /db_xref="FLYBASE:FBgn0023518"
+                     /db_xref="GOA:Q8IRW8"
+                     /db_xref="HSSP:1PEG"
+                     /db_xref="InterPro:IPR001214"
+                     /db_xref="InterPro:IPR001965"
+                     /db_xref="InterPro:IPR003616"
+                     /db_xref="InterPro:IPR003888"
+                     /db_xref="InterPro:IPR003889"
+                     /db_xref="InterPro:IPR015722"
+                     /db_xref="InterPro:IPR018516"
+                     /db_xref="InterPro:IPR018518"
+                     /db_xref="UniProtKB/Swiss-Prot:Q8IRW8"
+                     /translation="MNIPKVTTSLGAAEKAKPERVASVAAAAFNAVSLQKRSGDDTAT
+                     PAEDPTRKKAKTELLLGTGTAAPSLPAKASSTAPQQLLYQRSGQQAKAQVKAASEPQD
+                     VETADGVWDARDQQIIVCNFGSGTEMGAIKAEDADKQSEYRISTPRNSQSNPLLHRNT
+                     AFTSFTKKEGASSSASSSSSTASVISIEPSGSGQDHAENSGKSEDLDYVLMPASGADS
+                     ATSVGNSTGTGTPAGTPIGATTSTIILNANNGTAGVSGAGTTTILTQKSGHTNYNIFN
+                     TTATGSQTPTTTLLNRVNLHPKMKTQLMVNAKKLSEVTQTTAKVSIGNKTISVPLLKP
+                     LMSASGAATAGGATIVESKQLLQPGGQVTTVMSAAQQSGGQQVHPHVHSHAHHNFTKL
+                     IKRGPKNSGTIVSFSGLQIKPANTKIVATKVVSKKMLQLQQHQQQIQQQQQLQQLQVT
+                     SGGGLAPPQAAYQTYAMVQDSATVGPAAHSEDDAPAPRKITAYSENLQKILNKSKSQE
+                     STGGPEEFTNINSVVIKPLDKNTLNCPPSFNIFKQQQHSQAAQSQSISAVGSGAGTPV
+                     TFTMASGNASDLATTSTVSVSAGTICINSPMMGTRPIISIQNKNISLVLSKTTMAQQK
+                     PKMITTTTLSSQAALQMHHALIQDSSADKAGSSANSGSATSGASMQLKLTTANTPTKL
+                     SVSLAPDVVKLEEVGSESKAKLLVKQEAVVKDSTGTPTSEERAEEIGTPEKRLNANAT
+                     MTAINQVQNQSANQIQMATSTSTASNPSTPNPTVNATPMNNQRSAAEDNALLKQLLQN
+                     NSSSHSLNQISITSAHVGSASASAPLSARKVINVRAPSMGKVRSLEDQLARPVIPPVP
+                     TATQAAGSSSSSGSVATSTTTTTVASGGSSQQVATASATALPVSAVAITTPGVGGEAK
+                     LEQKSDQPAAIMQNQSQNQAPPPPPPPQQQQQQQLHQPQQLQPSPHQVKQTVQIVSKE
+                     TSFISGPVAAKTLVTEATSKPAELLPPPPYEMATAPISNVTISISTKQAAPKELQMKP
+                     KAVAMSLPMEQGDESLPEQAEPPLHSEQGATAAGVAPHSGGPLVSAQWTNNHLEGGVA
+                     TTKIPFKPGEPQKRKLPMHPQLDEKQIQQQAEIPISTSLPTTPTGQGTPDKVQLISAI
+                     ATYVKKSGVPNEAQPIQNQSQGQVQMQAQMQATMQGHLSGQMSGQISGHAAGQIPAQM
+                     HLQVQHQLHMAVHPQQQQQQLHQNQPQNATIPLPVTGQGAVPIPVPTMESKAGDQRKR
+                     RKREVQKPRRTNLNAGQAGGALKDLTGPLPAGAMVQLAGMPPGTQYIQGAASGTGHVI
+                     TSTGQGVTLGGVGASTGASSSPMLKKRVRKFSKVEEDHDAFTEKLLTHIRQMQPLQVL
+                     EPHLNRNFHFLIGSNETSGGGSPASMSSAASAGSSSAGGGKLKGGSRGWPLSRHLEGL
+                     EDCDGTVLGRYGRVNLPGIPSLYDSERFGGSRGLVGGSARTRSPSPAESPGAEKMLPM
+                     SSIQNDFYDQEFSTHMERNPRERLVRHIGAVKDCNLETVDLVESEGVAAWATLPRLTR
+                     YPGLILLNGNSRCHGRMSPVALPEDPLTMRFPVSPLLRSCGEELRKTQQMELGMGPLG
+                     NNNNNNYQQKNQNVILALPASASENIAGVLRDLANLLHLAPALTCKIIEDKIGNKLED
+                     QFMNQDDEKHVDFKRPLSQVSHGHLRKILNGRRKLCRSCGNVVHATGLRVPRHSVPAL
+                     EEQLPRLAQLMDMLPRKSVPPPFVYFCDRACFARFKWNGKDGQAEAASLLLQPAGGSA
+                     VKSSNGDSPGSFCASSTAPAEMVVKQEPEDEDEKTPSVPGNPTNIPAQRKCIVKCFSA
+                     DCFTTDSAPSGLELDGTAGAGTGAGPVNNTVWETETSGLQLEDTRQCVFCNQRGDGQA
+                     DGPSRLLNFDVDKWVHLNCALWSNGVYETVSGALMNFQTALQAGLSQACSACHQPGAT
+                     IKCFKSRCNSLYHLPCAIREECVFYKNKSVHCSVHGHAHAGITMGAGAGATTGAGLGG
+                     SVADNELSSLVVHRRVFVDRDENRQVATVMHYSELSNLLRVGNMTFLNVGQLLPHQLE
+                     AFHTPHYIYPIGYKVSRYYWCVRRPNRRCRYICSIAEAGCKPEFRIQVQDAGDKEPER
+                     EFRGSSPSAVWQQILQPITRLRKVHKWLQLFPQHISGEDLFGLTEPAIVRILESLPGI
+                     ETLTDYRFKYGRNPLLEFPLAINPSGAARTEPKQRQLLVWRKPHTQRTAGSCSTQRMA
+                     NSAAIAGEVACPYSKQFVHSKSSQYKKMKQEWRNNVYLARSKIQGLGLYAARDIEKHT
+                     MIIEYIGEVIRTEVSEIREKQYESKNRGIYMFRLDEDRVVDATLSGGLARYINHSCNP
+                     NCVTEIVEVDRDVRIIIFAKRKIYRGEELSYDYKFDIEDESHKIPCACGAPNCRKWMN
+                     "
+     gene            28577..29459
+                     /gene="EG:63B12.2"
+     CDS             join(28577..28625,28675..28773,28843..29459)
+                     /gene="EG:63B12.2"
+                     /note="/prediction=(method:''genefinder'',
+                     version:''084'');
+                     /prediction=(method:''genscan'', version:''1.0'');
+                     /match=(desc:''50S RIBOSOMAL PROTEIN L16'',
+                     species:''ESCHERICHIA COLI'', ranges:(query:29094..29225,
+                     target:SWISS-PROT::P02414:64..107, score:''87.00'')),
+                     method:''blastx'', version:''1.4.9'');
+                     /match=(desc:''GH05976.5prime GH Drosophila melanogaster
+                     head pOT2 Drosophila melanogaster cDNA clone GH05976
+                     5prime, mRNA sequence'', species:''Drosophila melanogaster
+                     (fruit fly)'', ranges:(query:28507..28625,
+                     target:EMBL::AI108047:1..119, score:''595.00''),
+                     (query:28690..28785, target:EMBL::AI108047:102..197,
+                     score:''354.00''), (query:28843..29264,
+                     target:EMBL::AI108047:186..607, score:''2101.00'')),
+                     method:''blastn'', version:''1.4.9'');
+                     /motif=(desc:''Ribosomal protein L16'', dbase:''PFAM'',
+                     acc:''PF00252'', method:''hmmer'', version:''2.1.1'',
+                     score:''31.0'')"
+                     /codon_start=1
+                     /protein_id="CAA15945.1"
+                     /db_xref="GI:3256104"
+                     /db_xref="FLYBASE:FBgn0023519"
+                     /db_xref="GOA:O46082"
+                     /db_xref="InterPro:IPR000114"
+                     /db_xref="InterPro:IPR016180"
+                     /db_xref="UniProtKB/TrEMBL:O46082"
+                     /translation="MLSLKLVSQLFKQSLAFCNKPLKLFFAAGNMAIVNTAGLKYFAP
+                     PIKYQNVEQPERPKLRVIERQPQLPPNIRPPKMQKRLRYMRGPEMVHNTLLHKQYAIV
+                     ATGGGRLRWGHYEMMRLTIGRKMNVNTMFATWRVPAPWQPITKKGQGQRMGGGKGAID
+                     HYVTPIKAGRVIVEIAGKCEFVEVKQFLQQVANQLPFQATVVSQEMLDEQRVAEEEQT
+                     RQNENPFTMKYVIQNNLSGCHRWLSPVDHKWFGKHL"
+     gene            complement(30060..34983)
+                     /gene="EG:86E4.6"
+                     /gene_synonym="FBgn0000117;arm"
+     CDS             complement(join(30060..30349,31633..31729,32738..33010,
+                     33071..33271,33344..34983))
+                     /gene="EG:86E4.6"
+                     /gene_synonym="FBgn0000117;arm"
+                     /codon_start=1
+                     /protein_id="CAA15946.1"
+                     /db_xref="GI:2832766"
+                     /db_xref="FLYBASE:FBgn0000117"
+                     /db_xref="GOA:P18824"
+                     /db_xref="InterPro:IPR000225"
+                     /db_xref="InterPro:IPR011989"
+                     /db_xref="InterPro:IPR013284"
+                     /db_xref="InterPro:IPR016024"
+                     /db_xref="UniProtKB/Swiss-Prot:P18824"
+                     /translation="MSYMPAQNRTMSHNNQYNPPDLPPMVSAKEQTLMWQQNSYLGDS
+                     GIHSGAVTQVPSLSGKEDEEMEGDPLMFDLDTGFPQNFTQDQVDDMNQQLSQTRSQRV
+                     RAAMFPETLEEGIEIPSTQFDPQQPTAVQRLSEPSQMLKHAVVNLINYQDDAELATRA
+                     IPELIKLLNDEDQVVVSQAAMMVHQLSKKEASRHAIMNSPQMVAALVRAISNSNDLES
+                     TKAAVGTLHNLSHHRQGLLAIFKSGGIPALVKLLSSPVESVLFYAITTLHNLLLHQDG
+                     SKMAVRLAGGLQKMVTLLQRNNVKFLAIVTDCLQILAYGNQESKLIILASGGPNELVR
+                     IMRSYDYEKLLWTTSRVLKVLSVCSSNKPAIVDAGGMQALAMHLGNMSPRLVQNCLWT
+                     LRNLSDAATKVEGLEALLQSLVQVLGSTDVNVVTCAAGILSNLTCNNQRNKATVCQVG
+                     GVDALVRTIINAGDREEITEPAVCALRHLTSRHVDSELAQNAVRLNYGLSVIVKLLHP
+                     PSRWPLIKAVIGLIRNLALCPANHAPLREHGAIHHLVRLLMRAFQDTERQRSSIATTG
+                     SQQPSAYADGVRMEEIVEGTVGALHILARESHNRALIRQQSVIPIFVRLLFNEIENIQ
+                     RVAAGVLCELAADKEGAEIIEQEGATGPLTDLLHSRNEGVATYAAAVLFRMSEDKPQD
+                     YKKRLSIELTNSLLREDNNIWANADLGMGPDLQDMLGPEEAYEGLYGQGPPSVHSSHG
+                     GRAFHQQGYDTLPIDSMQGLEISSPVGGGGAGGAPGNGGAVGGASGGGGNIGAIPPSG
+                     APTSPYSMDMDVGEIDAGALNFDLDAMPTPPNDNNNLAAWYDTDC"
+ORIGIN      
+        1 ggctttgtgt gagttcgggt agtgtgacca gcgccactgc ggaaacacag tgttaatacg
+       61 ccttgggcca aggtaggagg taggcccgtg gataccctgc catttttttt tttttttttt
+      121 gctactccat ctagaaaatt gttgtgtcta gccttagcaa gtacacggca ctactcactt
+      181 ttcaccagtg tagaatttaa catttcaaga ttgtgcaaag caattattta ataggttgta
+      241 ttaggcatat attaacatac ataaacagac atactctttc actgtaagta atgagtccaa
+      301 gcatcgcctt taccaacacc gccggccgac accgcgtatg caaaatcgag ctttacagca
+      361 ctagctttta aatgtccgtt taattttaat ggaaaccatg tttctggtta agaaaatata
+      421 taatacatta aacaaaatat actacttcta ctacttcgca cgaactgaga tctcagttaa
+      481 gtttttcaaa ttgtctatga tataccaaaa atggtttagg gcttggagca cataatttaa
+      541 caaaactcaa aagagaaccc agctagttgg acgactcgtc cagtgtcagc gtttccactc
+      601 ggctggcgat cgacgccgct gtctcctccg ccggctgacc cttctgcttg gcgtactcca
+      661 cgctcaggat gcgcatcacc tgtgcggcag tcatgttgtc gcgcttgtgt ctctggaagt
+      721 tgtccttaac gaacttagca aatcccttcg cctcgcccgc cggcgtggat acggtgtttc
+      781 cttgcttgtc ctttttgttc aggaagaggg tgatgggtcc ccggcagatc ctgcagcgca
+      841 aatcttccac cttgcgggat cgggaatggg catgtgacct gtgatgcgta aaaactgcat
+      901 gacaataata ttctttttat cacttgggag aacttacgct ttgtcgcagc tcaggcactt
+      961 gtaggtatac ttgaattcaa tgctatagtt gtggcagacc ttgatctgcg ggagatcggg
+     1021 gaacttgtcg ttggctcttt gtgcccacat cttccacacc cgtccgtgtc caccctcgcc
+     1081 attgaatacc caggccgcag catggcagag ttcgtgtatc aaggtgcaac gcaggcggtc
+     1141 cgcggtagtc agcactttga cgctcagttc caccacgctg ctacgctggt taagtctgca
+     1201 aacaatatat atttatcgaa ttcaaggagg atatctggtt gtctctataa gaatcaccca
+     1261 cttgcgcttg ttcatgcacc ggccggcagt gttgcgcagc aatttggacc aggtgatggg
+     1321 cacatccagc tcgttgttga acacctgggc gttatacatc ttgtaaagat gctgggccag
+     1381 ctgatcctta tttcttgcga agttttcccg atagaagaag gcctcgttgt ccgccctatc
+     1441 gcggctcact tgtccctcca gggatttcag aaagccgcac ttgccgccgc tcgcaacggg
+     1501 tgagagatcc ttctgcttcc taggttttgg aatctgctta gtggattttg ggggggtaga
+     1561 aacttttggc ggtgcagatg ttttgggcgg agcagtgcct ttaggcggag ccgtttttgg
+     1621 cgtaagcaac ttgagaattg ggctctcgtg gggcgttgtc tgaccttgct gcccaatgcc
+     1681 aagcttcttc tttacctcct gcactctcct gtggactgga gtcccgggta ggtagtcgct
+     1741 ctccagttca tccagcatgt ccaggtccaa cgccctgttt actatctcct tagcttggtt
+     1801 atcgttctcg aatcctgcgt taggggtaaa aagttggcga cgaatgtttg gctgctgcac
+     1861 aggagtggca ggaagtttag ccttaacgct ggcgcgacat gatcgcagta tgtcgtccag
+     1921 gcgacggtga cattttggcg ctagaataat gagttactaa aacatttaag tcagccattt
+     1981 aaaatactaa tatcaactct tacacggcga gtcctggtcg ggattgctga tcacctccac
+     2041 ctcgtctttg ctcaagtcga gataggtaag gtcgcctctc ttttgcttgt tctccttgtc
+     2101 cttatcactg tcgctatcac taccgctttc gctaaaagtg gcatctgcat cctcgtcgtc
+     2161 ggaggcgtct gtcccgctgt cggaatctat gagcttgcgc cagcgatcct cgtctatatg
+     2221 attggtgcgt gggcgtgtca acggcttttg agtccgcgga cgtctctccg tttggacagc
+     2281 gcgcatcgga ggcagacgag tcgagtttaa aggagtctga tttgtgcgca gaggtttggt
+     2341 aactggggat taaagcgcgt gtgactcaac ggttggagga taaaaagcat ggataaattc
+     2401 ttacatatgc tgaagtcccc gagaacactt tcatctggct tgggcttctt ttttttagcg
+     2461 gtggttaccg ctgttgcttg aatattcctg ggcctcagag gagcctgttt accgccacta
+     2521 ccactggagc gctttagagt gcggatcaca tctggtgtct gccaagactt gccgtacaat
+     2581 tgattgagca gcttttctgc gtgggtgaga aactgctcat cctcggatgc atcatccaca
+     2641 gacagcatgg atttttggtg gctctgaggg tcctgctgct ggtgctcttg gtgctgcacc
+     2701 tcctccgagc tgggcaggga cttagtggcc ctgggcgaag agtaatgctc atcgtcgtct
+     2761 tccgccgaac ttgactccat agtgggaatg ctgattttaa tgttgatctt cgctgaaata
+     2821 ttaatactgc tgacctggat agaaccgtgt tcgtcccctc ccgatgtgga ggaaccagag
+     2881 ctggcctttt gcggcgtgag ctcgccctcg ctgctggttt ccggtatttc aatggattca
+     2941 tcaggaacgg gctcattgtt gtgaatcgtc gagttatggg tctcagaact atcagaacac
+     3001 agggtgttgg gctcggtgtc attgtctgct aaacgcttgc tgctgtatgt gggctcaagc
+     3061 tcctccgatc cgagagtatt cgcctccgtt tcgtcgtctg ccaaccgctt gctgctatcc
+     3121 aatcgagtgg catctgctga gcagatggta ttcacctgcg tatcgttgtt cgccagttgt
+     3181 gtgctgttgt aaatcggcct ggtagtgggt ggctgccagt cctcgtcggt gggcgacatg
+     3241 gattcggtgt ccgcatcggc tagacgggat tgccgctggc tggaagagag ggggggcggt
+     3301 gtcaatgggc cattccactc catctcgcgt cgctctatgg acacatcgcg cagaaaagcc
+     3361 tcgatgcgct gcactttttc ggttgtgagc atgggctgtg gtatgtcttc ctggccggga
+     3421 ttagccacaa tttcccgttc actcacagcc atgctatcgg gaggcaaggg ttcttgctca
+     3481 tcctcgctag aatcggatat ggtgatacag gaggcggcgt cgtcgtcgcc ggatacgttc
+     3541 tcttccgtag tggaggaaat gcaaatggag atctccggct tggccgagtg ctcctcattt
+     3601 atgggctgca ctttcaaatt gctgatgcca gcggacagga gctctacatc gcccacattt
+     3661 gccacatcct ggctgcagcc gtcggcgctc agctgcaagg cttccatgta gtcggaattg
+     3721 tcgagttctg tgtcctccgt atttgccccg caggacggag cgggtgctcc cacattggcg
+     3781 cgcatgggag ctgctggcag tttccttgtt ttctggtcgt tcctcttttc tggatgatct
+     3841 tcggcgcatg ggacacctgg agtcgttttt tgtgggagga tagcgtcaaa ttggcgaact
+     3901 tttgattgaa gggaactttt actttgctcg ggtcgaccgc attgaagagc ctatacttat
+     3961 gatccgccat tttgggggcg tcgttggggc atttacggta aatcaatctc tatgaatatg
+     4021 ctttaagcaa aattcgtatt tgctattatt ctgtgcgcgt cgatttacgt tcatcgttat
+     4081 cgatagacta tttgattttc cggcatctag ctagtgctgt tcgaaaatgt ctaaaacggc
+     4141 atcactagta aaacgaattc ttccaaggaa atgaaactaa aaacaaaacc aaactactgc
+     4201 tcagttaatt taataccata gtacacccaa acttacaaaa ttagccaatg gcgattgtgt
+     4261 cgtcggcccg tgagtcgctc tcccatgcga tgaacaaccg cttcttgccc aacctggagt
+     4321 acttgctgca gggatctatc ctggattccg ccgtggaaca cttgatgcac aggtgggaga
+     4381 cccagtgtca gatttgaatc gtttgcaccc gactaacagt ctaaccgcct acccactatc
+     4441 agactaaagg gactctgcga caatgtggac acctcgccgg agccgtttca cgatctggaa
+     4501 gtgtgtatga gccttcgcca gcccaatgcc aaccagccgc tgcttcttcg cgtgcgccga
+     4561 gcccttggtc gcgatgcacc ctttcagatg cgctacctag gaaaccccga ggtggatctg
+     4621 cgccggccta cattggtacg cagctgcatg gactgcgcct gcaccaatgg cattttggaa
+     4681 ttcctcacgg aaatgggctt ccgcctggag ttcgagtaca tagcaaaggg ttggaatcat
+     4741 gaaatatatt acgcttgggt tgccaaaatg gatagtgaca aatggactta tttcaggcta
+     4801 tatgttccgc aaggggcgca tgaagattac cgtctccaag ctcattaaga ttgtgcccgg
+     4861 caagcagcag gacatggcca acgagccaat ctcacaaagc tacatagtgg aactctctgt
+     4921 ggtggcgcca acggggcagg agaatgtcgg cgaggaaatg cgcgtgtttg ccgagcaact
+     4981 aaagccactc gtgcagctcg agaagatcga ctacaagcga ctgggcggca tgccgtagtt
+     5041 tacaataaaa gtgcacatcg catttatcca acagttattt aatttcttaa atgtaagaaa
+     5101 atatacaaat ttacagaaaa gaaccgagag ggaatgatta cactgccaga gtaaaaaata
+     5161 tctcaaattc aaccttacac acccacatga cacgacaaca acggactttc ccaaagcagt
+     5221 gataaagaag ctgcggggcg gttaatcctt aaaggcctca ttaagagccg ccagattgcg
+     5281 atcgctcaca taactctgga gatcgctgcg gcccatcagc gaaatgacca tcttcagcgt
+     5341 actccaaata gactcggaca tctggttctg tcctctaaag gtagccgcca tcgccgcatt
+     5401 gggcagctct cgggcggcgt tagtgtgagc ctgcatggta agcgctgtga gtaagtgctc
+     5461 cacagcttcc ttgtaggcct taaggttcat gcaacatacg cccacgttgt aacgcacacg
+     5521 gatgaagccc ggttggagct gcagcgcctg ctgataagcc tccaccgcct ccacggagcg
+     5581 cgagccgttg gccaaactgg cccccaatcg gttccatgtc ttcgcatttt ggggatccac
+     5641 ctgcagagcg gactggtagc agtccaccgc cttgtcgaac tccccagata gattgtagag
+     5701 cacgccgagg gcatcctgga cttcggcatc cacctccgaa gggtgctgtc gaacggcttc
+     5761 caagtagatc tgctgcagat cgcgcagctt actcggacca atcagcgacg aagccaacga
+     5821 agtgccctcg gcctgcagct ccggatgggc tgcgaccagg tgctgatact tgggatgcac
+     5881 tgtcagccag ttgcacagca tgcgcacggc gttgttctgc aggccctcgt tggtgtagca
+     5941 cgcggccagg gccatcagga cctgttggtt gtccggttgc aagtcgtaag cccgcttaag
+     6001 tgccgcaatg gcctggggat ccatttcgtt ctctgtctgc gaagtgccca gcaactgcca
+     6061 gacctcagcg cgctccggtt gctttttggc cgccacctcg aaacatagaa ctgcgctggg
+     6121 tatatcccct ttggacaggt actccttacc cttttcaaac gggttctcca catcagacat
+     6181 ggggttgccc tcggcgaact cgtactcctt ataagcgtcc atattgtcgt tgtactccga
+     6241 cagccacgga tgctcgttct cgtcggccag cttctgccac tcgtcttgca gccgctccca
+     6301 gaacttttcg ttgaagttgg cggcggtttg ctctttttgt tcggtgctgc gctggtagtc
+     6361 gctgatccag tcgtccagcg attccccctg tggcgcctgt ggcagatgat ctgtgattat
+     6421 agtttccatg gcggagtcaa agaaggggtc ctgttgctgt cctgccgcaa tgggcatcaa
+     6481 aggctgacgc aatggcggca gggaccgaaa gttctggcta ctgatcaggg gctcgtcgaa
+     6541 gaactcctgg gcatgctgca ggtcctgctg ctgtgcctgc atgtggatca tcttgttggg
+     6601 cagggcgggt gccagtccgc gggcaaagtc ctgtccccac tgctccgcct gctgagagtg
+     6661 catctgctgc tgcggatttc cgtgaatatt tatgtcccgc atctcctgga gcagagtgtc
+     6721 catctgaaat gactgcggtg gggcagtgac ctgtcccagg aactcgttga tcaactggtc
+     6781 ctcgggacga gcagcgcgct cgaagtgtcg ctgcacatag ccctcatcct tgtgggcaac
+     6841 atcgcgggtg aactgtccgc ccagttgcat gagaggatta actccaccgc agtcgccctc
+     6901 gaccaatggg cggaaagaca tggtgttcga agtggagatg ctacgtaact ggggcaacca
+     6961 acgataagaa aaggggccaa atcaggtcca aaacaaaagt ccaaatgtca caaagattac
+     7021 ctgtttatcg gccgttatcg aagctatcgg ctttgtgaca gtgttgcaca gcgctctaat
+     7081 aataataaaa tatatcgccg cgcaaaatct tatccgccag agaattggtt tcgaacgcca
+     7141 aatccccgac tgcaccatgg actacgacct ttttcagtcg gatgacgagg agatcctggc
+     7201 taccttcata caggcgacac agaagcagga aaccctgagc gcgcaaatag acgtggacga
+     7261 tagcgaagag gacctagtcg acggtctaca cttgcccgag ttcaactgca gtggccgaga
+     7321 cactctgaag agccaactgt gcgagggagg ctttctgggg aatggctacg cccaattgga
+     7381 tccgccccgc tctcgcctgg attatctctg ttttgacttt gctccggctc aattagcggt
+     7441 tggcgcggta agaaactacc tgtacggcga ggcctggtga gtttagagct cccctggcag
+     7501 ctgccaacaa gtacaactct tccattctca gtaagaatgt gcagaagctg ttaaccgtcg
+     7561 tgatgggcca gcaacacctg caggccacgg ccgcctctat gaactctggt tggtatagag
+     7621 tgcgccagca agtcacacac ttctaccatc tgatgctgct cctacgaggc aatgagctgc
+     7681 tgccttcaca ttttcttgat gggtttcgac aattgctcaa cgatcagctg gatgcggata
+     7741 cctggaaggt tttgtatttt gcggagcaca acaagggaaa cgactgccag gcgccggcgt
+     7801 atcacctgta tcacggcgta ctggagtggc gttttctgga cctgcatata ctgtacgcct
+     7861 ctgggaatga tcaagcgttc ctagggcagc tggagcgcac actcgacgat ctgatcgttt
+     7921 gtgctggaca tcactaccgc agcaaacatc gctcggagct catccattcc tcgccgttca
+     7981 tgtgtcgctg caacaaggag ctgtggctgc tgctgaaacg tcttattccc aaatggctgg
+     8041 gagaacggga gctagacttt tggactctat tccacaaggc catgcagagg cacaagtcac
+     8101 tccacttcca gggtgagtgc acaaagaagc tagaccgtgc ggcttcccct catcttatag
+     8161 tcgtttttct tctcgaggtg agagcaatgc aatttctctg gcataccacg aactctattc
+     8221 ctggttgagg ctaggactgg cccgcttgga cgaatacaac agtgagggtt ggtaccagcc
+     8281 ggatcactcg ccgctcactg cggcaccaga aagcttccaa actgccagtc tgcttaagca
+     8341 atttctggcg agccagccgg acgaacagca gcggcgggtc tacctaattc aactctctcc
+     8401 ccttcaactg cagctgggca agccggatac tgatgtcctg tgccagctgt gggagtactt
+     8461 tcaccgatcc ctcaactgca attttagtgt gggaactgag ctagatcagc tgccgcttac
+     8521 ctgttccaat gggtcggcct acgtcgatcg ctacaacaaa ctgctgtcta agtcgcatat
+     8581 agaagatttg aatctgagca gtttcaccat gtacgcgtgg atgctgggca aaaccttgaa
+     8641 gcttttacca tcgcagggca gaagcaacca acgtcagaaa ctactcggcc gcatattcag
+     8701 caagtttagt gccgcgaaac ttttggctct gaatgagcct ggtattcacc atgtgatcga
+     8761 gctgtttctg tgcctgctgc tctgccacga agatctcagc gagttggcgc ccaagctgcg
+     8821 cgaaatgttg ctctgcctgg ccctggaaaa actgcctccg gtgcgaagga ttctcgtggc
+     8881 caagggacac atggccctgc tgcttctgca tgcccagcat cgcctatcta tggatgacta
+     8941 tgtgagcaag ctgctcaacc agttggccac cattcgcaat gatgcagagg tgggcgccat
+     9001 ttatgtgggc agccttcaag ccatctttaa tctggcggat gacttcaacc gcggcgagca
+     9061 gcagcttctc gggccatggc tggcacatta cgtcgaaaag tgtgggcagg catcgcagga
+     9121 tcgcgtatgg cagacgcttc acaatttaat cctccgtctc agcgagcgga gagctgtggc
+     9181 tggcaatgcg agtggcatca aggaggcact tcaacagcac ataatgccac tggtgaggac
+     9241 ccaatacgtt agtagccata gctcatggct tccaaagcta gcggctaact tcatcgccct
+     9301 ggagaataat ggggacaaac tgctactggg cttcctgcag ggaccagaac ccatcaatat
+     9361 ggctgcttct gctcagttgt tgctccaggt gttggaagac ggagggcgac ctgccagctc
+     9421 caccattctt caggtctggg tgaagtctct ggtcctccta aacgcacaac acgaatctgt
+     9481 attggcttta atgccccatg tcacacagct agaggagttc cgacttctgg ccattgatcc
+     9541 cacctctttg gagggcgggc gcgagcctct ctgcgccttc tttggagctc tgggaaggcg
+     9601 tgcccagcaa gaggaggctg ctgcccacgt ccgtatgcag ttgagccaca aactgcatgc
+     9661 ctatgtaaat catttcgagc tatggctacc cccggatcga agccgatcgg aactcggttc
+     9721 ccggttctac agcttcctag ccattgtcat ctataattgt tccactctag cgtacgtgcg
+     9781 atccaagccg agctgcttct tccacctggc catggtgcgg ttcctgctca ccacgcagtt
+     9841 gcaggcagga gtgccgcccg aaggtcgcct tccacaagtg gttcacaaga ttttcccagt
+     9901 gttgctgcaa ggcattggtc gactgcctta ccgcacggac gcatacgtgg ccaagacttt
+     9961 ggagcaacta gttcagcact ggacgccgca ctttagcttc tcatccaacg ccaagctggt
+    10021 ggcccgtcca tatgccaccc tcctccaggc ggatgtagat ggagagctgg cgcagtttgt
+    10081 gcttcagctc ctcgttaccc agtttttggt ggtccagcgg cggagggcag gacagcatgc
+    10141 gggcttggtg atcactataa tgcagcaact gatagagagc actggcaaag agcaggaaga
+    10201 acagctgcta accgttttgc gcggcgtgca catcccgctg ctggaacacg taatgttcgt
+    10261 ggacgaagtg gacctcagtc gcaaccaagt gtttggactt tataaagtgc ttatatcgca
+    10321 cgatgcctac aagcgatcac aggcggtcag ggatatgtgc tccaatcact tgcgatccct
+    10381 cgccgaaaag cacctggccc actgcactta cttttacttc cagatgctga tcaacctggc
+    10441 agagctggcg ccggatctag tggctcccat cctatccttt ataagggagc aggcagagca
+    10501 ggtggagcta aaacgcggcg ctggagaaga tgtgggcata cgcaagtgct tgcagcgact
+    10561 ccaaaaggtc ttgagcaggg tttaggctcc tcatggcttc ttttgtacat ataaggattc
+    10621 tcaataaaat gttaggcatt ctataaaatc tttattattt cagtcggaag attcaatgat
+    10681 tcctccttaa gagatatacg ttacggtgcg gcaaaatgta catggtggtt tacacagtct
+    10741 cgcgatctgt gctcaaggtc tcagttaaag tgttggaaat aaatacatta tgattgcttc
+    10801 tcctttgggc agttctataa acagacggct aaaccacgtt tttgacgtcg cgcggtatgc
+    10861 gattggtaag cagctcggcg ggcataaagc cggagtcgcc caggtacttg atggacacgt
+    10921 tgccggatgg actgatggtc agccaggtga tggaagcgtg attaatgtta atccgtagcc
+    10981 aaccctcggc ggggaactgc agggctcggc agacaaagta gcggatcacg ttgccgtgtc
+    11041 ccacgatcag ggtatagctc tccttctctt ggtcgggata ggcgcggtgg aagtatcggc
+    11101 gaaagccggc ctctatgcgc gatccgtcgc gaaggaactg ctgcagtgaa atgaaagccg
+    11161 aatatcatgt ggaatacgca ctgggttgac ccttgacttg acttacagat gcctccggct
+    11221 tccagtggcc gactggcggc tggggcggaa taggcgctcc ttcacgcagg aaggcacagt
+    11281 tcaccacttt ctctttttcg aaatcgatct gcttgagaat aatatcggaa gtctcctgtg
+    11341 cccgcaccat tgtggaggct actaccttgt cccacttgat gcccagctcg cagagccgtt
+    11401 tcccagtaaa ctccgcctgc ttgcggccgc gctccgtgag atgatgcgtg tcatccgagt
+    11461 cacccacgtc cagatactcg ccatgccgca ctaggataat gtggcgcgcc ttcttggcct
+    11521 tcgccttctc aagctccgcg ttgtagcggt tctcctcctc cggctggctg tttcgcagtg
+    11581 gacgcacgag ggcccgtggc tcccggcaat cccagttggt gtcccaaagg gcccacggat
+    11641 ccaccggctt atcactgtgc gtccacgagt tctgcacgac cgtctgcggg tcccgcagcc
+    11701 gctgtaggta gtaagccgcc agtccggctc ctgtgccgca cacgaagcta gtcaactttc
+    11761 gcatcgttag ggcttttagg tattttcttt aattttagtt ttgttccgct gaataagtgc
+    11821 ggtatttaaa tactgcgatt tggtatttga catactatgt tagcgggtat ataaataccg
+    11881 cgcaagacca tttagaattc aactatcgaa aagttaccaa gatgaatcaa aaatacgaaa
+    11941 tatatttaca caattattgt ataccaagaa aattaaggat ccacaatcaa ttgtttcgtt
+    12001 aattattccg tatgtgtttc ttaaagaaat accatgcaaa tactgaatac tgaaaagtac
+    12061 cagcgctggc actccttaat aacaatcagg ttgacgcgat atggcaacgc cgtagtgtga
+    12121 aaaattgcaa tttttttcat ttcacacaca cagacgcgac agatacgcca gcatcggaac
+    12181 gaaggacgta aaaaggccgc agaaaaacgc ctatcaaagc tgaggtttat tgaaggggtt
+    12241 atcagaaaga tatctctagg aaaagccgcc aacaggagtc acagcgtcga cattccatcg
+    12301 gagcagcaag aagcagaggc gggggcaata agaaacggaa gaagaagaag ccgattcgac
+    12361 gtttatcaat tatgaatttc ctgggattcg gccagtcagc ggacattgag atagtctttg
+    12421 atggagctga gcacaagacg gcagaggtta aaggggagga cggcaaagtg gagaagatgc
+    12481 tgctattcta cgacggggag acggtatccg gcaaggtgcg tcgtggtcag catcgggggg
+    12541 agttccccca agcataacca gagataaacc catatccacc cccttttcat ccaggtgaac
+    12601 gtgaccctca agaagccggg cagcaagctg gagcaccagg gcattaagat cgaattcatt
+    12661 ggccagatcg aactgtacta cgaccggggt aaccaccacg aattcaagtg tctagcgaag
+    12721 gccctggccg gcccgggcga tctcatccag aacaacagct atccattcga tttccccaaa
+    12781 gtggagaagc aattcgaggt gtacgccggc tcgaacgtgc ggttgcggta cttcctgcgc
+    12841 gcaaccatcg tcaggcggat cagcgacata acgaaggagg tcgacatcgc cgtgcacaca
+    12901 ctgtgcagct acccggagat gaacaacccc atcaagatgg aggtaggcat cgaagactgc
+    12961 ctgcacatcg aattcgagta taacaaaagc aagtaccacc tgcgggacac gattatcggc
+    13021 aagatctact tcctgttggt gcgcattaag atcaagcaca tggagattgc gatcatcaag
+    13081 aaggagagca cgggcacggg ccccaccatg tttaacgaaa acgaaacgat tgccaagtac
+    13141 gagatcatgg acggagcgcc cgtcaaaggc gagagcatac ccatccgggt ctttcttgct
+    13201 ggctacaatc tcacgccgac catgcgggac attaacaaga agttctcagt caagtatttc
+    13261 ctcaaccttg tgctgatgga caccgaggac cggcgctact tcaaacaaca ggagatcacg
+    13321 ctgtggcgca aggcagacaa accgcgttac catggcgctc agcagcacca gcaacagcag
+    13381 caccaacacg ttcccctgca cgctccgccg cacctggtca gcggtcctgc tgcgcccaca
+    13441 gtggctcact cgctgatcag ctcgagcacg gacagcggag aggtgggagg agcaccgaca
+    13501 gcgccgggca ctgcaggatc tgagtccaag atgggtctgt ttaccaggga gagccccaac
+    13561 caggagttca gccaacagca aatggattct ccgccgctga cgcccacgcc gtcgaccgca
+    13621 tccgttgcag ttgcagtccc cacagcggcg tcatctgttt cagaaccagc tcccgagcgg
+    13681 ggcataggcg atggagccgc agcggccacc acaagtgcct cacccgtagc tatgctctcc
+    13741 agttcgccac cgccattgct gccagtatcg ccgctctccc gatcggaaac tgaagcgtcg
+    13801 gagcaagtac aaccggagga tgaggacctc gatgcaatta cgcccaatac gaaaaagacc
+    13861 ggtgcaacgc cgttggccac cgattgagtg ggaagctgga gaggatttcc atcttcaggg
+    13921 ggataagtag taacagccag agctagggca acaacagaag gcggaactat tacgcatata
+    13981 ttcgtattcg tatacagcag caggaaggca gttcagcagc agcaacaaat atgcatatat
+    14041 ctattttttt aaagttaatt taaaattgtt acaaatgttt tattgaggtt atgcgcatca
+    14101 ttaaccaaaa gcaggcaaat cgcaaatgat agtaacgaaa aaacaaaacg aaacttagga
+    14161 caaatgagaa gaggcaacct cgtagctaca accaatctct tggcgtttcc attggtatta
+    14221 ttgctataac aagtcgagaa gctgtcgaga ggcgcgcgac tcggacacga aagcaaaccc
+    14281 taatcccctg cgccccaaaa ctagttaaac tccctagtat tccgatgacc attccctatc
+    14341 cttgtggcgt ttggaaaata tgatttttca atttgaaaaa tgttgaaatt gctttctaaa
+    14401 agtgagaccc ctgaattgaa atttaagtgt gcattaaact aaaccaactc caatacaaat
+    14461 gaagatgaag cagcaaacag cagacaaaac atccattaaa taataaagtt ttagtctata
+    14521 gcgtactaac gaattgatgc tgggagcgtt ctgataatgg cgatttgtcc gagcgatcgg
+    14581 aagtggaaac gacgaaacgt gttacatgcc ttgcatatgt acataacagt tcatatacat
+    14641 aacatacaag aattattgat atatacactt agacacgcaa tttaacaaat aaaagcgata
+    14701 tgagcgccaa acacgaagac aacgttaagt gaatcaagtg gaaactttgc caagtgcact
+    14761 gcctttcaaa tcgattggtg tgagtgccta gtccaccatt tctgtccact gggataatgc
+    14821 ctttgaggtg acacaccaat agcaagctgg tagtcagtcc tcgcggagta acttgtatgt
+    14881 taatataact aatcgggtga tgaaacgact actcttatcc agcaggtatt atataatttc
+    14941 cataacatct agatttattt aacaaataac gccggtttag cagctgcgac gacggctagt
+    15001 cccaggcctc cttgatcttc agctggttca gccgctcctc gatggtaacg tgtggcttca
+    15061 tcttgcgcag tgtctgctcg tccgtccatc tggcaacgag cttctcgcgc ttctgcagct
+    15121 ccttggcatg accgaatgac tgctcctgca ggcgggaagt gtggcattag gtgaggcaat
+    15181 ccgtacagag agcaggactt accatggtga gatacgggtg tcggaggagt aacattacct
+    15241 gctcctggcg ctcgtactcg cgggtcaggg tgtccattgc tcgctgactg accggtttca
+    15301 ccaggcgccg cttgccccgg aatatgtggc cgggcacagt cttcttgaac aaattgatca
+    15361 gcgtcaggtg cattttgttg ctcaagtgcc aagtaaaaac tacttcaatc cgcaaacttt
+    15421 ttattttata ataaattatt attatttcta ctttgtcccg aatttggatg tgaccaagtt
+    15481 tcgcgaaggg aaaaaccaca tcgattattt tagtaactgg tcgatacgcc aagacaaatc
+    15541 atggtttcgc ttatcgatag gaaactaccg cttatttccg gttgaacttt agaagtcgta
+    15601 atgcaataac aatattggta cgtattgtaa caacgtcgcg catttcaacc cgatcacaac
+    15661 atggaagacg ccgtggaggc ccttttcatc agcacgagca gcgaggacaa cacgacatgc
+    15721 agcgtgcagg atttgcggac aggcacagac ctgatgcgct acaagggcgg tggatgcgcc
+    15781 cagcaccaca gcctgaacat gatccacctg aactacgtga tggcggcgaa ctccgccaag
+    15841 ccactgctcc acgtgtggcc catcaacaag caagagcaga tggccggact gcggttcgtg
+    15901 gtgcccggca aggtcaacgc cttggccctg acgcctgatg ggaacttctt ggtggccggc
+    15961 atccaggaga acatctatct atggcacatg agctccggcc gtatgcttaa caccctgtcc
+    16021 aagcactacc aggcgatcac ttgcctgcgc ttcacggaca acggtgagca cttcatcagc
+    16081 ggcggcaaag acggagctgt gcttgtctgg gatctcacct tctccgccgc cccactggac
+    16141 acgggcgggg gcaaggatag cacggagccg ttgtacagct ttaacgatca cggtctggcg
+    16201 gtcactgatc tatactccgg catcggaggc atccgttcct atctgtacac cgtatcgttg
+    16261 gatcgctgct gcaaggtata tgacctgtgc gggggcgtcc tgctgctgag tgtggtgttc
+    16321 ccagtggccc tgcatagcgt gattgtcagc aagatggaaa ctagggtgta tgttggctcc
+    16381 agtgacggca aggtgtttgt ctttaatatg gaaaacgcgc cgcgcatgaa ggtgagtcca
+    16441 gatttcgttt atccactgct ttgccaacta attcctttac ttacccagga atattaccta
+    16501 gagggggagg aaatccaggc ctttgtgggc cacacatacg gcaaggccat cacctgcctg
+    16561 gctctgaata taagcgctac aactctggtc tccgggggcg aggacaatca ggtctgcgtc
+    16621 tgggacgtgg gcagcaggca acttattaag agcctgtccc aaaaaggctc ggtaaccaat
+    16681 ctgcatatcc gcctgctcag cccagccatc tttctgccgg aacacaagca gccgcagatg
+    16741 ttcgccgaca gtctaaagcg aatgattagt ccgtgggatg agaatgactg tatcgagctc
+    16801 ttcgatccgg actactccgg gggacgcaag acaccggagc tggactacac ccaaagtcat
+    16861 ccgggtacgg atgaggagat aatactcaaa cttatagcgt ccatgagttc gggaaagaac
+    16921 gaggacgacg aaggaattga ggcggaaacc aaagctacag atgtcgagga ttccgaggtc
+    16981 gaagaagaag aacctgcatc cgagccaatg gaaaccgcct ccaaggaagc tgagtccgaa
+    17041 aaatcgtatg cagaatatca gccagactca gcacagacaa gcgacgaaag agtgcaagag
+    17101 ctgcaggccg agaatgcgcg cctcaaagcg cagtcaatgc gcttgttcca gatagctttc
+    17161 aagtatatta ctagcgatac caatggccag gctgaaatca cagagaagac aaagcgcaag
+    17221 aaagcgcgga agacatagtg aaccttaagc ttgctttcaa ttacgtttac ttaggactta
+    17281 ggacaaaaat acatgataat agaaaaaaaa cagcactgat tgtgcctaaa aacgatttgg
+    17341 atgaacaaaa caataacttc tcgtagaggg atctacttgg gtgccgcttc gctgcccgcc
+    17401 tgcccgtcca tgttgtcatc tcccgattcg ggagcgttgt cattttcctc ggcaatcagg
+    17461 cgacggatct ctcggttgga gttcagcagc tcccgtagtt gggacataat gtcgtctgtg
+    17521 cgctgctcca cggcgtccag ggcacagctg agagcgtcca gactgttgtt cacgtcctcc
+    17581 atctctgtag gggtcattcc attagagcca atcccgagca gaaacggggc gctgtcaaaa
+    17641 ctcaccttgg aggtccgcct cctggacatt ggtgttgcca gagtcgccgg acgacgaggg
+    17701 atcatgattg tttttgggtg acattttccc tggaattttc cccggagttt ttccgtttgt
+    17761 tttttccagt tggatttatt gtcacgggat agctataaac gatagaggtg gttagaagag
+    17821 aacgataggt ctcagttcaa atacgatata aaaaaaaaac ttaatagggg aattcagtac
+    17881 atacgtacgt ttttgtaatt acgaaaacac tttttagctc aaaacactag gcgaacataa
+    17941 tccactgcaa aagtccaaag ctaagtttcc acttagtttt tagggatgtg cccgtgcctc
+    18001 gttttatttt tacgtaccaa tggaatagca tgggaaattt tggcttattc gcatatgtcg
+    18061 tgcctaattc gtgacacgaa caatgaaaca aatggtttac gtatctctag gcgttgactg
+    18121 gacttaatcg aacggttctt tcccatagtg cttaatgttg attggccaga gttgacccct
+    18181 tctgacaatg aacggctgtt taatttctca gagcgatcag cggtcgtact ccaacgtttt
+    18241 ctgttcgcct ggtgtctaca gtcgataatc ttgcccattt tgaccgaaat aattttgaag
+    18301 catcgaattg cgacagtaga tttcttgttg caatcatgag gcgagcataa taaacagaaa
+    18361 gtgtactagc ctctgtttct acgttgtttt tagagatgtg catgtatatc gttttatttt
+    18421 cacaacgcaa gcaaattact agggattttg gtatttgctc gagcatgacg tgccgattgc
+    18481 gtgtcacgaa cagggaaaca agaggggttc acatctcttc tgatactctt gcttaagctt
+    18541 tggtctaact gttcacaagg ctgcattcct attggttcaa ttgcgactgg aaacatgcaa
+    18601 tatgcgacca ttttggaaaa agaaactgtt tcttgatttt gtcgacatgt atcagctggc
+    18661 tggctactgg ctactggttt ctgaactcca gatattcagt cgagaatcgc atgcgaatgc
+    18721 ccgtaatatt tgctggcatc aatatttaat ctgttgccta gcgtgacagt cggccacact
+    18781 gcacctcaca taacataacc gaaaaatgaa caaatgtttt aggtgccagc cccggatatc
+    18841 gcttttccag ttcagcgtga gtccatgagt gtgttgcctt ataggattcg gattttcaat
+    18901 ttcttgttta cacagctacc gcggtgctat gccgcagtgc agccgggatg tccaccgcca
+    18961 caagaaaaac ccgtcgtcgg tttgccacac aagcccgatc ccaagacggt gaagtgcgac
+    19021 tatataggac cgccagacgc gcaatcaaac ctacgtccgt acgtacggca ctacggcgat
+    19081 gaggagacgc ggctggcaag aagcctgcgt cttaagcgga tcgaggtgga ggcatggaac
+    19141 acggacttct ggacaaaaca caataagcgc ttctacgagg tacaaccacg accactgtgc
+    19201 catctctttc tagtccgcta atgtcgtctc tttcgaattg gttcgtttac aggaaaagga
+    19261 agacttcatc cgcctgcaca aggaaagcgg aaccagcgaa gtgtccgcgg accagatgag
+    19321 ccacttctac aaagcgttcc tcgacaagaa ctggcgcatc cacatcatgt acaacatctc
+    19381 ctggtacctg aagaacttcg acatactcac cctggctgcc gcagtccagc tccagaggct
+    19441 tctggcgctg gccaagcgaa gatcttaggt gcaatatctg tcgtccccat ttcgtaattt
+    19501 ccagtttgcc gtttgcaata agttggaata aaagatcacg tgcgtaaaat ggtggcataa
+    19561 aatttactta gctactattt aaggggatga aaaatacacg ttgttcggag ttagttaatg
+    19621 tacttaaaag taatcgcaaa ctatttaaat aaaataaaat agaagtaggt gttcatatcc
+    19681 ttatcagtgt atatattcaa agaaggttgc gcacgataca cgcagcgaaa gaaggatcgc
+    19741 tccccatgta aagtggccga atattgaaag ataaccgcta caattatgat aataataata
+    19801 atggtaaaca gaggggaagg cacacacgca taaagtcaag ttttgggttg gccatcgggg
+    19861 cggtcagttt cctcgcgata attgcaatgg tggtagtgat gaatgtggag atggtgctaa
+    19921 aacaaataaa attaggtgct ccagcgactg tgtgaggaga gggggtccga aatacattac
+    19981 aggggtggtc gtgtcctagc agtaacattt atattctttc tatgtagaaa cgatagcaat
+    20041 tattcaattt aaactatgaa gacactctcc acttttgcac ttaagagcga tataaaggat
+    20101 acgaattggc tacagtgggc acatatacaa aacttacaag gtcatatgct ctccacgagc
+    20161 atatctgcat atagcatata aactatatat atataaatat atatatatat atatctatat
+    20221 atataaatgt acacgaacta taatgcttag cgaatctagc tacttgatca gatacaagtc
+    20281 ctgttcctgt tcctgtctct actcctgttc atgttcactg ggagcgacgt gctcgccgcc
+    20341 gcttcttgcg cttcctttgg tcctccgcta gaggctcctc ccgactctag ttcatccact
+    20401 tgcgacagtt gggcgctcca caggcgcacg gtatcttgtg cgactcgtcc tcaatgtcga
+    20461 acttgtagtc gtacgagagc taaagcacag aatttaagag atattgtgag ttaaggtaca
+    20521 ggcgaaacac ttctatttgc gggacccacc tcctcgccgc gatagatctt ccgcttggcg
+    20581 aatattatga tccgcacgtc gcgatcgacc tccactatct cggtaacaca gttgggattg
+    20641 cacgaatggt tgatgtagcg cgccaacccg ccgcttagag tggcgtccac cacgcggtct
+    20701 tcatccagcc ggaacatgta gatgccacgg ttctggggaa tcagagatta gtcaaagtta
+    20761 caagaaaaca tggtcgcgaa acccaccttg gactcgtact gcttctcgcg tatctcggag
+    20821 acctcggtgc ggataacctc gccaatgtac tcgattatca tggtgtgctt ttcaatgtcc
+    20881 cgagctgcat acaagccaag accctggatc ttagatctag aaaatgagag cttaagtaat
+    20941 cagtggttat tgactaggac ctaatgtctc acctcgccaa gtagacgttg ttgcgccact
+    21001 cctgcttcat ctttttgtac tgggagctct tcgaatgcac gaactgcttg ctgtacgggc
+    21061 aggccacttc tccggcaatc gcagccgagt tggccatccg ctgcgtgctg cagctgccgg
+    21121 ccgtgcgttg cgtatgcggc ttcctccaga cgagcagctg tcgttgcttg ggttccgtac
+    21181 gcgccgctcc agacggattg atggctagcg ggaactcaag aagcgggttg cgaccgtact
+    21241 tgaagcggta gtcagtgagc gtctcaatgc ccgggaggct ttccaggatt cgcacaatgg
+    21301 ccggttccgt taggccaaat aggtcctcac cactgatgtg ctggggaaag agctgcaacc
+    21361 acttgtgcac cttacgcagt cgcgtgattg gctgcagaat ctgctgccag accgccgagg
+    21421 gcgaactgcc ccgaaactcg cgctccggct ccttgtcgcc ggcgtcctgc acctggatgc
+    21481 gaaactcggg cttgcatccg gcctctgcga tactgcaaat gtatcgacac ctacgattgg
+    21541 gtcgtcgcac gcaccagtag tagcgactct atgggggagg aagaggaacg ggatttaaga
+    21601 ttgctgttca taaacatggc ggccgaccgg ctggtacttg tacttaccac cttgtagcca
+    21661 atggggtaga tgtagtgggg tgtgtggaag gcctccagct gatgcggcag taactgaccc
+    21721 acgttcagga acgtcatgtt gcccacacgg agcaggttgc ttagctctga atagtgcatg
+    21781 acggtggcca cctgacggtt ttcatcccga tcgacaaaaa ctctccggtg gacaaccagg
+    21841 gagctcagtt cattatctgc cacagagcct cctaatccgg cgccagtcgt ggcgcctgct
+    21901 cctgcaccca tcgtgatgcc ggcatgagca tgaccatgaa cgctgcagtg cacggacttg
+    21961 ttcttgtaaa agacgcactc ctcgcgaatg gcgcatggca ggtggtacag gctgttgcag
+    22021 cgcgacttga aacacttgat ggtggcgcct ggttggtgac aagcgctaca cgcctggctc
+    22081 agtcccgctt gcagagctgt ctggaagttc atcagcgccc cagacaccgt ctcgtacacg
+    22141 ccgttggacc acagggcgca gttaaggtga acctgtatgt gaaagtgtac attaagctgt
+    22201 gatgcaatca atcattaggg ttacactttc tacttaccca tttatccaca tcgaagttaa
+    22261 gcagtcgcga gggtccatct gcctggccgt caccacgctg attgcagaag acacactgcc
+    22321 gcgtgtcctc caactgcagc ccactggtct ctgtttccca cacagtatta ttgaccggtc
+    22381 cagccccagt tccggcacca gcagttccgt cgagctccag tccggatggc gccgagtccg
+    22441 tggtgaagca atcagcacta aaacacttca caatgcattt gcgctgtgcg gggatatttg
+    22501 tggggttgcc cggtacgctc ggcgttttct catcctcgtc ctccggttct tgtttgacca
+    22561 ccatttccgc tggggcagtt gagctggcgc agaagctgcc aggcgagtct ccgttggatg
+    22621 attttacagc agaaccgccg gctggctgaa gcagcagact agccgcctcc gcctggccat
+    22681 cctttccatt ccacttgaat ctcgcaaagc aggcgcgatc gcagaagtac acaaaaggag
+    22741 ggggaaccga ttttcttggc agcatgtcca tcagttgagc caaccggggg agttgctctt
+    22801 ctagggcagg aacactgtgc cgaggaactc gcagcccagt ggcgtgaacc acatttccgc
+    22861 agctgcggca gagcttacga cgcccgttga ggatcttcct cagatgaccg tgactcactt
+    22921 gactcagtgg tcgcttgaag tcgacgtgct tttcatcgtc ctgattcata aactggtcct
+    22981 ccaacttgtt gccaatcttg tcctcgatga tcttgcaggt aagggcgggc gccaagtgca
+    23041 gtagattggc cagatcccgc agcacgccgg ctatgttctc cgatgccgag gcgggcagtg
+    23101 cgagtatcac attctggttc ttctgctggt aattgttatt attattattg cccagcggtc
+    23161 ccattcccag ctccatctgc tgtgtcttgc gcagctcttc gccgcaggat cgaagcagtg
+    23221 gagacacggg aaagcgcatg gtcagcggat cctccggcag tgcgaccggc gacatccgtc
+    23281 catggcaacg gctgtttcca ttgagcagta ttagacccgg atagcgggta agtcgtggaa
+    23341 gagtcgccca cgcagctacg ccctcgctct ccaccaggtc tacggtctcc aaattgcaat
+    23401 ccttgacggc tccaatgtgc cgcaccaggc gttccctagg attgcgctcc atatgcgtgg
+    23461 agaactcctg gtcataaaaa tcattttgga tgctagacat tggtagcatc ttttctgctc
+    23521 ccggagactc tgctggcgag ggtgaacggg ttcgtgcaga tccaccaact agacctctac
+    23581 ttccgccaaa gcgttcgcta tcgtacaacg agggtatccc tggcagattc actcgaccat
+    23641 agcggccgag aacggtgcca tcacagtcct ccagaccttc caaatgcctg ctcagtggcc
+    23701 agcctcgaga tccgcccttc agctttcctc ctccagccga tgatgatccg gcagaagccg
+    23761 cagaactcat tgaggcgggc gaaccacctc cagaagtctc gttgctcccg ataagaaagt
+    23821 gaaagttgcg attgagatgc ggctccagaa cttgaagcgg ctgcatttgg cggatgtgcg
+    23881 tcagcaactt ctcggtaaat gcatcgtgat cctcttctac cttggagaac ttgcgaaccc
+    23941 gcttcttgag catgggcgag gaactggctc cagtactggc gcccactcct cccaaagtaa
+    24001 ctccttgtcc ggtactggtg atcacatgac cagtccctga tgccgcgcct tgtatgtact
+    24061 gggtccccgg cggcattcct gccagttgga ccattgcacc tgccggtagt ggacctgtta
+    24121 gatccttaag agctccaccc gcttgtccgg cgttcagatt tgtgcgcctc ggcttctgga
+    24181 cctcacgttt gcggcgcttc ctttggtcgc ctgccttgct ctccatggtg ggcacgggga
+    24241 tgggcactgc accctgtcca gtaactggaa ggggaatcgt cgcattctgt ggttggttct
+    24301 ggtgcagttg ctgctgctgc tgctgtggat gaactgccat atggagctga tgctgtactt
+    24361 gcaaatgcat ttgagcgggt atctgtccag cggcatgtcc ggagatttgt ccggacatct
+    24421 gcccagacag gtgtccttgc atagtcgcct gcatttgcgc ctgcatctgc acctggccct
+    24481 ggctctggtt ctggatgggt tgtgcctcgt tcgggacacc ggatttcttt acataagtgg
+    24541 caatcgctga gatcagctgt actttgtcgg gagtaccttg tccagtcgga gttgttggta
+    24601 gggaggtgct tatgggaatc tctgcctgtt gctggatctg cttttcgtcc agttgtgggt
+    24661 gcatggggag cttgcgtttt tgaggctctc caggcttgaa cggtatcttt gtggtggcta
+    24721 cacctccttc taaatggtta ttggtccatt gcgcagacac aaggggacct ccggagtgag
+    24781 gtgcaactcc cgctgcagta gctccctgtt ccgaatgaag cggcggctcc gcttgctctg
+    24841 gcagcgattc gtcgccctgc tccatgggta gtgacatagc taccgccttg ggcttcatct
+    24901 gcagttcctt cggagccgct tgtttggtgg atatggatat ggtgacgttc gatataggag
+    24961 cagtggccat ttcgtaaggc ggaggaggta gtagttcagc cggcttcgaa gtggcttccg
+    25021 tcactagtgt tttagcagca acgggtcctg agatgaacga cgtctccttc gacacaatct
+    25081 gcacagtctg cttgacttgg tggggtgacg gttgcagctg ctgcggctgg tgtagttgct
+    25141 gctgctgctg ctgctgtggt ggcggtggtg gtggaggcgc ctggttttgg ctctgattct
+    25201 gcataattgc tgctggctga tcggatttct gctccagctt tgcctcccct cccactcctg
+    25261 gtgtggtaat tgcgaccgca ctaacaggta gagccgtcgc tgaggcggtg gctacctgtt
+    25321 ggctgcttcc tccgctagct actgttgtgg tggtggtgga cgtggccaca gatccactgc
+    25381 tactactact acctgccgcc tgcgtggcag tgggcaccgg aggaatcacc ggacgtgcca
+    25441 gttgatcctc caaacttctg accttcccca tgctgggcgc ccgtacgttg ataaccttgc
+    25501 gggcggaaag aggtgccgaa gctgaggcgg aaccaacgtg agccgaagtg atgcttatct
+    25561 ggttgaggct atgactgctg ctgttgtttt ggagcagttg ctttagaagt gcattatcct
+    25621 ccgctgccga gcgttggttg ttcataggtg tggcgttcac tgtaggattg ggtgtgctgg
+    25681 gattcgaggc agttgaggta gatgtggcca tttgaatttg attggcggac tgattttgaa
+    25741 cctggttaat agccgtcatt gtggcattgg cgttcaaacg cttctccggc gtgccgatct
+    25801 cctcagcccg ctcctcactg gtcggagtac cagtgctatc cttcacaacc gcctcctgtt
+    25861 tgaccagtag ctttgcttta gattcgctgc caacttcttc cagcttgact acgtccggag
+    25921 ccagactaac gctgagtttg gtgggcgtat tggcggtcgt tagtttcagc tgcattgaag
+    25981 ctcccgaggt agctgatccg gagtttgcag aagatcccgc cttgtctgca ctagaatcct
+    26041 gaatcaaagc atgatgcatc tgcagcgccg cctgactgga caacgtggtt gtagttatca
+    26101 tcttcggttt ttgctgggcc atggtcgtct tggacagcac cagggatatg ttcttgttct
+    26161 gaatggagat tattggccgc gtgcccatca tcggactgtt tatgcagatg gtccccgccg
+    26221 aaacggaaac ggtggaggtg gtggccagat ctgaggcatt ccccgaagcc atggtaaacg
+    26281 tcacgggtgt gcctgctcca ctgcctaccg cggagattga ttggctttga gcagcctgtg
+    26341 agtgctgctg ctgcttaaag atgttaaagc tgggtggaca attgagtgta ttcttgtcga
+    26401 gcggcttaat caccacgctg ttgatgttgg tgaactcctc cgggcctcca gtcgattcct
+    26461 gggacttgct cttgttgaga attttttgaa ggttctccga gtaggctgta atctttcgag
+    26521 gcgctggcgc atcgtcttcc gaatgggccg caggtcccac agttgcggaa tcctgaacca
+    26581 ttgcgtacgt ttggctgggg ttggtggtgg tgatagtcac tatgctgcct gtggcggagc
+    26641 caggcctcca ccactggtca cctgcagctg ctgaagctgc tgctgctgtt ggatctgttg
+    26701 ttggtgctgc tgaagttgca gcatcttttt gctcaccacc ttggtggcca caattttggt
+    26761 gttcgccggc ttgatctgta gccccgaaaa cgagacaatg gtgccgctat tttttggccc
+    26821 gcgtttgata agtttggtaa agttgtgatg tgcatgagaa tggacgtgcg ggtggacctg
+    26881 ctgaccaccg ctttgctgcg cagcactcat tacggtagtc acctgaccgc ccggctgcag
+    26941 cagttgcttg ctctctacaa tcgtggctcc tccggctgtg gccgctccac tagcgctcat
+    27001 cagcggcttg agcagcggca ccgatatagt cttgttgcca atcgacactt tcgccgtggt
+    27061 ctgcgttact tccgacagct tcttggcgtt aaccatcagc tgggttttca tcttggggtg
+    27121 aagattcacc cggtttaaca atgttgtagt gggcgtttgg ctaccagtgg ccgtggtatt
+    27181 gaagatgttg tagttcgtgt gaccggattt ctgtgtgagg attgtagtgg tgccggctcc
+    27241 actgactcct gccgttccgt tgttagcgtt taaaataatg gtggaggtag tagctccaat
+    27301 aggcgttcct gctggtgttc ccgttccggt ggagttaccc acagatgtag cgctatccgc
+    27361 gccgctggct ggcatcagta cgtagtcgag gtcctcagat ttgccggagt tttcagcatg
+    27421 atcctgcccc gagccactgg gctcgatgga aatgacggac gcggttgacg atgatgacga
+    27481 ggccgacgat gaggcaccct cctttttggt aaagctggta aaggctgtgt ttcggtgtag
+    27541 caaagggtta gattgactgt tccttggagt gctgattctg tactcactct gcttgtcagc
+    27601 gtcctccgcc ttgatggcac ccatctcagt gccggagccg aagttgcaca ctatgatctg
+    27661 ctgatcgcgg gcgtcccaga cgccgtccgc cgtctcgaca tcctgcggct ccgacgcagc
+    27721 ttttacctgc gccttagcct gctgtccact ccgctggtag aggagctgct gcggcgcggt
+    27781 gctcgacgct ttggcgggca aactgggcgc tgccgttcca gttccgagaa gcagctccgt
+    27841 cttggccttc ttgcgcgtgg gatcctccgc cggagtggcg gtgtcgtcgc cgctgcgctt
+    27901 ctgcaggctg accgcattga aggcagcggc ggccacggat gctactcttt cgggtttcgc
+    27961 cttttcggcg gcaccaagcg atgttgtcac cttcggtata ttcataacaa acacacaagt
+    28021 ggaaacgcgg aacgccggat gcgatgcgct gcgtttcgtg ggacgggaag ggcggcggtc
+    28081 tagctagcta gggctcgcgc ggcctgcttt tttttttacc gagcgaaaac atgcacgatt
+    28141 agtcaaaaaa attttatttt cgtgtatgca gagcagtgtt accagatggt aaaacgacca
+    28201 ttaccctgaa acgttcttac ccatccctgg ttttccactc agaaacccac cacttttccc
+    28261 atcccatttc aacatatcgc catggcggtt gcaatcgaat aacgtttgta cagcaatcat
+    28321 ttttcgttaa cttcagaagt ttttaataca taacataatt attgtgttcc acgtgcaata
+    28381 tggcacattt tcaactgcaa gaataaacca tagtctggac agggccgtca gctcactcga
+    28441 ccaatcggtg gtctatcgat atatgttttt agcaccacat ttattagctc gatctggcaa
+    28501 cggtggccgt tgatgcaaca catctttgca caatacaatt ttataaataa gtaatatatt
+    28561 ttgacataaa ctcaccatgc tctcattaaa gttagtctcc cagctcttta agcaaagcct
+    28621 tgcgtgtaag ttgcagtggc gcttcctgcc tagccacatc caatccgata acagtttgca
+    28681 acaaaccact taaacttttc tttgcagcgg gcaacatggc aattgtcaac acagccggtc
+    28741 ttaagtattt cgctccgcct attaaatacc agagtaagta gttgcattta aatgtgcaca
+    28801 atgaatttag agcaataaat gaatgaatgt gggaaccccc agatgtggag cagccggaga
+    28861 gacccaagct gagggtcatt gagcgccagc cccagctgcc gccaaacatc cgtccgccaa
+    28921 agatgcagaa gcgcctgcga tacatgcgcg gtccggagat ggtgcacaac acgctgctcc
+    28981 ataagcagta cgcaatcgtg gccactggcg gagggcgcct gcgctggggc cactacgaaa
+    29041 tgatgcgttt gaccatcgga cgcaagatga acgtcaacac tatgttcgcc acatggcgcg
+    29101 ttcccgcacc ctggcagccg atcactaaga agggccaggg ccaacggatg ggcggcggaa
+    29161 agggagccat cgaccactac gtgaccccca tcaaggccgg tcgcgtcatt gtcgagatag
+    29221 ccggcaagtg cgagttcgtt gaggtcaagc agttcctgca gcaggtggcc aaccagctgc
+    29281 ccttccaggc caccgtcgtt tcccaggaga tgctcgacga acagcgcgtc gccgaggagg
+    29341 aacagacccg ccagaatgag aaccccttta ccatgaagta cgtgatccag aacaacctca
+    29401 gcggctgcca ccgttggctc tcgcccgtgg accacaagtg gttcggcaag cacctgtaga
+    29461 tgtatagctt caattaataa agccatcctt cgttaatctg ttacgaaact gtttcaagta
+    29521 cttttgaaaa ctggaaatat cttaaagtag gttcgaactt cgaacttagg gctcgttgtt
+    29581 ccaagccgtg actctgcggc acccaattgt ggagcaaata agaaaaacgc catatgaagg
+    29641 gaaatgtacg agttctattg caaacatttg tttaattttc catttcgttt acgtgggtaa
+    29701 tatgtaatgc atcatataat atgtttttct tgccgtttcg ttcgcattat aataaatgta
+    29761 taatattatg catgtatgcg tgtgtgtatg ctttgtcgcg gggtatggtg tgtgagcaaa
+    29821 tagccttctc ccacggactt cagttctgga agcagaactt tgacctgccg cagctcctcg
+    29881 tatttgtcaa gtaaaatcca caccttcgtt gatctagtca agtttcggtg atcgcgattc
+    29941 cgggatccgg gatggaatca aagccggtgg aagagggcta ttgtgcaggg atgggaattc
+    30001 gtgtgtttta tgttatgggg tcgaatggat actcgaccct tacccttagc tcggcttgtc
+    30061 taacaatcgg tatcgtacca ggcagccagg ttgttgttgt cattgggtgg cgtcggcatg
+    30121 gcgtccaagt caaagttcaa tgcaccggca tcaatctcgc caacgtccat gtccatggaa
+    30181 tagggcgaag ttggtgcgcc gctaggcgga atggcgccga tgttaccacc gccgccgcta
+    30241 gctccgccta cagctccacc attgccggga gcaccgccag caccgccgcc gcccactggg
+    30301 ctgctgatct ccagaccctg catcgaatct attggtagag tatcatatcc tgtgaacaaa
+    30361 cgagatgggc aaagaatgat agggaatatt gtgattagtg gagaggattt acaatctccg
+    30421 ccagccgtca actggcagat ggtgcgacac cttgaagtcc tgcaaaagtg gattcactgc
+    30481 tgctcgcttt aatcgggaac tcatctaaaa tgcatctttc caacacactt attggattta
+    30541 tgccgattca aacgaaatgc agactccact cgtacacgac gaccttttaa cattaaccta
+    30601 gagtatcaaa caacaaaaat ctgtcgttga atactgctta aaaagaacta aatacgtcta
+    30661 aaatacgaca cgacatggac gcgttattgt cgattggaat tcgtcctctg aaacttgcat
+    30721 gcacacacgg cttacaaact agatacgagt atatacacca taaaatatat ggattgtggg
+    30781 tggctaaaac tatgcgatta tcgcaggcta cgtgacatgc agtatgaacc gaaataaagt
+    30841 ttattactgc tccttcatgg agggagacct taaagataaa agccgtctaa tgaaaggaaa
+    30901 caaaatagat ttatacaaaa caataaattt gcgaaattat caaagaaacg tatgtgtttc
+    30961 tttactattc acgatcctta ttttttaagg ttgcactctg tggttatttg tggtagatcg
+    31021 gtgttcgtgt gtgtgtgtag tgcaaaaatc ttcaagctac gtgtaaagtc cggagagata
+    31081 gatattcttt tccaaatgtg agagagcagg ggaagtaatc ccgcaaaaga ctgaagttta
+    31141 tccctattat cccttattga cataattggc gcccaatgtc gggcatcgga tgcacaagat
+    31201 ttggatttat cgacaaatgt ttgtataccg caaatggaaa caggcggagt tatgttcact
+    31261 tccttcgcat gcagccgtgg aactcaaggg tttaacgata ttagggggta acgagcaagg
+    31321 agacagagat attgagatca agcgagggag ctgggtggaa gagggtttcg ctcacactga
+    31381 agaaactaaa gtgagcttaa cgtcttagct tcgattaaca agtgcatatt tgaatgatga
+    31441 acagacatga taacgattaa atggatgcgg gggtttgggg ctggtcccga ggatttttcg
+    31501 aattgtctga acctgttaac gtttccgttg gtttactttt tagtggggtt atgcaggatt
+    31561 cttcttcttg gggtgtggct cgaggggtac gatgggtacg agggtctctt cttacgcata
+    31621 tgacatacat accttgctga tggaatgcgc gacctccgtg cgaactgtgc acgctgggcg
+    31681 gaccttgtcc gtacaggccc tcatatgctt cttctggtcc aagcatatcc tgtgatcgat
+    31741 cgaattcgtg tttgtttatc ggtttatcgg tcggtttgcg tgatatgtgc gtgatcgtac
+    31801 gtgtgtggtt gtgtggtgga tgtatttttt acagtttcgt tttcatttat tttttgttgg
+    31861 gatggatcag aagtgaaaag ttgttaggaa agaagaagac acgcgcaaac gccagtttgc
+    31921 aagtgaatgt gagcgagagg aatagagagt ggggtgaggt tgttgtggta tcggggcggc
+    31981 gagagcgaga cagagagtga gagtcgcatt gttggattgt tgttgttggt gagattttgg
+    32041 tgcagtgatt atccgtcatt tcggttgttg ttgcgtttca tttaccgttg cagttgtgtt
+    32101 tatagtgatt tgttgttttg ttttgggttg ttttggtttt acacacacaa agtaaacata
+    32161 aaggaaaaaa agaaaagaac aaaagtaaaa caaacgtgaa ttaattacaa aatcaaaatt
+    32221 aaacataaac aaagagcgcg atgacgcagc aattatacaa attgaaattc atgtaagtat
+    32281 gtttttggtc gggttgtttt cggaggaatc gtggaggagg tgaggttggg ttgtgtggtt
+    32341 tggggagggt atcaatcaaa tatgatcaga actaatcgga atccgtattt gtaatcggcg
+    32401 ttcatctaca actacctact tatcgactaa catatacggt ctatcgattg gtggtttaca
+    32461 agaaaagcaa aaaaccgaac gaaatgaacc caaatgaaat ggaaattcaa aaataggtta
+    32521 tcgaaatcgt aagcaagcga tatataggtc gatacttaat ctggatacca ttatataatg
+    32581 cttgactaaa gtaggttctc tacaaattta caattttatg tacagatttc gcttaacgcg
+    32641 ctgcattttt aaatcagatt caatggaaca caagaagggc gtttaaaaag ccggaatccc
+    32701 ggggacgtcg aatttgctta gcctacttag cacgcacctg tagatcggga cccatgccca
+    32761 ggtcggcatt ggcccatatg ttgttgtcct cgcgcagcag cgagttggtc agctctatgg
+    32821 atagccgctt cttgtaatcc tgcggcttgt cctcactcat gcgaaagaga acagcggcgg
+    32881 cgtatgtggc cacgccttca ttgcgcgagt gcaggagatc ggtcagcggc ccagtggcgc
+    32941 cctcctgctc gataatctcg gcgccctcct tgtcagcggc gagctcacaa agaacgccag
+    33001 cagccacgcg ctaaagtaag aaaatattca tagtatactt gagtcacaac aagataaact
+    33061 tcgatctcac ctgtatgttc tcgatttcgt tgaacagcaa tcgtacaaag atcggtatta
+    33121 ccgactgctg gcgaatgagt gcccggttgt gagactcgcg ggccaggata tgtagcgccc
+    33181 ccaccgtgcc ctcgacaatc tcctccatgc gaacgccgtc agcgtatgcg gacggctgct
+    33241 gtgaaccagt ggtggctatc gaggaacgtt gctgcaaggt tgcaagtata attgacgtca
+    33301 taattattct ctccaactta tgcttccact ataactaact caccctctct gtgtcttgga
+    33361 aggcgcgcat aagcagtcgc accagatggt ggatggcccc gtgctcccgc aacggggcgt
+    33421 gattggccgg acagagggcc aaattgcgta tgagtccaat gacggccttg atcaagggcc
+    33481 agcgtgatgg tggatgcaat agctttacaa tcaccgatag tccgtagttt aagcgtacgg
+    33541 cattctgggc caactcagag tccacatgac gcgaggtcaa gtgacgcagg gcacatacag
+    33601 ccggctcggt aatctcttcg cgatctccag cattgataat agtacggacg agggcgtcca
+    33661 caccgcccac ctgacaaacg gtggccttgt tgcgctgatt gttgcacgtc agatttgaaa
+    33721 ggataccggc ggcacaggtg accacgttga catcggtcga gcccagaacc tggacgagag
+    33781 attggagcaa agcttcaagg ccctccacct tagtggctgc atccgaaaga ttgcggagcg
+    33841 tccacaaaca gttttgcaca aggcgcggtg acatgttacc caagtgcata gccagcgcct
+    33901 gcattccacc ggcatccacg atggccggct tgttgctgga gcaaacggag agcactttca
+    33961 gtacccgcga agtggtccac agaagcttct cgtagtcgta ggagcgcata atgcgcacga
+    34021 gttcgttggg ccctccggag gcaagaatta ttaacttgct ctcctggtta ccataggcca
+    34081 gaatttgcaa gcaatctgtg acgatagcca gaaacttaac gttgtttcgt tgcagcagag
+    34141 taaccatctt ctgaagcccg ccggccaggc gcacagccat cttagagcca tcctggtgga
+    34201 gcagcaaatt gtgcagagtg gtaattgcat agaacagcac actctccact ggcgaggaga
+    34261 gcaacttgac gagtgccggg atgccgccac tcttgaagat ggccagcaga ccctggcgat
+    34321 ggtgtgataa gttgtgcagt gttcctaccg ctgccttggt gctctccaga tcgttgctgt
+    34381 tagagatggc acgcaccaaa gcggctacca tctgagggct gttcataatg gcatgtcgcg
+    34441 aggcctcctt cttagacagc tggtggacca tcatggcggc ctgggaaact accacctgat
+    34501 cctcatcgtt cagcagcttg atcaactcgg gtatggccct ggttgccagc tcagcgtcgt
+    34561 cctggtagtt gatcagattg accaccgcgt gctttagcat ttgtgacggt tccgaaagac
+    34621 gttgcactgc cgtcggctgt tggggatcaa actgggtgga gggaatctca atgccctcct
+    34681 ccagggtttc cggaaacatg gcagcacgta cacgttggga gcgtgtctgg ctcagttgct
+    34741 ggttcatatc gtccacttgg tcttgtgtga aattctgcgg gaaaccggtg tccaggtcga
+    34801 acataagtgg atctccctcc atctcctcgt cctccttgcc agacagcgat ggaacctggg
+    34861 tcacggcacc cgagtggatg ccggagtcgc ccaagtacga attctgctgc cacatgaggg
+    34921 tctgctcctt ggcggatacc atcggcggca gatcaggtgg attgtattga ttattatgcg
+    34981 acactgcaaa agattgattg caaaacgttt tagagtgaat tgacaaaaat atacactcca
+    35041 acttttctaa ctcgaatcac cgatgtgttt cgatcatttc cattgcaact taatcgtgtt
+    35101 ataagacccc aaagaagcag aaatgaagtg taagaataat ttttgtatgc tcttctttaa
+    35161 cttgttaaca tctgtctaca cattcatggt aacttttctt ttttaaaacc ttttgaagtg
+    35221 gaaaaacgac agagtagaac ggaatactga gtgcagccca ccatctacat ataatgcaac
+    35281 gaattcgggt gcggggatgc acacgcttta accctctgca acccatttgc atgcgctttc
+    35341 gttaaaagat ggccaaatgg gaaacgacag cgactgacag caaagtgagc agcatcccaa
+    35401 cagccggcgc aaaaaatgca aaaggaaaac tttgaagcgt gacaaattga acgctgcagg
+    35461 atattcccag aaagttcagg gcgctgggcg gaatgggttt ggtgcagggg gtcagatgct
+    35521 cacacatgag agggtactgg caaaaggatt tgtgggcgtt ttgtttgcca cttcagtctt
+    35581 aattatgccg ttccaggccc agctttttgc ctttgttgtt ttacttatgc gcggacacag
+    35641 cacggccacg ccccttctgt atgcattcgt aattacaaac ttcactgctc ttcgccatcc
+    35701 actctgcaat actacagtca aatctcaata gatcgaacac ggtgctgaat ataaatgact
+    35761 ccataaaaag cagcattgaa acatgctggt aacctatgga ccaggtctcc aaatgtggtc
+    35821 tctgagttca acaaaatggt ttagcccaca gctgatgaat tttgttcgct ataagcacat
+    35881 gcgactgtaa tactgtaatc gcttttcgtt tcatttccca aatcgattaa gcgttttttc
+    35941 ttcgccatat ccgtcgagtg ggccacgcac ttgaatggag tactgtgttg ggatggaggg
+    36001 cgcgggcgga gcctttaatt gcatgttgcc gcttactaat taaattctgc acagcagcag
+    36061 cgccagaaaa aagcaaaggc agaagccaag aaaaatgtgc agccaactcg actgcgagtt
+    36121 cgggagacgg ggtacgagaa caaggtcccc ggagaagacc aaggagcgat ggcaaaaggg
+    36181 tggcgtgggt tggagtgcca cgtgcaagta cacgagtcct tgaatgtgtg tgtgcgtaag
+    36241 tggatagcat ggggagggaa tggagtttca aaggatagtg agcagcggcc tactcaaggg
+    36301 ggtttcgggg ttgtacagca attagttgaa aactaaacta aatacttaat agtggtcgaa
+    36361 ttaaaaggcc acttcctaaa tggctatgaa ctgttcacta c
+//
+
