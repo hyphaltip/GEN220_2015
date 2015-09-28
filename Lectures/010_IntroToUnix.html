@@ -33,58 +33,201 @@
       # Outline
 
       1. The command line shell
+
       2. Directories and Files
+      
       3. Running programs
-      4. Data Streams 
+
 
       ---
+      # Quick reminder
 
+      * Learn by doing: Lots of things in this course are going to be running examples and playing around
+
+      * You need to try things out - outside of class, during class.
+
+      * CaSe does matter when typing commands or filenames
+
+     
+      ---
       # Introduction
 
+      * UNIX is an environment which give a power interface to running
+      applications and access to data
+
+      * Strengths are when you build something that can automate your
+      work in data analysis.
+
+      * Challenges are learning your way around
+      thinking on the command line
+      
+      * Even though we'll focus on text-based command line (Command
+      Line Interface-CLI) there are rich graphical tools built in UNIX
+      as well - display is through the X11 system.
+
+      * Sometimes it feels like _Magic_ because there are special
+      words/incantations you have to use to get something done - but
+      there are tools to help you search for the right tool (including Google)
+      
       ---
       # Command line
 
       1. Breakdown of the syntax
-      2. The prompt
-      3. Running a command
+      2. The prompt - can look like
+      ```shell
+      $ hostname
+      [host]$ ls -l
+      ```
+      3. Where you run commands to do things!
+
+      4. You can save these commands in a text file to rerun. We call this file a _script_
+
+      5. Many commands in UNIX -- hundreds
       
       ---
       # Directories and listing
 
-      1. ls
-      2. ls command options
+      1. ls - shows a listing of the files and folders
+      ```shell
+      $ ls
+      $ ls -l
+      ```
+      3. ls -d will display a directory name only
+      4. ls -F will give a different symbol for directories
+      5. ls -l shows long listing
+      6. ls -lt shows long listing, ordered by newest to oldest
+      
+      7. How to know all the options?
+      
+      ```bash
+      $ man ls
+      NAME
+      ls -- list directory contents
+      
+      SYNOPSIS
+      ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file ...]
+
+      DESCRIPTION
+
+      For each operand that names a file of a type other than
+      directory, ls displays its name as well as any requested,
+      associated information.
+      ```
 
       ---
       # Directories: Creating and Deleting
 
-      1. mkdir
-      2. rmdir
+      1. mkdir - make directory
+      ```shell
+      $ mkdir MyDir
+      $ mkdir MyDir # will give warning
+      $ mkdir MyDir/UnderDir/DeepDir # will not work, UnderDir not created
+      $ mkdir -p MyDir/UnderDir/DeepDir # -p option will create intermediate one
+      ```
+      
+      2. rmdir - remove directory
+      ```shell
+      $ rmdir MyDir # won't let you unless it is empty
+      $ rmdir MyDir/UnderDir/DeepDir
+      ```
 
+      ---
+      # Navigating paths
+
+      1. to go into a directory use cd
+
+      2. to go back a level use 'cd ..' Can specify a total path 'cd /tmp'
+
+      3. To go back to your home dir, type cd
+
+      5. Try to make a dir, go into it, make another directory.
+      
+      4. On the Mac you can see the same directories and files
+      organized graphically too
+      
+      5. SWCarpentry has a nice intro with graphics [here](https://swcarpentry.github.io/shell-novice/01-filedir.html)
+      
+      ![Figure](img/filesystem.svg)
+      
       ---
       # Files
 
-      1. touch
-      2.  
+      1. The whole point of all this is probably to create files with data
       
+      2. can make an empty file with
+      ```shell
+      $ touch file # will create an empty file
+      ```
+
+      3. Running programs can generate files
+
+      4. We will discuss output later but you can direct output of a program to create a file.
+      ```shell
+      $ echo "hello world" > hello.txt
+      $ echo "goodbye cruel world" > goodbye.txt
+      ```
+      
+      ---
+      # Permissions
+
+      1. ls -l will show a long version of listing output
+      ```plain
+      jstajich@pigeon:/bigdata/gen220/shared/data_files$ ls -l
+      total 0
+      lrwxrwxrwx 1 jstajich gen220     25 Sep 25 13:53 Nc20H.expr.tab -> expression/Nc20H.expr.tab
+      -rw-rw-r-- 1 jstajich gen220 609183 Sep 25 13:52 Spellman.csv
+      drwxrwxr-x 2 jstajich gen220 4096 Jun 10 00:39 expression
+      drwxr-xr-x 6 jstajich gen220 4096 Jun 10 00:39 sequences
+      ```
+      2. There is info on the file/folder and 3 sets of permissions listed there
+          * 'd' -> It is a directory, 'l' -> it is a link, empty, it is a file
+          * User -> rwx or rw-  permissions for the user
+          * Group
+          * All
+
+      3. what are permissions
+          * r - is it readable
+          * w - is it writeable
+          * x - is it executable
+
+      4. Directories have to be executable to be able to be used/entered. Programs/applications need to be executable to be able to run.
+      
+      ---
+      # Deleting things (careful!)
+
+      1. rm - for removing files
+      2. rm -r -- _be careful_ removes recursively
+      3. rm -f - removes without prompting you
+      4. rm -rf - removes recurisvely without prompty __Use with care__
+
       ---
       # File content
 
-      1. cat
-      2. more
-      3. less
+      Want to read the content of a text file you can use these
+      commands 
+      1. cat - will spit out the whole file on the screen
+      2. more - a paginator - will display one page at a time (based
+      on your screen)
+      3. less - similar to more, but has additional options
 
       ---
       # Editors
 
-      1. pico
-      2. emacs, vi, nano
-      3. TextEdit on OSX
+      1. pico or nano
+      * Will be one of the easiest to try out on the command line
+      * Follow commands at bottom of screen to figure out how it works
 
+      2. emacs, vi
+
+      3. TextEdit, TextMate on OSX
+
+      4. Syntax highlighting useful when doing programming. We will do
+      more on this later.
+      
       ---
       # Other resources
       1. [Introduction to UNIX Shell - Software Carpentry](http://swcarpentry.github.io/shell-novice/)
       2. [UNIX bootcamp - Rescued by Code](http://rescuedbycode.com/linux-bootcamp)
-      3. 
       
     </textarea>
     <script src="js/remark.js" type="text/javascript">
