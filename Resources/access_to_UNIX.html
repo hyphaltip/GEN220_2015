@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="access-to-unix">Access to UNIX</h1>
+<p>There are several ways to get access to UNIX environment. It depends on what kind of computer you have. It boils down to accessing a UNIX environment directly on your machine or remotely connecting to a machine that is running UNIX.</p>
+<h2 id="apple---osx">Apple - OSX</h2>
+<p>Apple's OSX is built on a UNIX <em>kernel</em> which is effectively we call an operating system. It is based on a flavor of Linux called <a href="http://freebsd.org">FreeBSD</a>. Some info on <a href="https://www.apple.com/media/us/osx/2012/docs/OSX_for_UNIX_Users_TB_July2011.pdf">UNIX for OSX</a> is provided by Apple.</p>
+<p>Importantly you can access the UNIX command line interface on your Apple machine using the Terminal which is located in the Utilities folders or simply search for Terminal in the Spotlight search menu. Some other guides about starting a command line session on OSX <a href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">here</a>. Note that you can customize many things about how the Terminal looks, including colors, fonts, and open multiple windows at once which is really useful to support doing more than one thing (e.g. running a program and running an editor) at a time.</p>
+<p>I also really prefer a tools called <a href="https://www.iterm2.com/">iTerm</a> for my UNIX environment. It is a replacement for Terminal and provides many features that are helpful for customization and overall experience.</p>
+<p>You may not find you are able to understand what the differences between these tools right at the beginning - that's fine - use whatever gets you working on the command line as soon as possible and as you become more of an expert you may enjoy the additional features you can find in other programs.</p>
+<p>You should also make sure and install X11 to support running graphical programs on any remote host. This allows you to login to a remote host, have that host draw something which will show up on your screen. For example, read a PDF that is located on the remote server but show the file on your screen on your laptop. On OSX this is called <a href="http://xquartz.macosforge.org/landing/">X11 Quartz</a>.</p>
+<p>Tools to connect to the remote server (e.g. pigeon.bioinfo.ucr.edu) are already built into the system. The main tool you will use is <code>ssh</code>. One thing we reccomend is when you connect you use the -X option which will turn on forwarding of X11 info, so that graphical drawing will work <code>ssh -X login@pigeon.bioinfo.ucr.edu</code>.</p>
+<h2 id="apple---ios-ipad">Apple - iOS &amp; iPad</h2>
+<p>It is possible to run a secure login shell onto a remote UNIX computer on the iPad or your iPhone. This is not ideal but it will give you access to the shell in the same way. However switching between editor and the command line interface will be problematic in the small amount of screen space you will have.</p>
+<h2 id="windows-pc">Windows PC</h2>
+<p>There are a several ways to access UNIX from your PC. The easiest I think is to install one of the free SSH tools for Windows. One of the easiest to use is <a href="http://www.putty.org/">PuTTY</a>.</p>
+<p>A second option to run UNIX on your PC is to install a UNIX-like environment on your PC. This is provided by a package called <a href="http://www.cygwin.com">Cygwin</a>.</p>
+<p>In both cases you may want to also install an X11 client for your windows computer so that graphical display from the remote server can be displayed. I am not sure of the best tools but I believe <a href="http://sourceforge.net/projects/xming/">Xming</a> is free and reliable. If you install Cygwin then <a href="http://x.cygwin.com/">Cygwin/X</a> is probably the best way to go to get X11 capabilities.</p>
+<p>There are some other options, like installing what is called a <em>Virtual Machine</em> on your Windows computer which will allow you to run a program which will let you build and run what looks like another computer within your environment. This is most easily done with several tools but probably the best to try is <a href="https://www.virtualbox.org/">Virtual Box</a>. This is not completely straightforward as you are of course installing another operating system and administering a UNIX/Linux computer is outside the scope of the class.</p>
+<p>Also an advanced user (and if you are, you would have done this already probably) could also install another operating system directly on your computer (not virtually) and then it is possible to setup a dual-boot computer at startup you can go into Windows or Linux. I won't include instructions here but it is something that can be done relatively easily now with current versions of operating systems but still would require knowledge outside the scope of this class.</p>
+</body>
+</html>
