@@ -108,7 +108,7 @@
       * Open a new terminal window; type
       
       ```shell
-      $ set PATH=""
+      $ export PATH=""
       # try running any program, eg ls or hostname, etc
       # will fail because PATH is now empty      
       ```
@@ -220,11 +220,11 @@
       64 bytes from 138.23.226.208: icmp_seq=22 ttl=241 time=44.175 ms
       64 bytes from 138.23.226.208: icmp_seq=23 ttl=241 time=41.319 ms
       # it will continue to run now in the background
-      # bring it back to the __foreground__ with 'fg'
+      # bring it back to the foreground with 'fg'
       $ fg # still running
       64 bytes from 138.23.226.208: icmp_seq=5 ttl=241 time=32.900 ms
       64 bytes from 138.23.226.208: icmp_seq=6 ttl=241 time=33.840 ms      
-      # now cancel it with __Control-C__
+      # now cancel it with Control-C
       ```
       If you have more than one process in the background, __`fg`__
       will bring up the most recent one. You can switch to a
@@ -468,7 +468,7 @@
       ```shell
       $ zcat data/Nc20H.expr.tab.gz | wc -l
       # output from zcat is printed to STDOUT and that is redirected
-      # to the command __`wc`__ with the __`-l`__ option which in turn
+      # to the command wc with the -l option which in turn
       # expects input on STDIN.
 
       # Output from a program can be fed to a pager like less
@@ -499,6 +499,18 @@
       $ blastn -query query.fa -db db.fa -outfmt 6 | gzip -c > blastresult.out.gz
       ```
 
+      ---
+      # Wildcards on the commandline
+
+      * use the '*' to match anything
+      * use '?' to match any character 1 time
+      * indicate specific characters in '[]'
+
+      ```shell
+      $ ls [A-Za-z]*.jpg # match JPG files with names starting with a
+      letter
+      ```
+      [more]
       ---
       # Fin
 
