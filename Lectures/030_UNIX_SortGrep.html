@@ -32,13 +32,171 @@
       ---
       # Sorting with sort
 
+      ```shell
+      $ sort file.txt > file.sorted.txt
+      ```
+      Type of sorting:
+      
+      1. -d/--dictionary_order : consider only blanks & alphanumeric characters 
+      2. -n/--numeric-sort : compare according to string numerical
+      value
+
+      4. -f/--ignore-case : upper/lower doesn't matter
+      4. -r/--reverse : reverse the order
+
+      3. -k : specify the key positions to sort by
+
+      ---
+      # Let's try some examples : sort alphabetical
+
+      ```shell
+      $ sort data/numbers_only.dat
+      10
+      10
+      12
+      25
+      30
+      34
+      39
+      42
+      49
+      49
+      ```
+
+      ---
+      # Let's try some examples : sort numeric
+
+      ```shell
+      $ sort -n data/numbers_only.dat | head -n 10
+      7
+      7
+      7
+      10
+      10
+      12
+      25
+      30
+      34
+      39
+      ```
+
+      ---
+      # More sort
+      ```shell
+      $ sort -r -n numbers_floating.dat  | head -n 10
+      49.6859213710444
+      49.6454233452118
+      49.5141651980655
+      49.2878027550901
+      48.5007601226085
+      45.15231125553
+      43.0392927946809
+      41.8950131857132
+      41.7844270115886
+      39.63172550297467
+      ```
+     
       ---
       # Unique with uniq
-      
+
+      Uniq collapses adjacent lines in a file which are identical
+
+      ```shell
+      $ sort -n data/numbers_only.dat | uniq | head -n 10
+      7
+      10
+      12
+      25
+      30
+      34
+      39
+      42
+      49
+      51      
+      ```
+
+      ---
+      # Unique with uniq - count the number of occurances
+
+      ```shell
+      $ sort -n data/numbers_only.dat | uniq -c | head -n 10
+      3 7
+      2 10
+      1 12
+      1 25
+      1 30
+      1 34
+      1 39
+      1 42
+      2 49
+      1 51            
+      ```
+
       ---
       # Column processing with cut
 
+      __`cut`__ - subselect and print certain columns from a file
 
+      ```bash
+      YAR060C	Chr_I	100.00	336	0	0	336	1	217148	217483	8.6e-83	298.8
+      YAR060C	Chr_I	64.00	325	95	22	330	14	198385	198695	4.1e-18	84.0
+      YAR060C	Chr_I	74.07	108	25	3	110	6	211012	211119	2.1e-10	58.4
+      YAR060C	Chr_I	97.02	336	8	2	1	336	14799	15132	1.3e-77	281.6
+      YAR060C	Chr_I	72.48	109	25	5	6	110	20974	21081	2.3e-10	58.2
+      YAR061W	Chr_I	100.00	204	0	0	1	204	218131	218334	3.4e-54	203.1
+      YAR061W	Chr_I	70.62	194	57	0	1	194	203400	203593	6.5e-23	99.2
+      YAR061W	Chr_I	94.61	204	7	4	204	1	13951	14150	5e-48	182.6
+      YAR061W	Chr_I	67.88	193	62	0	194	2	27770	27962	3.9e-20	90.0
+      YAL030W	Chr_I	100.00	252	0	0	103	354	87502	87753	2.5e-55	207.7
+      YAL030W	Chr_I	98.15	108	2	0	1	108	87287	87394	8e-22	96.4
+      ```
+      Query sequence names
+      ```shell
+      $ cut -f1 yeast_orfs-to-chr1.FASTA.tab | head -n 5
+      YAR060C
+      YAR060C
+      YAR060C
+      YAR060C
+      YAR060C
+      YAR061W
+      YAR061W
+      YAR061W
+      YAR061W
+      YAL030W
+      YAL030W
+      ```
+
+      ---
+      # Cut examples
+      Get the Hit sequence names
+      ```shell
+      $ cut -f2 yeast_orfs-to-chr1.FASTA.tab | head -n 5
+      Chr_I
+      Chr_I
+      Chr_I
+      Chr_I
+      Chr_I
+      ```
+      Get the Query name and Percent Identity
+      ```shell
+      $ cut -f1,3 yeast_orfs-to-chr1.FASTA.tab | head -n 5
+      YAR060C	100.00
+      YAR060C	64.00
+      YAR060C	74.07
+      YAR060C	97.02
+      YAR060C	72.48
+      YAR061W	100.00
+      YAR061W	70.62
+      YAR061W	94.61
+      YAR061W	67.88
+      YAL030W	100.00
+      YAL030W	98.15      
+      ```      
+
+      ---
+      # Cut two columns out, and run sort to sort on 
+      $ cut -f1,3 yeast_orfs-to-chr1.FASTA.tab | sort -r -k2,2n  |  head -n 1
+      
       ---
       # Column combining with paste
 
@@ -53,12 +211,100 @@
       ```shell
 
       $ awk '{print $1}' blast.out.tab   # print out the first column of a file
-
-
+      ```
+      
       ---
       # Powerful searching with grep
 
+      Tools for finding pattern matches in text data. Operates
+      line-by-line and reports the lines that match a particular
+      pattern.
+    
+      Syntax is:
+      grep EXPRESSION FILE
+      or
+      CMDPIPE | grep EXPRESSION
 
+      Cmdline Options
+      1. -i -- case insensitive
+      2. -n -- report line the match is on
+      3. -c -- simple count the number of matches
+      4. -v -- report lines which DON'T match the pattern
+
+      ```shell
+      $ grep YAL    
+     
+      ---
+      # Regular expressions
+
+      ---
+      # Putting things together
+
+      ```
+      $ more celegans_gene_names.txt
+      aagr-1
+      aagr-2
+      aagr-3
+      aak-1
+      aak-2
+      aakb-1
+      aakb-2
+      aakg-1
+      aakg-2
+      aakg-4
+      aakg-5
+      aap-1
+      aars-2
+      aat-2
+      aat-5
+      aat-6
+      abce-1
+      abcf-1
+      abcf-2
+      abcf-3
+      abch-1
+      abf-1
+      abf-2
+      abf-3
+      ```
+
+      ---
+      # Putting things together - what are sizes of C.elegans named
+      genes families
+
+      ```shell
+      $ cut -d\- -f2 celegans_gene_names.txt
+      
+
+      
+      ---
+      # Comparing what iss different with diff
+
+      diff is a tool used to compare the content of two files and
+      report the differences. This is a line-by-line comparison (not
+      within a line).
+
+      Can deal with insertions/deletions.
+
+      ```shell
+      $ grep -v "\." celegans_gene_names.txt > celegans_gene_names.no_dot.txt
+      $ diff  celegans_gene_names.txt celegans_gene_names.no_dot.txt
+      185,188d184
+      &lt; ant-1.1
+      &lt; ant-1.2
+      &lt; ant-1.3
+      &lt; ant-1.4
+      213,214d208
+      &lt; arf-1.1
+      &lt; arf-1.2
+      287,288d280
+      &lt; atg-4.1
+      &lt; atg-4.2
+      476,478d467
+      &lt; cdc-25.1
+      &lt; cdc-25.3
+      &lt; cdc-25.4
+      ```
       ---
       #
       

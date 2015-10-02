@@ -507,10 +507,36 @@
       * indicate specific characters in '[]'
 
       ```shell
+      $ rm *.jpg   # match all files ending in .jpg
       $ ls [A-Za-z]*.jpg # match JPG files with names starting with a
       letter
+      $ ls ???.jpg # match all filenames with three characters
       ```
-      [more]
+
+      ---
+      # Some commandline/filename gotchas
+
+      ```shell
+      $ echo "jeepers" > --oops
+      $ ls
+      -rw-r--r--  1 stajich  staff      8 Oct  1 23:06 --oops
+      $ rm --oops   
+      rm: illegal option -- -
+      usage: rm [-f | -i] [-dPRrvW] file ...
+       unlink file
+      $ rm ./--oops   # here's how to remove it, give a path
+
+      $ touch star
+      $ echo "oh boy" > st*r
+      -bash: st*r: ambiguous redirect
+      $ echo "oh boy" > "st*r"
+      $ ls st*r
+      st*r star
+      $ rm st*r
+      $ ls st*r # oops this deleted both 'star' and 'st*r' file
+      $ echo "oh boy" > "st*r"; touch star
+      $ rm "st*r" # or rm st\*r
+      ```
       ---
       # Fin
 
@@ -523,10 +549,8 @@
 
       * read the man page for several programs that are new to you -
       can you find out about other command line options to gzip?
-
-      
      
-</textarea>
+    </textarea>
     <script src="js/remark.js" type="text/javascript">
     </script>
     <script type="text/javascript">
