@@ -8,14 +8,14 @@ can use the echo command to print out a message with the result if
 needed.
 
 1. Getting data 
-    + Use wget or curl to download the text file [_The Variation of Animals and Plants Under Domestication, Vol. I._](http://www.gutenberg.org/cache/epub/24923/pg24923.txt)
+    + Use wget or curl to download the text file [_The Variation of Animals and Plants Under Domestication, Vol. I._](/data/pg24923.txt) originally downloaded from https://www.gutenberg.org/ebooks/24923
     + How big is this file (in kilobytes)?
 2. Compressing and uncompressing
     + Compress the File pg24923.txt you downloaded with gzip, how big is it in kilobytes?
     + Uncompress it, then compress it with bzip2, how big is it in kilobytes?
     + Uncompress it again
 2. Counting
-    + How many total words are in the file presenting Darwin's [_The Variation of Animals and Plants Under Domestication, Vol. I._](http://www.gutenberg.org/cache/epub/24923/pg24923.txt)
+    + How many total words are in the file presenting Darwin's [_The Variation of Animals and Plants Under Domestication, Vol. I._](/data/pg24923.txt)
     + How many rows are in this [data file](/GEN220_2015/data/Nc20H.expr.tab)
 3. Sorting
     + Sort the [data file](/GEN220_2015/data/Nc20H.expr.tab) based on the FPKM column (gene expression) (write out to a new file called Nc20H.expr.sorted.tab)
