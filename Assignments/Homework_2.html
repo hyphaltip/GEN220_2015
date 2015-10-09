@@ -11,6 +11,22 @@
   <![endif]-->
 </head>
 <body>
-<p>Homework 2</p>
+<h1 id="homework-2">Homework 2</h1>
+<h2 id="bedtools">BedTools</h2>
+<p>Recently the 3000 Rice genome project released data on resequencing 3000 rice genomes. See the <a href="http://blog.dnanexus.com/tag/3000-rice-genomes-project/">site here</a> and <a href="http://www.oryzasnp.org/">OryzaSNP</a>.</p>
+<p>For your reference. I downloaded SNP data with allele frequency info from the <a href="wget%20http://s3.amazonaws.com/3kricegenome/reduced/NB-snp.frqx.gz">Rice 3K project</a> (no need for you to download the whole file). I then converted it to BED format and retained only the Chr6 data.</p>
+<pre class="shell"><code>    wget http://oryzasnp-atcg-irri-org.s3-website-ap-southeast-1.amazonaws.com/3krg-3k_filt_snp-v1/3k_filtered.map.gz
+    wget http://oryzasnp-atcg-irri-org.s3-website-ap-southeast-1.amazonaws.com/3krg-3k_filt_snp-v1/3k_filtered.ped.gz
+    gunzip *.gz
+    plink --file 3k_filtered --recode vcf-iid -out 3k_filtered.SNP_filt
+    grep ^6 3k_filtered.SNP_filt.vcf  &gt; chr6_3kSNP_filt.vcf
+    awk &#39;BEGIN{OFS=&quot;\t&quot;} {print $1,$2-1,$2}&#39; chr6_3kSNP_filt.vcf &gt; rice_chr6_3kSNPs_filt.bed</code></pre>
+<p>You can access this file in the SNPs.bed link below</p>
+<p>I downloaded the Rice GFF annotation from <a href="http://gramene.org">Gramene</a> from this FTP location ftp://ftp.gramene.org/pub/gramene/release47/data/gff3/oryza_sativa/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz</p>
+<p>Use the following files <a href="/data/rice_chr6_3kSNPs_filt.bed.gz">SNPs</a> and <a href="/data/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz">annotation</a></p>
+<ol type="1">
+<li>How many <strong>genes</strong> have SNPs that overlap them?</li>
+<li>How many <strong>SNPs</strong> are in the coding regions of genes (denoted by the CDS feature)?</li>
+</ol>
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BEDTools and Range Queries</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # BedTools
+
+      Tools for interacting with genomic ranges
+
+      ---
+      #First, Tabular File Formats
+
+      * [BED](https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+      * [BED
+      Detail](https://genome.ucsc.edu/FAQ/FAQformat.html#format1.7) - an extension of BED
+      * [GFF](https://genome.ucsc.edu/FAQ/FAQformat.html#format3) -
+      General Feature Format version 3 is best to follow
+      [GFF3](http://www.sequenceontology.org/gff3.shtml) and the older
+      [GFF2](http://www.sanger.ac.uk/resources/software/gff/spec.html)
+      which is used in some places
+      * [GTF](https://genome.ucsc.edu/FAQ/FAQformat.html#format4) -
+      Gene Transfer Format
+      * BLAST default tabular format
+      *
+
+      ---
+      #BED format
+      
+      ```code
+      CHROM   START   END
+      ```
+
+      Simple compact format to describe where a genomic feature is
+      located. The first/leftmost value is '0'
+
+      ---
+      #GFF format
+
+      More complex format
+      ```code
+      CHROM   SOURCE   TYPE  START  STOP  STRAND SCORE PHASE GROUP
+      ```
+
+      There are several variants on this format, mostly this takes
+      place in how the GROUP column is encoded. GFF3 has a specific
+      flavor of this while other formats have more relaxed guidelines.
+
+      There can be genes, mRNA, CDS, exon, Untraslated region
+      features.
+
+      Group field can look like
+      ```code
+      ID=ENS0001;Name=Gene1
+      #or
+      ID=ENST002;Parent=ENS001;Description="ensembl gene"
+
+      GTF format is a variant of GFF format where there are simple
+      exons. It does not usually have the same Group fields
+      
+      ---
+      #BEDTools
+
+      "flexible tools with which to compare large sets of genomic
+      features"
+
+      It is intended for either manipulating or querying genomic
+      features. The concept is that the genome is a linear coordinate
+      system and you want to query intervals.
+
+      It's goal is to be really fast at these computations.
+      
+      Here is the main website http://bedtools.readthedocs.org/en/latest/
+
+      ---
+      #BEDTools
+
+      1. Overlap queries
+
+      2. Intersect queries
+
+      3. Extension of features
+
+      4. Changing output
+
+      ---
+      #BEDTools - workshopping
+
+      
+      ---
+      #Tabix
+
+      Another tool for interacting with ranged data. This is more
+      suitable for random access to querying locations.
+
+      __Data Files need to be Sorted__
+
+      Here's some simple code to sort it for you
+      ```shell
+      $ (grep ^"#" in.gff; grep -v ^"#" in.gff | sort -k1,1 -k4,4n) |
+      bgzip > sorted.gff.gz # sort the data
+      $ tabix -p gff sorted.gff.gz # build the index
+      # now query for features in a range
+      tabix sorted.gff.gz chr1:10,000,000-20,000,000
+      ```
+
+      ---
+      #Tabix workshopping
+
+      ```shell
+      $ module load tabix
+      $ tabi
+      ```
+      
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
