@@ -14,7 +14,7 @@ You can access this file in the SNPs link below
 
 I downloaded  the Rice GFF annotation from [Gramene](http://gramene.org) from this [FTP location](ftp://ftp.gramene.org/pub/gramene/release47/data/gff3/oryza_sativa/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz)
 
-Use the following files [SNPs](/data/rice_chr6_3kSNPs_filt.bed.gz) and [annotation](/data/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz)
+Use the following files [SNPs](/GEN220_2015/data/rice_chr6_3kSNPs_filt.bed.gz) and [annotation](/GEN220_2015/data/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz)
 
 1. How many __genes__ have SNPs that overlap them?
 2. How many __SNPs__ are in the coding regions of genes (denoted by the CDS feature)?
