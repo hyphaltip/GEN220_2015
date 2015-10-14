@@ -227,6 +227,19 @@
       >>> str.split(" ",2)
       ['Jumping', 'cow', 'over the moon']
       ```
+
+      ---
+      #substring - extracting parts of a larger string
+      You can query the string with the [ ] operator to get a subset
+      of the string
+      ```python
+      >>> msg="I am a golden god!"
+      >>> msg[:4] # everything before position 4
+      'I am'
+      >>> msg[7:13] # get a middle part from 7-15
+      'golden'
+      >>> msg[14:] # get from 14 to the end
+      'god!'
       
       ---
       #Lists
@@ -264,6 +277,37 @@
       # can also use this syntax to build it up
       squares = [x**2 for x in range(10)]
       ```
+
+      ---
+      #Using split to parse strings
+      Starting with strings containing several parts which
+      encode information you want.
+
+      ```text
+      Symbol:NASDAQ=AAPL;Date:2015-10-01;Performance:Open=111.29,Close=109.56
+      Symbol:NASDAQ=MSFT;Date:2015-10-01;Performance:Open=46.65,Close=46.53
+      Symbol:NYSE=MMM;Date:2015-10-01;Performance:Open=149.0,Close=148.64
+      ```
+      What if we want to extract the 'AAPL','MSFT','MMM' and the
+      Opening share price?  Let's use split for this as one way to do
+      it.
+      ```python
+      >>> q =
+      "Symbol:NASDAQ=AAPL;Date:2015-10-01;Performance:Open=111.29,Close=109.56"
+      >>> types = q.split(";")
+      >>> print types
+      ['Symbol:NASDAQ=AAPL', 'Date:2015-10-01',
+      'Performance:Open=111.29,Close=109.56']
+      >>> symbolset = types[0].split(":")
+      >>> print symbolset
+      ['Symbol', 'NASDAQ=AAPL']      
+      >>> symbol = symbolset[1].split("=")
+      >>> symbol
+      ['NASDAQ', 'AAPL']
+      >>> print symbol[1]
+      'AAPL'
+      ```
+      
       ---
       #Documentation and Comments
 
@@ -272,7 +316,13 @@
       There are also othe self-documentation feature to make it easy
       to generate readable documention for web or other sites. These
       are flanked with three double quotes like
+      ```python
       """Documentation here"""      
+      # can also be on multiple lines
+      """This message could be concise, on multiple lines, and
+      later I could tell you more about
+      my program or function"""
+      ```
 
       ---
       #Print information out
@@ -285,21 +335,179 @@
       [7, 8, 9]
       >>> print "the list is " + l      
       TypeError: cannot concatenate 'str' and 'list' objects
-      >>> print "the list is " + l[0]     
+      >>> print "the list is " + str(l)
+      the list is [7, 8, 9]
+      >>> print "the first item in the list is " + l[0] 
       TypeError: cannot concatenate 'str' and 'int' objects
-      
+      >>> print "the first item in the list is " + str(l[0])
+      the first item in the list is 7      
+      # use the repr function to also print out the represenetation of
+      #an object
+      >>> print "the square of 8 is " + repr(8**2)
+      the square of 8 is 64
       ```
-      Can use formatting to print some things out
+      ---
+      #repr function to display an object/string/number
+
+      ```python
+      # use repr to print out literally the string
+      >>> hello = 'hello world\n'
+      >>> print hello
+      hello world
+      >>> print repr(hello)
+      'hello world\n'
+      ```
+      ---
+      #More fancy printing
       
-      There are several 
+      Can use formatting to print some things out
+      ```python
+      >>> n = [1, 2, 'oh my god']
+      >>> print n
+      [1, 2, 'oh my god']
+      # print things out with fancier printing
+      >>> print n[0].rjust(5), n[1].rjust(5), n[2].ljust(10)
+      AttributeError: 'int' object has no attribute 'rjust'
+
+      >>> print repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(10)
+          1     2 oh my god
+      >>> print repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].ljust(10)
+      1         2 oh my god
+      >>> print repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].rjust(10)
+          1     2  oh my god
+      >>> print repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].rjust(12)
+          1     2    oh my god
+      >>> print repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(12)
+          1     2 oh my god
+      ```
+
+      ---
+      #Print out with placeholders
+
+      ```python
+      >>> a = 15
+      >>> b = 41
+      >>> print "a + b = ", a+b
+      a + b =  56
+      >>> print "{} + {} = {}".format(a,b,a+b)
+      15 + 41 = 56
+      >>> print "{} ({}) + {} ({}) = {}".format("a",a,"b",b,a+b)
+      a (15) + b (41) = 56
+      ```
       ---
       #Problems to try in class
 
       Using command line python (e.g. start it up without any
       arguments)
-      1. Determine what 2145 divide
+      1. Determine what 2146 divided by 13 is. Show with floating
+      point.
+      2. 
+
+      ---
+      #
+            ---
+      #Logic with if statements & importance of indentation
+
+      if / elif / else are used to apply logic. This plus loops is the
+      essence of programming.
+
+      Note this requires you indent your code to indicate the level of
+      the if statement
       
+      ```python
+      x=10
+      if x &lt; 0:
+          print "x is positive: ", x
+      elif x &gt; 0:
+          print "x is negative: ", x
+      else:
+          print "x is 0: ", x      
+      ```
+
+      ---
+      #Loops
+      Iterate through lists or based on logic. Here we count up from 1 to 10
+      ```python
+      for n in range(1,11):
+          print "n is ", n
+          if n % 2 == 0:
+             print "n is even"
+      #iterate over a range based on a list
+      a = ['Mary', 'had', 'a', 'little', 'lamb']
+      for i in range(len(a)):
+          print i, a[i]
+      ```
+      ```python
+      n is  1
+      n is  2
+      n is even
+      n is  3
+      n is  4
+      n is even
+      ...
+      0 Mary
+      1 had
+      2 a
+      3 little
+      4 lamb
+      ```
+
+      ---
+      #Loops can also count backwards
+      ```python
+      for n in range(10,-1,-1):
+          print n
+      10
+      9
+      8
+      7
+      6
+      5
+      4
+      3
+      2
+      1
+      0
+      ```
+      ---
+      #Loops over plus lists
       
+      ```python
+      stocks = [
+      'Symbol:NASDAQ=AAPL;Date:2015-10-01;Performance:Open=111.29,Close=109.56',
+      'Symbol:NASDAQ=MSFT;Date:2015-10-01;Performance:Open=46.65,Close=46.53',
+      'Symbol:NYSE=MMM;Date:2015-10-01;Performance:Open=149.0,Close=148.64']
+
+      for ticker in stocks:
+          print ticker
+
+      print # empty line
+      for ticker in stocks:
+          parts = ticker.split(";")
+          symbolset = parts[0].split(":")
+          symbol = symbolset[1].split("=")
+          print symbol[1]
+      ```
+      produces
+      ```python
+      Symbol:NASDAQ=AAPL;Date:2015-10-01;Performance:Open=111.29,Close=109.56
+      Symbol:NASDAQ=MSFT;Date:2015-10-01;Performance:Open=46.65,Close=46.53
+      Symbol:NYSE=MMM;Date:2015-10-01;Performance:Open=149.0,Close=148.64
+
+      AAPL
+      MSFT
+      MMM
+      ```
+
+      ---
+      #Iterate over a string
+
+      Can use for loops on strings as well
+      ```python
+      dna="AAGATCAGGAC"
+      for c in dna:
+          print "DNA base is " + c
+      ```
       
     </textarea>
     <script src="js/remark.js" type="text/javascript">
