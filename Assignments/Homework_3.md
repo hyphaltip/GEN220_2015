@@ -1,7 +1,8 @@
 Homework 3
 ==========
 
-Use the following files [SNPs](/GEN220_2015/data/rice_chr6_3kSNPs_filt.bed.gz) and [annotation](/GEN220_2015/data/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz)
+Use the following files [SNPs](https://hyphaltip.github.io/GEN220_2015/data/rice_chr6_3kSNPs_filt.bed.gz) and [annotation](https://hyphaltip.github.io/GEN220_2015/data/Oryza_sativa.IRGSP-1.0.27.chromosome.6.gff3.gz)
+
 
 You will likely need to re-use your solutions from Homework 2.
 
@@ -19,17 +20,17 @@ number of SNPs by the length of the gene in kilobases.
     that to kilobases instead of bases. Here is example of expected
     output.
 
-```code
-gene_name       length  SNP     SNPs_per_kb
-OS06G0510200	1391	50      35.9453630482
-OS06G0487620	553     20      36.1663652803
-OS06G0120200	2568    93      36.214953271
-```
+    ```text
+    gene_name       length  SNP     SNPs_per_kb
+    OS06G0510200	1391	50      35.9453630482
+    OS06G0487620	553     20      36.1663652803
+    OS06G0120200	2568    93      36.214953271
+    ```
 
-There are several ways to solve this. You should try your best to do
-as much of it as you can in python.  In particular you will need to
-use some of the string functions to
-[split](https://docs.python.org/2/library/string.html?highlight=split#string.join)
-out some of the parts you don't want from that last column.
+    There are several ways to solve this. You should try your best to
+    do as much of it as you can in python.  In particular you will
+    need to use some of the string functions to
+    [split](https://docs.python.org/2/library/string.html?highlight=split#string.join)
+    out some of the parts you don't want from that last column.
 
 2. 
