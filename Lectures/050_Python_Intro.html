@@ -132,8 +132,33 @@
       ```
 
       ---
+      # Other math capabilities
+
+      The % operator is modulus - it means return the remainder after
+      dividing by the number. It is useful to see if something divides
+      evenly into a number
+
+      ```python
+      >>> 10 / 3
+      3
+      >>> 10 % 3  # 10 / 3 is 3 with remainder of 1
+      1
+      >>> 10 / 2
+      5
+      >>> 10 % 2   # 10 / 2 is 5 with a remainder of 0
+      0
+      ```
+      This can be useful to see if something is "Modulo" something (or
+      Mod) -- really useful when looking at sequence data and checking
+      to see if it will translate -- is the length/value mod 3 == 0 -
+      means it is divisible perfectly by 3.
+      
+      ---
       #Strings
 
+      Quotes can define the different special characters and use of
+      strings
+      
       ```python
       >>> 'break dance'
       'break dance'
@@ -143,10 +168,138 @@
       "don't break dance"
       >>> 'don\'t break dance'
       "don't break dance"
-      ```
+      >>> ('concatenate ' 'these ' 'together')
+      'concatenate these together'
+      ```      
       ---
       # Variables
 
+      Data can be assigned to variables. Variables don't exist until
+      they are declared.
+
+      The = is used for assignment. Some modifiers allow for modifying
+      variable in place
+      * += add to the value of the variable
+      * -=, /=, *= are other 
+      
+      ```python
+      >>> d = 0 # declare the variable d
+      >>> print "d is " + d
+      d is 0
+      >>> print "e is " + e
+      Traceback (most recent call last):
+      File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+      NameError: name 'e' is not defined
+      >>> d=8*7
+      >>> print d
+      56
+      >>> d += 100
+      >>> print d
+      156
+      ```      
+
+      ---
+      # String functions
+      Documented well in the python [string](https://docs.python.org/2/library/string.html?highlight=string) library code.
+      
+      * string.find(substring,[,starting[,end]])
+      Find a substring within a string
+      
+      ```python
+      >>> str = "Jumping cow over the moon"
+      >>> str.find("cow")
+      8
+      >>> str.find("o") # start searching from beginning
+      9
+      >>> str.find("o",12) # start searching after character 12
+      22 
+      ```
+
+      * string.split(separator, max_split)
+      Split a string into a list based on a separator (great for
+      column delimited data!). max_splits specifies if it should stop
+      after N separators are found
+      
+      ```python
+      >>> str = "Jumping cow over the moon"
+      >>> str.split(" ")
+      ['Jumping', 'cow', 'over', 'the', 'moon']
+      >>> str.split(" ",2)
+      ['Jumping', 'cow', 'over the moon']
+      ```
+      
+      ---
+      #Lists
+
+      For collecting enumerated items
+
+      ```python
+      >>> l = [ 2, 3, 5]
+      >>> l[0] # lists start at 0
+      2
+      >>> l[1:3]
+      3,5
+      >>> l.append(10)
+      >>> print l
+      [2, 3, 5, 10]     
+      ```
+      The sum function will summate a list
+      ```python
+      >>> sum(l)
+      10
+      ```
+
+      ---
+      #Lists other tools
+
+      List comprehension -- we will do more on this when we cover
+      loops in next lecture.
+
+      ```python
+      squares = []
+      for x in range(10):
+          squares.append(x**2)
+      print squares
+      [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+      # can also use this syntax to build it up
+      squares = [x**2 for x in range(10)]
+      ```
+      ---
+      #Documentation and Comments
+
+      Comment lines start with a '#'
+
+      There are also othe self-documentation feature to make it easy
+      to generate readable documention for web or other sites. These
+      are flanked with three double quotes like
+      """Documentation here"""      
+
+      ---
+      #Print information out
+
+      print can accomodate a lot of types of data but it doesn't know
+      how to mix types that well
+      ```python
+      >>> l = [7, 8, 9]
+      >>> print l
+      [7, 8, 9]
+      >>> print "the list is " + l      
+      TypeError: cannot concatenate 'str' and 'list' objects
+      >>> print "the list is " + l[0]     
+      TypeError: cannot concatenate 'str' and 'int' objects
+      
+      ```
+      Can use formatting to print some things out
+      
+      There are several 
+      ---
+      #Problems to try in class
+
+      Using command line python (e.g. start it up without any
+      arguments)
+      1. Determine what 2145 divide
+      
+      
       
     </textarea>
     <script src="js/remark.js" type="text/javascript">
