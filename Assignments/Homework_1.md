@@ -8,19 +8,19 @@ can use the echo command to print out a message with the result if
 needed.
 
 1. Getting data 
-    + Use wget or curl to download the text file [_The Variation of Animals and Plants Under Domestication, Vol. I._](/data/pg24923.txt) originally downloaded from https://www.gutenberg.org/ebooks/24923
+    + Use wget or curl to download the text file [_The Variation of Animals and Plants Under Domestication, Vol. I._](http://hyphaltip.github.io/GEN220_15/data/pg24923.txt) originally downloaded from https://www.gutenberg.org/ebooks/24923
     + How big is this file (in kilobytes)?
 2. Compressing and uncompressing
     + Compress the File pg24923.txt you downloaded with gzip, how big is it in kilobytes?
     + Uncompress it, then compress it with bzip2, how big is it in kilobytes?
     + Uncompress it again
 2. Counting
-    + How many total words are in the file presenting Darwin's [_The Variation of Animals and Plants Under Domestication, Vol. I._](/data/pg24923.txt)
-    + How many rows are in this [data file](/GEN220_2015/data/Nc20H.expr.tab)
+    + How many total words are in the file presenting Darwin's [_The Variation of Animals and Plants Under Domestication, Vol. I._](http://hyphaltip.github.io/GEN220_15/data/pg24923.txt)
+    + How many rows are in this [data file](http://hyphaltip.github.io/GEN220_2015/data/Nc20H.expr.tab)
 3. Sorting
-    + Sort the [data file](/GEN220_2015/data/Nc20H.expr.tab) based on the FPKM column (gene expression) (write out to a new file called Nc20H.expr.sorted.tab)
-    + How many exon features are there in the [rice chromosome 6 gff file](/GEN220_2015/data/rice_chr6.gff.gz) (this file is compressed). You can do this in several different ways.
+    + Sort the [data file](http://hyphaltip.github.io/GEN220_2015/data/Nc20H.expr.tab) based on the FPKM column (gene expression) (write out to a new file called Nc20H.expr.sorted.tab)
+    + How many exon features are there in the [rice chromosome 6 gff file](http://hyphaltip.github.io/GEN220_2015/data/rice_chr6.gff.gz) (this file is compressed). You can do this in several different ways.
 1. Finding and Counting
-    + Count the number of gene features in this [genbank file](/GEN220_2015/data/D_mel.63B12.gbk) - see for example [this explanation](http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html) of a genbank file if you are not familiar.
+    + Count the number of gene features in this [genbank file](http://hyphaltip.github.io/GEN220_2015/data/D_mel.63B12.gbk) - see for example [this explanation](http://www.ncbi.nlm.nih.gov/Sitemap/samplerecord.html) of a genbank file if you are not familiar.
 1. Column combining
-    + Take these files [Nc20H](/GEN220_2015/data/Nc20H.expr.tab) [Nc3H](/GEN220_2015/data/Nc3H.expr.tab) and combine columns 1-6 (gene_id,bundle_id,chr,left,right,FPKM) from Nc20H and column 6 from Nc3H to make a new file with 7 columns the last 2 are gene expression values for the two experiments.  You should use the cut and paste UNIX commands to accomplist this, though use of other tools is permitted.  You may want to validate the gene counts in both files, using sort and uniq
+    + Take these files [Nc20H](http://hyphaltip.github.io/GEN220_2015/data/Nc20H.expr.tab) [Nc3H](http://hyphaltip.github.io/GEN220_2015/data/Nc3H.expr.tab) and combine columns 1-6 (gene_id,bundle_id,chr,left,right,FPKM) from Nc20H and column 6 from Nc3H to make a new file with 7 columns the last 2 are gene expression values for the two experiments.  You should use the cut and paste UNIX commands to accomplist this, though use of other tools is permitted.  You may want to validate the gene counts in both files, using sort and uniq
