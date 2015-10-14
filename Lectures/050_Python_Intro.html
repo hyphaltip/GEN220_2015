@@ -240,7 +240,7 @@
       'golden'
       >>> msg[14:] # get from 14 to the end
       'god!'
-      
+      ```
       ---
       #Lists
 
@@ -256,17 +256,34 @@
       >>> print l
       [2, 3, 5, 10]     
       ```
-      The sum function will summate a list
+      The sum() function will summate a list, len() will report how
+      long it is. max() will report the largest number in a list
       ```python
       >>> sum(l)
+      20
+      >>> len(l)
+      4
+      >>> max(l)
       10
       ```
 
       ---
       #Lists other tools
 
+      Lists can be sorted
+      ```python
+      >>> l = [10,3,17,4]
+      >>> l.sort()
+      >>> l
+      [3, 4, 10, 17]      
+      >>> ls = ['zf','fz','no','apple']
+      >>> ls.sort()
+      >>> print ls
+      ['apple', 'fz', 'no', 'zf']
+      ```
+
       List comprehension -- we will do more on this when we cover
-      loops in next lecture.
+      loops
 
       ```python
       squares = []
@@ -344,8 +361,8 @@
       # use the repr function to also print out the represenetation of
       #an object
       >>> print "the square of 8 is " + repr(8**2)
-      the square of 8 is 64
-      ```
+      the square of 8 is 64      
+      ```      
       ---
       #repr function to display an object/string/number
 
@@ -360,7 +377,10 @@
       ---
       #More fancy printing
       
-      Can use formatting to print some things out
+      Can use formatting to print some things out like these important
+      [numbers and
+      phrase](http://genius.com/Beastie-boys-get-it-together-lyrics).
+      
       ```python
       >>> n = [1, 2, 'oh my god']
       >>> print n
@@ -401,11 +421,15 @@
       arguments)
       1. Determine what 2146 divided by 13 is. Show with floating
       point.
-      2. 
-
+      2. assign a string to a variable, determine how long the string
+      is, print out the first 2 letters of the string
+      3. create a list from the string "a-b-cc-de-fgh" where the '-'
+      separate the words. print out the length of list.
+      4. Make a list mixed with words and numbers, sort it. How does
+      it behave?
+      5. Calculate the mean of a list of numbers (4, 8, 15, 16, 23, 42)
+      
       ---
-      #
-            ---
       #Logic with if statements & importance of indentation
 
       if / elif / else are used to apply logic. This plus loops is the
