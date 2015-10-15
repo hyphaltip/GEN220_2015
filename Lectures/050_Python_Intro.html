@@ -371,6 +371,7 @@
       >>> hello = 'hello world\n'
       >>> print hello
       hello world
+
       >>> print repr(hello)
       'hello world\n'
       ```
@@ -440,9 +441,9 @@
       
       ```python
       x=10
-      if x &lt; 0:
+      if x &gt; 0:
           print "x is positive: ", x
-      elif x &gt; 0:
+      elif x &lt; 0:
           print "x is negative: ", x
       else:
           print "x is 0: ", x      
