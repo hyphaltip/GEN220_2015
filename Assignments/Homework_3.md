@@ -23,10 +23,7 @@ Download the genome annotation for the Chr6 of Rice again (or reuse what you had
 
 1. Compute the number of gene and exon features in the file using python
 
-2. Compute the numer of bases which are in genes and in exons
-
-3. Report the % of the chromosome which is exonic (e.g. covered by
-exons).  Assume the CDS exons in the GFF files are NON-overlapping for
+2. Compute the number of bases which are in genes and in CDS features. Report the % of the chromosome which is coding (e.g. covered by CDS exons).  Assume the CDS exons in the GFF files are NON-overlapping for
 this problem.
 
 - If you are a more advanced programmer, try to solve this problem by
