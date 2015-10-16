@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Loops and More</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # More Python Loops, Arrays, and Functions
+
+      ---
+      #Loops and logic
+
+      Useful to walk through your data and perform logic
+
+      Testing operators
+
+      * a &lt; b - test if something is less than
+      * a &gt; b - test if something is greater than
+      * a &gt;= b - test if something is greater than or equal
+      * a &gt; b __and__ b &gt; c - combine logic using AND
+      * a &gt; b __or__ b &gt; c - combine using OR
+      * __not__ ( a &lt; b ) - negate the result with NOT
+
+      ---
+      #Logic some more
+
+      ```python
+      a=1
+      b=2
+      if a != b:
+          print "a not b"
+      else:
+          print "a == b"
+
+      if not (a != b):
+          print "a not b"
+      else:
+          print "a == b"
+      
+      ```
+      ```text
+      a not b
+      a == b
+      ```
+      
+      ---
+      #for loops
+
+      Reminder of how to use for to iterate through items in a list
+      or in a string
+      
+      ```python
+      dna="AAGATCAGGAC"
+      for c in dna:
+          print "DNA base is " + c
+
+      for c in range(len(dna)):
+          print "DNA base is " + dna[c]
+
+      lst = [70,78,12]
+      for n in lst:
+          print "item is", n
+
+      ```
+
+      ---
+      #Loops with while
+
+      Another way to loop is to use the while operator
+      
+      ```python
+      # hello
+      i=0
+      while i &lt; 10:
+          print "i is ", i
+          i += 1
+
+      ```
+
+      ---
+      #functions
+
+      Function [info](https://docs.python.org/2/tutorial/controlflow.html#defining-functions)
+      
+      * def to define the function
+      * can use return to inidicate the return from the routine
+      
+      ```python
+      # code to calculate the average
+
+      def average(lst):
+      """This is the average function
+      """
+          sum = 0;
+          for n in lst:
+             sum += n
+          return sum / len(lst)
+
+
+      print average([1,2,3,4,5,100])
+      ```
+
+
+      ---
+      #Regular expressions and matching
+      
+      Regular expressions - there are many components I will explain
+      on the board, but here is the main syntax
+
+      The documentation is best [read here](https://docs.python.org/2/library/re.html)
+      
+      ```python
+      import re
+      m = re.search('(dog)', 'dogwood'):
+      if m:
+          print " contains dog"
+          print m.group(0) 
+
+      m = re.search('(d[aoe]g)', 'dogwood'):
+      if m:
+          print m.group(0) 
+
+      m = re.search('(d[aoe]g)', 'dugwood'):
+      if m:
+         print m.group(0) 
+
+      ```
+      
+      ---
+      #Problems
+
+      1. Write code to test if there is a stopcodon in the following
+      text
+      ```text
+      AGAGACGAGAGTTACCGACGTAT
+      ```
+      2. Check and see if it is in frame?
+
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
