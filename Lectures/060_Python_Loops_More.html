@@ -156,6 +156,54 @@
       ```
       2. Check and see if it is in frame?
 
+      ---
+      #search and replace
+
+      Using re.sub and re.subn can replace 
+      ```re.sub(_pattern_,_replacement_,_string_,count_num_times_to_perform)```
+      subn() can replace the same as sub() but returns the updated
+      string and count of number of changes instead of updating the string      
+      ```re.subn(_pattern_,_replacement_,_string_,count_num_times_to_perform)```
+
+      ```python
+      #replace dog with cat
+      import re
+      str = "My dog likes to eat dogfood"
+      print str
+      str2 = re.sub("dog","cat",str)
+      print str2
+      str3 = re.sub("cat","lion",str2,1)
+      print str3
+      ```
+      ```text
+      My dog likes to eat dogfood
+      My cat likes to eat catfood
+      My lion likes to eat catfood
+      ```
+
+      ---
+      #More advanced Regex use
+
+      Regular expressions can be 'compiled' which will make them run
+      faster and simply the use when you need to repeatedly search a
+      pattern. For example, to enumerate the locations of all the
+      sites that match
+           
+      ```
+      import re
+      motif = "\s+([Tt]he)\s+"
+      message = "It was the darkest and stormiest of night. The candles were lit
+      but the wind kept blowing them out. -OutTheDoor"
+
+      the_pattern = re.compile(motif)
+      m = the_pattern.search(message)
+      while m:
+          print "matched ",m.group(1), " from ", m.start(1), " to ", m.end(1)
+          m = the_pattern.search(message,m.end()+1)
+      ```
+
+      
+      
     </textarea>
     <script src="js/remark.js" type="text/javascript">
     </script>
