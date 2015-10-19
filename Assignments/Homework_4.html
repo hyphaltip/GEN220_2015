@@ -9,11 +9,71 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
 </head>
 <body>
 <h1 id="homework-3">Homework 3</h1>
-<ol type="1">
-<li>Dictionary</li>
+<p>Task: You have been given a set of RNA sequences that are assembled. You would like to investigate how many of them have poly-A tails and if they have the</p>
+<p>Here is a file of assembled mRNA transcripts from an RNAseq experiment in FASTA format.</p>
+<ul>
+<li>Write a script to read in the data, and count the polyA sites</li>
+<li>Generate a distribution of polyA lengths (distance between the site and the end of the tail/contig)</li>
+<li>Compute summary statistics for these lengths (mean, median)</li>
+<li>Plot histogram of this distribution - using R</li>
+</ul>
+<ol start="2" type="1">
+<li>A restriction enzyme cuts DNA at specific locations. Identify the number of cut sites in the genome of Bacillus subtilis of the EcoRI (GAATTC) motif. Your program should simply print out</li>
+</ol>
+<pre class="text"><code>Genome file: [MY FILE]
+Number of EcoRI (GAATTC) cut sites: [Number of sites]
+...</code></pre>
+<p>Here is a list of RE sites - you will need to re-write some of these to convert to a regular expression.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">EcoRI   <span class="op">=</span> <span class="st">&quot;GAATTC&quot;</span> 
+Bsu15I  <span class="op">=</span> <span class="st">&quot;ATCGAT&quot;</span>  
+Bsu36I  <span class="op">=</span> <span class="st">&quot;CCTNAGG&quot;</span>
+BsuRI   <span class="op">=</span> <span class="st">&quot;GGCC&quot;</span>
+EcoRII  <span class="op">=</span> <span class="st">&quot;CCWGG&quot;</span></code></pre></div>
+<p>The abbreviation for DNA patterns is as follows</p>
+<p>Only worry about the genome not the plasmids. The <a href="http://www.ncbi.nlm.nih.gov/pubmed/9384377">paper describing</a> was published in 1997 but the most recent version of the genome B. subtilis genome for strain 168. See all the strains available <a href="http://www.ncbi.nlm.nih.gov/genome/genomes/665?">here</a> and you can find a direct link to the strain 168 <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1">FTP folder of the assembly</a></p>
+<p>The goal of this is to write generic code so you are welcome to run this on any genome really. There are many sequenced strains, it would be interesting to compare if the number of cut sites (or their size) varied among strains. Think about (or try) to make your program handle a folder of sequence files to read and provide a report.</p>
+<ol start="3" type="1">
+<li></li>
 </ol>
 </body>
 </html>
