@@ -49,6 +49,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <h1 id="homework-4">Homework 4</h1>
+<p><strong>Due Oct 30 before class starts.</strong></p>
 <ol type="1">
 <li>A restriction enzyme cuts DNA at specific locations. Identify the number of cut sites in the genome of Bacillus subtilis of the EcoRI (GAATTC) motif. Your program should simply print out</li>
 </ol>
@@ -78,7 +79,7 @@ EcoRII  <span class="op">=</span> <span class="st">&quot;CCWGG&quot;</span></cod
 <ul>
 <li>Write a script to read in the data, and count which sequences have polyA sites -- you can use <a href="this%20script">http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py</a> as a starting point for reading the data</li>
 <li><p>Generate a distribution of polyA lengths (distance between the motif you found and the end of the contig). You will want to review how we capture a regular expression search match and then get the start or end of that match. E.g.</p>
-<pre class="text"><code> 5&#39; ------------------------------------ 3&#39; 
+<pre class="text"><code> 5&#39;&lt;------------------------------------&gt; 3&#39; 
                   AATAAAGAACAAAGTA
                      100       110
 match ends at 100
