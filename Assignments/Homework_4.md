@@ -1,6 +1,7 @@
 Homework 4
 ==========
 
+__Due Oct 30 before class starts.__
 
 1. A restriction enzyme cuts DNA at specific locations. Identify the
 number of cut sites in the genome of Bacillus subtilis of the EcoRI
