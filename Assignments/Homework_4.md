@@ -1,29 +1,8 @@
 Homework 4
 ==========
 
-Task: You have been given [a set of RNA
-sequences](http://hyphaltip.github.io/GEN220_2015/data/Scer_Trinity.fasta.gz)
-that are assembled. You would like to investigate how many of them
-have poly-A tails. Look for sequences that have AAAAAA or AATAAA, find
-the 3' most of these (e.g. the last one in the sequence) [this
-paper](http://nar.oxfordjournals.org/content/27/24/4751.full) talks
-about finding motifs related to poly-A positioning.
 
-Here is a file of assembled mRNA transcripts from an RNAseq experiment
-in FASTA format.
-
-- Write a script to read in the data, and count which sequences have polyA sites
- -- you can use [http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py](this script) as a starting point for reading the data
-- Generate a distribution of polyA lengths (distance between the motif you found and the end of the contig)
-- Compute summary statistics for these lengths (mean, median)
-- Plot histogram of this distribution - using R. Here is a [simple R script](http://hyphaltip.github.io/GEN220_2015/Examples/histogram.R) to plot histogram you can run like this - just make sure you file is called 'polyA_lengths.dat' or change the code in the R script.
-```bash
-$ R --no-save < histogram.R
-```
-
-You may want to revisit the regular expression lectures and see this page on [Regular Expressions from Python](https://docs.python.org/2/library/re.html).
-
-2. A restriction enzyme cuts DNA at specific locations. Identify the
+1. A restriction enzyme cuts DNA at specific locations. Identify the
 number of cut sites in the genome of Bacillus subtilis of the EcoRI
 (GAATTC) motif. Your program should simply print out
 
@@ -62,7 +41,7 @@ program handle a folder of sequence files to read and provide a
 report.
 
 
-3. Write a program to find which proteins have a Nuclear Localization
+2. Write a program to find which proteins have a Nuclear Localization
 Signal in yeast. The [following paper Fries et
 al](http://www.jbc.org/content/282/27/19292.full). Figure 8
 demonstrates a sequence pattern. There is one part that is ambiguous
@@ -86,3 +65,36 @@ you can download.
   hits have this prediction. Or you could test how many DON'T have
   this prediction since this signal sequence may not have been used to
   classify localization in GO
+
+3. Task: You have been given [a set of assembled RNA-Seq
+sequences](http://hyphaltip.github.io/GEN220_2015/data/Scer_Trinity.fasta.gz)
+that were assembled with
+[Trinity](https://trinityrnaseq.github.io/). You would like to
+investigate how many of them have poly-A tails. Look for sequences
+that have AAAAAA or AATAAA, find the 3' most of these (e.g. the last
+one in the sequence) [this
+paper](http://nar.oxfordjournals.org/content/27/24/4751.full) talks
+about finding motifs related to poly-A positioning.
+
+- Write a script to read in the data, and count which sequences have polyA sites
+ -- you can use [http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py](this script) as a starting point for reading the data
+- Generate a distribution of polyA lengths (distance between the motif you found and the end of the contig). You will want to review how we capture a regular expression search match and then get the start or end of that match. E.g.
+```text
+ 5'<------------------------------------> 3' 
+                      AATAAAGAACAAAGTA
+                         100       110
+	match ends at 100
+	sequence is 110 bp long
+	polyA tail is 10 bp long
+```
+
+The matching or sequence composition of is not always perfect for
+polyA (how to decide what is the LAST motif match is the problem). But give this a try - see if you can generate some summary statistics from this data.
+	
+- Compute summary statistics for these lengths (mean, median)
+- Plot histogram of this distribution - using R. Here is a [simple R script](http://hyphaltip.github.io/GEN220_2015/Examples/histogram.R) to plot histogram you can run like this - just make sure you file is called 'polyA_lengths.dat' or change the code in the R script.
+```bash
+$ R --no-save < histogram.R
+```
+
+You may want to revisit the regular expression lectures and see this page on [Regular Expressions from Python](https://docs.python.org/2/library/re.html).
