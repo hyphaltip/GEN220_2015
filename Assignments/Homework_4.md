@@ -1,18 +1,26 @@
-Homework 3
+Homework 4
 ==========
 
 Task: You have been given a set of RNA sequences that are
 assembled. You would like to investigate how many of them have poly-A
-tails and if they have the
+tails. Look for sequences that have AAAAAA or AATAAA, find the 3' most
+of these (e.g. the last one in the sequence) [this
+paper](http://nar.oxfordjournals.org/content/27/24/4751.full) talks
+about finding motifs related to poly-A positioning.
 
 Here is a file of assembled mRNA transcripts from an RNAseq experiment
 in FASTA format.
 
-- Write a script to read in the data, and count the polyA sites
-- Generate a distribution of polyA lengths (distance between the site
-and the end of the tail/contig)
+- Write a script to read in the data, and count which sequences have polyA sites
+ -- you can use [http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py](this script) as a starting point for reading the data
+- Generate a distribution of polyA lengths (distance between the motif you found and the end of the contig)
 - Compute summary statistics for these lengths (mean, median)
-- Plot histogram of this distribution - using R
+- Plot histogram of this distribution - using R. Here is a [simple R script](http://hyphaltip.github.io/GEN220_2015/Examples/histogram.R) to plot histogram you can run like this - just make sure you file is called 'polyA_lengths.dat' or change the code in the R script.
+```bash
+$ R --no-save < histogram.R
+```
+
+You may want to revisit the regular expression lectures and see this page on [Regular Expressions from Python](https://docs.python.org/2/library/re.html).
 
 2. A restriction enzyme cuts DNA at specific locations. Identify the
 number of cut sites in the genome of Bacillus subtilis of the EcoRI
@@ -34,15 +42,10 @@ BsuRI   = "GGCC"
 EcoRII  = "CCWGG"
 ```
 
-The abbreviation for DNA patterns is as follows 
+The abbreviation for DNA ambiguity patterns can be found on [this page](https://en.wikipedia.org/wiki/Nucleic_acid_notation). 
 
-Only worry about the genome not the plasmids. The [paper
-describing](http://www.ncbi.nlm.nih.gov/pubmed/9384377) was published
-in 1997 but the most recent version of the genome B. subtilis genome
-for strain 168. See all the strains available
-[here](http://www.ncbi.nlm.nih.gov/genome/genomes/665?) and you can
-find a direct link to the strain 168 [FTP folder of the
-assembly](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1)
+Use the _B. subtilis_ genome [here](http://www.ncbi.nlm.nih.gov/genome/genomes/665) and you can find a direct link to the strain 168 [FTP folder of the
+assembly](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1). You want the ".fna" file.
 
 The goal of this is to write generic code so you are welcome to run
 this on any genome really. There are many sequenced strains, it would
@@ -51,6 +54,27 @@ varied among strains. Think about (or try) to make your program handle
 a folder of sequence files to read and provide a report.
 
 
+3. Write a program to find which proteins have a Nuclear Localization
+Signal in yeast. The [following paper Fries et
+al](http://www.jbc.org/content/282/27/19292.full). Figure 8
+demonstrates a sequence pattern. There is one part that is ambiguous
+(X)n where n varies some in the species. Feel free to write this
+targeted for the _Saccharomyces cerevisiae_ search or just make it
+some arbitrarily long length based on all the data.  Here is the
+[sequence download
+site](http://www.yeastgenome.org/download-data/sequence) for
+Saccharomyces and [here are the proteins in fasta
+format](http://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans_all.fasta.gz)
+you can download.
 
-
-3. 
+* You can spot check how you tool does by looking at the Gene Ontology
+  (GO) [data for
+  Saccharomyces](http://downloads.yeastgenome.org/curation/literature/go_slim_mapping.tab). The
+  4th column indicates the ontology - a C there means 'cellular
+  localization' so the rows that have a 'C' in the 4th column give you
+  some indication of where the protein localizes to (if it is
+  known). Typically a nuclear localization signal would indicate the
+  protein localizes to the nucleus. So you could see how many of your
+  hits have this prediction. Or you could test how many DON'T have
+  this prediction since this signal sequence may not have been used to
+  classify localization in GO
