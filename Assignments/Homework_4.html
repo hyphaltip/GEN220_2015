@@ -49,7 +49,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <h1 id="homework-4">Homework 4</h1>
-<p>Task: You have been given a set of RNA sequences that are assembled. You would like to investigate how many of them have poly-A tails. Look for sequences that have AAAAAA or AATAAA, find the 3' most of these (e.g. the last one in the sequence) <a href="http://nar.oxfordjournals.org/content/27/24/4751.full">this paper</a> talks about finding motifs related to poly-A positioning.</p>
+<p>Task: You have been given <a href="http://hyphaltip.github.io/GEN220_2015/data/Scer_Trinity.fasta.gz">a set of RNA sequences</a> that are assembled. You would like to investigate how many of them have poly-A tails. Look for sequences that have AAAAAA or AATAAA, find the 3' most of these (e.g. the last one in the sequence) <a href="http://nar.oxfordjournals.org/content/27/24/4751.full">this paper</a> talks about finding motifs related to poly-A positioning.</p>
 <p>Here is a file of assembled mRNA transcripts from an RNAseq experiment in FASTA format.</p>
 <ul>
 <li>Write a script to read in the data, and count which sequences have polyA sites -- you can use <a href="this%20script">http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py</a> as a starting point for reading the data</li>
@@ -73,7 +73,9 @@ BsuRI   <span class="op">=</span> <span class="st">&quot;GGCC&quot;</span>
 EcoRII  <span class="op">=</span> <span class="st">&quot;CCWGG&quot;</span></code></pre></div>
 <p>The abbreviation for DNA ambiguity patterns can be found on <a href="https://en.wikipedia.org/wiki/Nucleic_acid_notation">this page</a>.</p>
 <p>Use the <em>B. subtilis</em> genome <a href="http://www.ncbi.nlm.nih.gov/genome/genomes/665">here</a> and you can find a direct link to the strain 168 <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1">FTP folder of the assembly</a>. You want the &quot;.fna&quot; file.</p>
-<p>The goal of this is to write generic code so you are welcome to run this on any genome really. There are many sequenced strains, it would be interesting to compare if the number of cut sites (or their size) varied among strains. Think about (or try) to make your program handle a folder of sequence files to read and provide a report.</p>
+<p>You can also use the E. coli K-12 genome from NCBI or what is <a href="http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta">available here</a>.</p>
+<p>The goal of this is to write generic code so you are welcome to run this on any genome really. There are many sequenced strains, it would be interesting to compare if the number of cut sites (or their size) varied among strains.</p>
+<p>For the advanced programmers. Think about (or try) to make your program handle a folder of sequence files to read and provide a report.</p>
 <ol start="3" type="1">
 <li>Write a program to find which proteins have a Nuclear Localization Signal in yeast. The <a href="http://www.jbc.org/content/282/27/19292.full">following paper Fries et al</a>. Figure 8 demonstrates a sequence pattern. There is one part that is ambiguous (X)n where n varies some in the species. Feel free to write this targeted for the <em>Saccharomyces cerevisiae</em> search or just make it some arbitrarily long length based on all the data. Here is the <a href="http://www.yeastgenome.org/download-data/sequence">sequence download site</a> for Saccharomyces and <a href="http://downloads.yeastgenome.org/sequence/S288C_reference/orf_protein/orf_trans_all.fasta.gz">here are the proteins in fasta format</a> you can download.</li>
 </ol>

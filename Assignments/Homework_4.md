@@ -1,10 +1,11 @@
 Homework 4
 ==========
 
-Task: You have been given a set of RNA sequences that are
-assembled. You would like to investigate how many of them have poly-A
-tails. Look for sequences that have AAAAAA or AATAAA, find the 3' most
-of these (e.g. the last one in the sequence) [this
+Task: You have been given [a set of RNA
+sequences](http://hyphaltip.github.io/GEN220_2015/data/Scer_Trinity.fasta.gz)
+that are assembled. You would like to investigate how many of them
+have poly-A tails. Look for sequences that have AAAAAA or AATAAA, find
+the 3' most of these (e.g. the last one in the sequence) [this
 paper](http://nar.oxfordjournals.org/content/27/24/4751.full) talks
 about finding motifs related to poly-A positioning.
 
@@ -47,11 +48,18 @@ The abbreviation for DNA ambiguity patterns can be found on [this page](https://
 Use the _B. subtilis_ genome [here](http://www.ncbi.nlm.nih.gov/genome/genomes/665) and you can find a direct link to the strain 168 [FTP folder of the
 assembly](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1). You want the ".fna" file.
 
+You can also use the E. coli K-12 genome from NCBI or what is
+[available
+here](http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta).
+
 The goal of this is to write generic code so you are welcome to run
 this on any genome really. There are many sequenced strains, it would
 be interesting to compare if the number of cut sites (or their size)
-varied among strains. Think about (or try) to make your program handle
-a folder of sequence files to read and provide a report.
+varied among strains.
+
+For the advanced programmers. Think about (or try) to make your
+program handle a folder of sequence files to read and provide a
+report.
 
 
 3. Write a program to find which proteins have a Nuclear Localization
