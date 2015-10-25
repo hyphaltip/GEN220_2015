@@ -30,7 +30,7 @@ assembly](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1). You 
 
 You can also use the E. coli K-12 genome from NCBI or what is
 [available
-here](http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta).
+here](http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta.gz).
 
 The goal of this is to write generic code so you are welcome to run
 this on any genome really. There are many sequenced strains, it would

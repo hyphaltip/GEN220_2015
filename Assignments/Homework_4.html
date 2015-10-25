@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -46,6 +43,9 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <h1 id="homework-4">Homework 4</h1>
@@ -64,7 +64,7 @@ BsuRI   <span class="op">=</span> <span class="st">&quot;GGCC&quot;</span>
 EcoRII  <span class="op">=</span> <span class="st">&quot;CCWGG&quot;</span></code></pre></div>
 <p>The abbreviation for DNA ambiguity patterns can be found on <a href="https://en.wikipedia.org/wiki/Nucleic_acid_notation">this page</a>.</p>
 <p>Use the <em>B. subtilis</em> genome <a href="http://www.ncbi.nlm.nih.gov/genome/genomes/665">here</a> and you can find a direct link to the strain 168 <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF_000009045.1_ASM904v1">FTP folder of the assembly</a>. You want the &quot;.fna&quot; file.</p>
-<p>You can also use the E. coli K-12 genome from NCBI or what is <a href="http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta">available here</a>.</p>
+<p>You can also use the E. coli K-12 genome from NCBI or what is <a href="http://hyphaltip.github.io/GEN220_2015/data/Ecoli_K-12.fasta.gz">available here</a>.</p>
 <p>The goal of this is to write generic code so you are welcome to run this on any genome really. There are many sequenced strains, it would be interesting to compare if the number of cut sites (or their size) varied among strains.</p>
 <p>For the advanced programmers. Think about (or try) to make your program handle a folder of sequence files to read and provide a report.</p>
 <ol start="2" type="1">
