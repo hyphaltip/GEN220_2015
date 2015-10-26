@@ -37,6 +37,8 @@ this on any genome really. There are many sequenced strains, it would
 be interesting to compare if the number of cut sites (or their size)
 varied among strains.
 
+You can use [this script](http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py) as a starting point for reading a FASTA file
+
 For the advanced programmers. Think about (or try) to make your
 program handle a folder of sequence files to read and provide a
 report.
@@ -78,7 +80,7 @@ paper](http://nar.oxfordjournals.org/content/27/24/4751.full) talks
 about finding motifs related to poly-A positioning.
 
 - Write a script to read in the data, and count which sequences have polyA sites
- -- you can use [http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py](this script) as a starting point for reading the data
+ -- you can use [this script](http://hyphaltip.github.io/GEN220_2015/Examples/read_fasta.py) as a starting point for reading a FASTA file
 - Generate a distribution of polyA lengths (distance between the motif you found and the end of the contig). You will want to review how we capture a regular expression search match and then get the start or end of that match. E.g.
 ```text
  5'<------------------------------------> 3' 
