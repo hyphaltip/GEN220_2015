@@ -1,0 +1,21 @@
+ATT,ATC,ATA	I	Isoleucine
+CTT,CTC,CTA,CTG,TTA,TTG	L	Leucine
+GTT,GTC,GTA,GTG		V	Valine
+TTT,TTC		F	Phenylalanine
+ATG		M	Methionine
+TGT,TGC			C	Cysteine
+GCT,GCC,GCA,GCG	A	Alanine
+GGT,GGC,GGA,GGG	G	Glycine
+CCT,CCC,CCA,CCG	P	Proline      	
+ACT,ACC,ACA,ACG	T	Threonine
+TCT,TCC,TCA,TCG,AGT,AGC	S	Serine
+TAT,TAC  Y    Tyrosine
+TGG  W	  Tryptophan
+CAA,CAG  Q	Glutamine
+AAT,AAC N	Asparagine
+CAT,CAC H	Histidine
+GAA,GAG E	Glutamic acid  	
+GAT,GAC D	 Aspartic acid 
+AAA,AAG	 K	Lysine       	
+CGT,CGC,CGA,CGG,AGA,AGG		R	Arginine
+TAA,TAG,TGA    *    Stop codon
