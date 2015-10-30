@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python: Parsing Structured Data</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # Python: Parsing Structured Data
+
+      Tabular: CSV,TSV
+      Sequence data: FastA, GenBank
+
+      ---
+      # Reminder about opening files
+
+      ```python
+      # open a file handle
+      fh = open("myfile.txt","rb")
+           
+      # or you can do this which will open
+      # the filehandle in a protected way
+      # and take care of closing everything afterwards
+      with open("myfile.txt","rb") as fh:
+          # this code will only happen
+          # if the open file succeeds
+          # otherwise will exit with an error
+      ```
+
+      ---
+      # Reminder about cmdline arguments
+
+      * import sys
+      * get the command line input as a list from sys.argv[]
+
+      ```bash
+      $ python argparse.py arg1 arg2 arg3 this-is-one "this is one"
+      ```
+      ```python
+      import sys
+      for n in range(len(sys.argv)):
+          printf 'argv[%d] = %s' %(n, sys.argv[n])    
+      ```
+      
+      ```text
+      argv[0] = argparse.py
+      argv[1] = arg1
+      argv[2] = arg2
+      argv[3] = arg3
+      argv[4] = this-is-one
+      argv[5] = this is one
+      ```
+
+      ---
+      # Parse CSV from file
+
+      ```python
+      import csv
+      import sys
+
+      # pass in the file to parse on the commandline
+      # curl -O
+      # https://raw.githubusercontent.com/1KFG/genomes/master/lib/organisms.csv
+      filename = sys.argv[1]
+     
+      print "input file is",filename
+
+      # almost the same as
+      # csvfile = open(filename, 'rb')
+      with open(filename, 'rb') as csvfile:
+          # csvfile is the handle 
+          reader = csv.reader(csvfile) #
+          for row in reader:
+              print "species is",row[0],"strain is",row[2]
+        
+      ```
+
+     
+      ---
+      # Parse CSV from web
+      
+      ```python
+      import csv
+      import urllib2
+      
+      # pass in the file to parse on the commandline
+      url = "https://raw.githubusercontent.com/1KFG/genomes/master/lib/organisms.csv"
+      
+      # csvfile is the handle 
+      csvfile = urllib2.urlopen(url)
+      reader = csv.reader(csvfile) 
+
+      for row in reader:
+          print "species is", row[0], "strain is", row[2]
+      
+      ```
+      ---
+      # Additional modules for structured data
+
+      BioPython - a library of modules for bioinformatics
+
+      __[BioPython Tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html)__
+
+      Modules for Sequence data, BLAST parsing, Multiple alignments
+
+      To installed on computer you control use Python tool 'pip'
+      ```bash
+      $ pip install biopython
+      ```
+      ---
+      # Simple BioPython
+
+      ```python
+      import Bio
+      from Bio.Seq import Seq
+      my_seq = Seq("ATGAGTACACTAGGGTAA")
+      
+      print my_seq
+
+      rc = my_seq.reverse_complement()
+      pep = my_seq.translate()
+      print "revcom is", rc
+      print pep
+      ```
+
+      ---
+      # Parsing sequence files
+
+      ```text
+      more ../data/E3Q6S8.fasta
+      >tr|E3Q6S8|E3Q6S8_COLGM RNAse P Rpr2/Rpp21/SNM1 subunit domain-containing protein OS=Colletotrichum graminicola (strain M1.001 / M2 / FGSC 10212) GN=GLRG_02386 PE=4 SV=1
+      MAKPKSESLPNRHAYTRVSYLHQAAAYLATVQSPTSDSTTNSSQPGHAPHAVDHERCLET
+      NETVARRFVSDIRAVSLKAQIRPSPSLKQMMCKYCDSLLVEGKTCSTTVENASKGGKKPW
+      ADVMVTKCKTCGNVKRFPVSAPRQKRRPFREQKAVEGQDTTPAVSEMSTGAD
+      ```
+      ```python
+      import sys
+      #import Bio
+      from Bio import SeqIO
+      from Bio.Seq import Seq
+      
+      # seqfile 
+      filename = sys.argv[1]
+      for seq_record in SeqIO.parse( filename , "fasta"):
+          print(seq_record.id)
+          print(repr(seq_record.seq))
+          print seq_record.seq
+          print(len(seq_record))
+      ```
+      ```text
+      tr|E3Q6S8|E3Q6S8_COLGM
+      Seq('MAKPKSESLPNRHAYTRVSYLHQAAAYLATVQSPTSDSTTNSSQPGHAPHAVDH...GAD',
+      SingleLetterAlphabet())
+      MAKPKSESLPNRHAYTRVSYLHQAAAYLATVQSPTSDSTTNSSQPGHAPHAVDHERCLETNETVARRFVSDIRAVSLKAQIRPSPSLKQMMCKYCDSLLVEGKTCSTTVENASKGGKKPWADVMVTKCKTCGNVKRFPVSAPRQKRRPFREQKAVEGQDTTPAVSEMSTGAD
+      172
+      ```
+      ---
+      # GenBank files: another sequence format
+
+      ```text
+      LOCUS       AJ240084                1905 bp    DNA     linear   PRI 03-FEB-2000
+      DEFINITION  Homo sapiens TRIM gene, promoter.
+      ACCESSION   AJ240084
+      VERSION     AJ240084.1  GI:6911579
+      KEYWORDS    T-cell receptor interacting molecule; TRIM gene.
+      SOURCE      Homo sapiens (human)
+        ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+      REFERENCE   1
+      AUTHORS   Hubener,C., Mincheva,A., Lichter,P., Schraven,B. and Bruyns,E.
+      TITLE     Genomic organization and chromosomal localization of the human gene
+                encoding the T-cell receptor-interacting molecule (TRIM)
+      JOURNAL   Immunogenetics 51 (2), 154-158 (2000)
+        PUBMED   10663578
+      REFERENCE   2  (bases 1 to 1905)
+        AUTHORS   Huebener,C.
+        TITLE     Direct Submission
+        JOURNAL   Submitted (06-MAY-1999) Huebener C., Immunomodulation Laboratory,
+                  Institute for Immunology, University of Heidelberg, Im Neuenheimer
+                  Feld 305, Heidelberg, 69120, GERMANY
+      ```
+
+      ---
+      # GenBank file
+      ```text
+      FEATURES             Location/Qualifiers
+           source          1..1905
+                           /organism="Homo sapiens"
+                           /mol_type="genomic DNA"
+                           /db_xref="taxon:9606"
+                           /clone_lib="RPCI1,3-5 Human PAC library"
+           gene            1..1902
+                           /gene="TRIM"
+           regulatory      1..1746
+                           /regulatory_class="promoter"
+                           /gene="TRIM"
+           5'UTR           1747..1902
+                           /gene="TRIM"
+      ```
+      ---
+      # GenBank file
+      ```text
+      ORIGIN
+         1 ccaaaaattt ccagtcctga aaccctttct ctttccaatg tcctctgtaa gctcgagttg
+        61 tgggcatcta ctttgcccat attccaaggt cttgcttagg taacctctgt agtcctttct
+       121 tgagcctagg acttctactt ttcttaccag ttaccctctt tcaggaccaa agctcaactc
+       181 ctcaaggcca taactaggcc ctctcctctc aaactgattt atcaggtgcc cgaatcttcc
+       241 tgaatgtctg ggattcaact tttcagcagt cttcctccct acgttccatc taattctaag
+       301 atgaaacctt ctgattcttt gttgtcctct gatccctaca tgaacctgag gctgctgttc
+       361 cctgaagtct tgttctgtca gcatccaggc ctgcttcata aaacctgtca ctctgctaat
+       421 ggttagcggc tgaacaaaga gtcctctggc caaataagtt tagaaaaact ctgataaaaa
+       481 tattatttgg gtttcctttt cgcaggactt acctaagcct ttaatatgca tctacggagg
+       541 taaaaataaa gctatatatt ttttccaaag atatttgttg aagaaacatt tgtcttctgc
+       601 gtttcttaaa ggccgagtgt tctatggaac atactttaaa aaaccctttt aaagaagctt
+       661 agaccagaga atctccaagg tctctttcag ttttacagcc tctgagtcaa cgattcacca
+       721 aaaaatattt tggggggaag tgattgaagt ggaaaaattt gttagtgttt agccagcttt
+       781 gtccaaagga taagatgcac tgtattttgc ttactaggga gttattttct ataatggaag
+       841 acaaagaaag cacaagacac ccatggtttt gtttgttcaa tcactgagag taagtctcaa
+       901 ttattgagac ttacgatgtg ccggtgtgct taattctagt tatgaaattt taataatgaa
+       961 taatatagat tctattcctt atatgagttt ccaaaagcat tgtccagaac atctatatta
+      1021 aaatatctta tcatatacaa tatatgtaat ttaaaatgca ctcagaaaat ctgcttgtta
+      1081 aaatgcagat tctagtgctt caccctaaat agtctaattt agacgggccc aggattttaa
+      1141 actagcatct tatagcatac ttatgtacac caacatgtaa gaactgctgc tattaagatt
+      1201 ctgggatggt ggttgagaac aggagcttgt tgtcaggtgg ctctagattg gacagagaaa
+      1261 ctcatactga taaggtgagg attgtcagga aataaggcag gcatctagcc tcgcattaag
+      1321 atgaggtata gaaggcaact gatacatact aagtgctcaa aaaatattaa ctccctgtcc
+      1381 tccatcatgg ctcaagaaaa tacaacagct gagcacaccc acgggttgct tactatttac
+      1441 ttatcagttt agtgtatctt attttgtttc catgtgaatt tacttgtgaa gagatgactg
+      1501 gattctctcc agagatagga agatccctcc tggtttaatt cctaccttta tttatttatt
+      1561 tttcaattag actcaggtat tgataaaaat tcaaatgtca gattacaaag gtgtgtggga
+      1621 tttttcttcc cacgttacac aatttaagtc gactgttttc agatcaaaac tcaagacaac
+      1681 tccttcacca catttcctgt ttgtaactga aacaaagtac acacaaaaga ttttaagaaa
+      1741 cagaagagaa aagaatccga ggcacagata aagataagtt ttactgtcat gctgctttta
+      1801 acataacaga gcaacatcac ctaggaaaaa agtttgtagg aggattttta atccatatat
+      1861 ttgtcttatg gctagataaa gatttctccg aaaaaaagaa gcatg
+      //
+      ```
+      ---
+      # Now parse GenBank
+      ```python
+      import sys
+      #import Bio
+      from Bio import SeqIO
+      from Bio.Seq import Seq
+      
+      # seqfile 
+      filename = sys.argv[1]
+      for seq_record in SeqIO.parse( filename , "genbank"):
+          print(seq_record.id)
+          print(repr(seq_record.seq))
+          print seq_record.seq
+          print(len(seq_record))
+      ```
+      ```text
+      python bp_parse_gbk.py ../data/AJ240084_TRIM.gbk
+      AJ240084.1
+      Seq('CCAAAAATTTCCAGTCCTGAAACCCTTTCTCTTTCCAATGTCCTCTGTAAGCTC...ATG',
+      IUPACAmbiguousDNA())
+      CCAAAAATTTCCAGTCCTGAAACCCTTTCTCTTTCCAATGTCCTCTGTAAGCTCGAGTTGTGGGCATCTACTTTGCCCATATTCCAAGGTCTTGCTTAGGTAACCTCTGTAGTCCTTTCTTGAGCCTAGGACTTCTACTTTTCTTACCAGTTACCCTCTTTCAGGACCAAAGCTCAACTCCTCAAGGCCATAACTAGGCCCTCTCCTCTCAAACTGATTTATCAGGTGCCCGAATCTTCCTGAATGTCTGGGATTCAACTTTTCAGCAGTCTTCCTCCCTACGTTCCATCTAATTCTAAGATGAAACCTTCTGATTCTTTGTTGTCCTCTGATCCCTACATGAACCTGAGGCTGCTGTTCCCTGAAGTCTTGTTCTGTCAGCATCCAGGCCTGCTTCATAAAACCTGTCACTCTGCTAATGGTTAGCGGCTGAACAAAGAGTCCTCTGGCCAAATAAGTTTAGAAAAACTCTGATAAAAATATTATTTGGGTTTCCTTTTCGCAGGACTTACCTAAGCCTTTAATATGCATCTACGGAGGTAAAAATAAAGCTATATATTTTTTCCAAAGATATTTGTTGAAGAAACATTTGTCTTCTGCGTTTCTTAAAGGCCGAGTGTTCTATGGAACATACTTTAAAAAACCCTTTTAAAGAAGCTTAGACCAGAGAATCTCCAAGGTCTCTTTCAGTTTTACAGCCTCTGAGTCAACGATTCACCAAAAAATATTTTGGGGGGAAGTGATTGAAGTGGAAAAATTTGTTAGTGTTTAGCCAGCTTTGTCCAAAGGATAAGATGCACTGTATTTTGCTTACTAGGGAGTTATTTTCTATAATGGAAGACAAAGAAAGCACAAGACACCCATGGTTTTGTTTGTTCAATCACTGAGAGTAAGTCTCAATTATTGAGACTTACGATGTGCCGGTGTGCTTAATTCTAGTTATGAAATTTTAATAATGAATAATATAGATTCTATTCCTTATATGAGTTTCCAAAAGCATTGTCCAGAACATCTATATTAAAATATCTTATCATATACAATATATGTAATTTAAAATGCACTCAGAAAATCTGCTTGTTAAAATGCAGATTCTAGTGCTTCACCCTAAATAGTCTAATTTAGACGGGCCCAGGATTTTAAACTAGCATCTTATAGCATACTTATGTACACCAACATGTAAGAACTGCTGCTATTAAGATTCTGGGATGGTGGTTGAGAACAGGAGCTTGTTGTCAGGTGGCTCTAGATTGGACAGAGAAACTCATACTGATAAGGTGAGGATTGTCAGGAAATAAGGCAGGCATCTAGCCTCGCATTAAGATGAGGTATAGAAGGCAACTGATACATACTAAGTGCTCAAAAAATATTAACTCCCTGTCCTCCATCATGGCTCAAGAAAATACAACAGCTGAGCACACCCACGGGTTGCTTACTATTTACTTATCAGTTTAGTGTATCTTATTTTGTTTCCATGTGAATTTACTTGTGAAGAGATGACTGGATTCTCTCCAGAGATAGGAAGATCCCTCCTGGTTTAATTCCTACCTTTATTTATTTATTTTTCAATTAGACTCAGGTATTGATAAAAATTCAAATGTCAGATTACAAAGGTGTGTGGGATTTTTCTTCCCACGTTACACAATTTAAGTCGACTGTTTTCAGATCAAAACTCAAGACAACTCCTTCACCACATTTCCTGTTTGTAACTGAAACAAAGTACACACAAAAGATTTTAAGAAACAGAAGAGAAAAGAATCCGAGGCACAGATAAAGATAAGTTTTACTGTCATGCTGCTTTTAACATAACAGAGCAACATCACCTAGGAAAAAAGTTTGTAGGAGGATTTTTAATCCATATATTTGTCTTATGGCTAGATAAAGATTTCTCCGAAAAAAAGAAGCATG
+      1905
+      ```
+      ---
+      # Parse features from GenBank file
+      See documentation on [SeqIO here](http://biopython.org/wiki/SeqIO)
+      
+      ```python
+
+      
+      ```
+      
+      ---
+      # An even simpler fasta parser to dictionary
+      ```python
+      from Bio import SeqIO
+      handle = open("example.fasta", "rU")
+      record_dict = SeqIO.to_dict(SeqIO.parse(handle, "fasta"))
+      handle.close()
+      print record_dict["gi:12345678"] #use any record ID
+      ```
+
+      ---
+      #Convert file formats
+
+      From GenBank to Fasta
+      ```python
+      from Bio import SeqIO
+ 
+      input_handle = open("cor6_6.gb", "rU")
+      output_handle = open("cor6_6.fasta", "w")
+      
+      sequences = SeqIO.parse(input_handle, "genbank")
+      count = SeqIO.write(sequences, output_handle, "fasta")
+      
+      output_handle.close()
+      input_handle.close()
+      ```
+      Or even more simply
+      ```python
+      from Bio import SeqIO
+      count = SeqIO.convert("cor6_6.gb", "genbank", "cor6_6.fasta", "fasta")
+      print "Converted %i records" % count
+      ```
+      
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
