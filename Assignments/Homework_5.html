@@ -14,9 +14,13 @@
 <h1 id="homework-5">Homework 5</h1>
 <p>Due Nov 11</p>
 <ol type="1">
-<li><p>Write a script using the 'csv' package to parse a BLAST report and print out the number of hits found for each query sequence. Also add a step to filter hits which are of a minimum length of at least 50 bp match in the query.</p></li>
-<li><p>Write a script to parse <a href="https://www.vectorbase.org/download/ixodes-scapularis-wikeltranscriptsiscaw14fagz">the transcript sequences</a> from the Tick <em>Ixodes scapularis</em> genome and print out the max, minn, and average length of these transcripts.</p></li>
-<li><p>Write a script to</p></li>
+<li><p>Write a script using the 'csv' package to parse <a href="http://hyphaltip.github.io/GEN220_2015/data/Ecoli-vs-Senterica.BLASTP.tab.gz">this <em>E.coli</em> vs <em>Salmonella enterica</em> BLAST report</a> and <a href="http://hyphaltip.github.io/GEN220_2015/data/Ecoli-vs-Yersinia.BLASTP.tab.gz">this <em>E.coli</em> vs <em>Yersinia pestis</em> BLAST report</a> and make a new report which prints out the <em>E.coli</em> sequence ID, and a column for the best <em>Salmonella</em> hit and the best <em>Yersinia</em> hit. best hit for each sequence to a file call 'Ecoli_report.tab'. Also print to STDOUT a summary report with the total number of sequences with a good hit in <em>E.coli</em> to each Salmonella and Yersina (e.g. 1000 proteins in Ecoli had a Salmonella hit, 700 had a hit to Yersinia). Screen the search results - don't take a best hit if something is less than 40% identical at the protein level.</p></li>
+<li><p>Using BioPython SeqIO module and any others you need, write a script to parse <a href="https://www.vectorbase.org/download/ixodes-scapularis-wikeltranscriptsiscaw14fagz">the transcript sequences</a> from the Tick <em>Ixodes scapularis</em> genome and print out.</p></li>
 </ol>
+<ul>
+<li>the max, minimum, and average length of these transcripts.</li>
+<li>Number of transcripts which start with ATG</li>
+<li>GC content of the transcripts</li>
+</ul>
 </body>
 </html>
