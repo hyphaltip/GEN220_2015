@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bioinformatics: BLAST and Sequence analysis tools</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # Bioinformatics tools
+
+      ---
+      # Sequence search tools - BLAST
+
+      * BLAST is by far the most taught tool in Bioinformatics. I am
+      not going to rehash this for
+      * See NCBI's [Introduction to
+      BLAST](http://www.ncbi.nlm.nih.gov/books/NBK52639/)
+      * One of 7 Million pages by Googling ["blast introduction tutorial"](https://www.google.com/webhp?#q=blast+introduction+tutorial)
+
+      ---
+      # BLAST on Biocluster
+      There are multiple flavors of BLAST (implementations). Focus on
+      the current latest version from NCBI.
+      
+      We will make links to two files which are ORFs from two yeast species
+      ```bash
+      # setup some files to do some searches
+      $ mkdir BLAST_demo
+      $ cd BLAST_demo      
+      $ ln -s /bigdata/gen220/shared/data_files/sequences/yeast_chr1_orfs.fa .
+      $ ln -s /bigdata/gen220/shared/data_files/sequences/C_glabrata_orfs.fa .
+      ```
+      Now we have some files, set them up for running BLAST. Our
+      question is, what ORFs are similar at the DNA level between
+      these two species.
+      ```bash
+      $ module load ncbi-blast # load the module on the biocluster
+      $ makeblastdb -dbtyp nucl -in C_glabrata_orfs.fa
+      $ ls
+      C_glabrata_orfs.fa      C_glabrata_orfs.fa.nhr
+      C_glabrata_orfs.fa.nin  C_glabrata_orfs.fa.nsq
+      yeast_chr1_orfs.fa
+      $ blastn -query yeast_chr1_orfs.fa -db C_glabrata_orfs.fa | more
+      ```
+
+      ---
+      #BLAST: what are the tools
+
+      * makeblastdb - index a database (required to do once before
+      searching)
+      * blastn - DNA/RNA to DNA/RNA search
+      * blastp - protein to protein search
+      * blastx - translated query (DNA/RNA) against protein database
+      * tblastn - protein query against translated (DNA/RNA) database
+      * tblastx - translated query and database (both in DNA/RNA but
+      search in protein space)
+      * blastdbcmd - retrieve a sequence from a blast formatted DB
+      
+      ---
+      #BLAST: what are the cmdline options?
+
+      All the tools have documented command line options. Use -h or
+      -help to get detailed info. Sometimes with no arguments will
+      print documentation, other times will not.
+      
+      ```bash
+      $ makeblastdb
+      USAGE
+      makeblastdb [-h] [-help] [-in input_file] [-input_type type]
+      -dbtype molecule_type [-title database_title] [-parse_seqids]
+      [-hash_index] [-mask_data mask_data_files] [-mask_id mask_algo_ids]
+      [-mask_desc mask_algo_descriptions] [-gi_mask]
+      [-gi_mask_name gi_based_mask_names] [-out database_name]
+      [-max_file_sz number_of_bytes] [-logfile File_Name] [-taxid TaxID]
+      [-taxid_map TaxIDMapFile] [-version]
+      
+      DESCRIPTION
+      Application to create BLAST databases, version 2.2.30+
+
+      Use '-help' to print detailed descriptions of command line arguments
+      ========================================================================
+      ```
+
+      ---
+      #BLAST: what are the cmdline options?
+      ```bash
+      $ blastn -h
+      USAGE
+      blastn [-h] [-help] [-import_search_strategy filename]
+      [-export_search_strategy filename] [-task task_name] [-db database_name]
+      [-dbsize num_letters] [-gilist filename] [-seqidlist filename]
+      [-negative_gilist filename] [-entrez_query entrez_query]
+      [-db_soft_mask filtering_algorithm] [-db_hard_mask filtering_algorithm]
+      [-subject subject_input_file] [-subject_loc range] [-query input_file]
+      [-out output_file] [-evalue evalue] [-word_size int_value]
+      [-gapopen open_penalty] [-gapextend extend_penalty]
+      [-perc_identity float_value] [-qcov_hsp_perc float_value]
+      [-xdrop_ungap float_value] [-xdrop_gap float_value]
+      [-xdrop_gap_final float_value] [-searchsp int_value] [-max_hsps int_value]
+      [-sum_stats bool_value] [-penalty penalty] [-reward reward] [-no_greedy]
+      [-min_raw_gapped_score int_value] [-template_type type]
+      [-template_length int_value] [-dust DUST_options]
+      [-filtering_db filtering_database]
+      [-window_masker_taxid window_masker_taxid]
+      [-window_masker_db window_masker_db] [-soft_masking soft_masking]
+      [-ungapped] [-culling_limit int_value] [-best_hit_overhang float_value]
+      [-best_hit_score_edge float_value] [-window_size int_value]
+      [-off_diagonal_range int_value] [-use_index boolean] [-index_name string]
+      [-lcase_masking] [-query_loc range] [-strand strand] [-parse_deflines]
+      [-outfmt format] [-show_gis] [-num_descriptions int_value]
+      [-num_alignments int_value] [-line_length line_length] [-html]
+      [-max_target_seqs num_sequences] [-num_threads int_value] [-remote]
+      [-version]
+      
+      DESCRIPTION
+      Nucleotide-Nucleotide BLAST 2.2.30+
+
+      Use '-help' to print detailed descriptions of command line arguments
+      ```
+
+      ---
+      #BLAST: some key arguments
+      * -query - query file name (required)
+      * -db    - database file name (require)
+      * -evalue - set the evalue cutoff
+      * -max_target_seqs - max number of hit seqs to show
+      * -num_alignments - max number of alignments to show
+      * -num_threads - number of threads (parallel processing to run,
+      8 will be faster than 2)
+      * -outfmt - specify a simpler format than the text format, try
+      '-outfmt 6' for tabular format
+      * -subject - instead of doing a DB search, search for alignments
+      between query sequence and 1 to many subject sequences. Useful
+      when want to just see the alignment of 2 sequences already
+      picked out from other analyses
+      
+      ---
+      #BLAST: Putting it all together
+
+      ```bash
+      #PBS -l nodes=1:ppn=2     
+      module load ncbi-blast
+      if [ ! $PBS_PPN ]; then
+         PBS_PPN=1
+      fi
+      if [ ! -f  C_glabrata_orfs.fa.nhr ]; then
+        makeblastdb -in C_glabrata_orfs.fa -dbtype nucl
+      fi
+      blastn -query yeast_chr1_orfs.fa -db C_glabrata_orfs.fa -evalue
+      1e-5 -outfmt 6 -out yeastORF-vs-CglabrataORF.BLASTN.tab -a $PBS_PPN      
+      ```
+
+      ---
+      # Git for Science
+      Git is a version control system
+      
+      * Allows you to have a repository of files (code, data, images,
+      etc)
+      * You can "check-in" versions which will be archived with a
+      version number/tag. Can always roll back to this version now.
+      * Git repositories can be shared, synchronized to a central
+      repository or shared among multiple distribited points
+      * Key is that you can work on files, share your changes with
+      collaborators.
+      * You can also rewind your own changes, tag a version for a
+      specific use (e.g. when you published the paper) and keep
+      working on the code.
+
+      ---
+      # Git HowTO
+
+      * [Github's Tutorial](https://guides.github.com/activities/hello-world/) on
+      how to use their system
+      * SW Carpentry [Git
+      Novice](https://swcarpentry.github.io/git-novice/)
+      * [Git for Scientists](http://nyuccl.org/pages/gittutorial/)
+
+      ---
+      #Git practice
+
+      * Make a repository
+      * add some files
+      * checkin some file versions
+      * make changes, check in another version
+      * sync to github
+      * collaborate, create a common repository for your team to work
+      out of
+
+      Advanced concepts
+      * Branches and Merging
+      * Creating a tagged version
+      * Resolving conflicts
+      
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
