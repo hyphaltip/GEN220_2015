@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RNASeq Basics</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # RNAseq methods
+
+      ---
+      # RNAseq seeks to capture expressed transcripts
+
+      ![Central Dogma](http://images.tutorvista.com/cms/images/123/central-dogma.png)
+
+      RNA-seq - see [RNA-seqlopedia](http://rnaseq.uoregon.edu/) on methods and workflows.
+
+      Currently cannot sequence RNA directly. Must convert it into
+      cDNA which is more stable and can be sequenced. Several
+      approaches to this with random priming ([with
+      limitations](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2896536/))
+      and polyA priming ([with
+      limitations](http://www.biomedcentral.com/1471-2164/15/419))
+
+      ---
+      # What can you do with these mRNA fragments
+
+      Current Seq technology (MiSeq) can get millions of fragments
+      at up to 2x300 bp reads. PacBio can generate up to 10kb or so
+      fragments.
+      * Transcript Assembly - what are the full length transcripts,
+      what are the isoforms (alt-splicing), what are the transcript
+      regulatory regions
+      * Expression analysis - what is the 'gene' expression. What are
+      the relative abundance of each isoform
+      * Strand-Specific RNASeq preserves the strandedness so identify
+      overlapping transcripts better, can identify antisense transcripts.
+
+      ---
+      # Running transcript assembly
+
+      * Use Trinity
+
+      ---
+      # Running Read alignment for expression
+
+      Alignments to genome need to be smarter than just read alignment
+      as the genes with introns will require a split-alignment
+      
+      * Protocols  - TopHat/Cufflinks (Tuxedo protocol)
+      * GSNAP
+      * 
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
