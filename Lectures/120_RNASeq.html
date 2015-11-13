@@ -56,19 +56,123 @@
       overlapping transcripts better, can identify antisense transcripts.
 
       ---
-      # Running transcript assembly
-
-      * Use Trinity
+      # Running transcript assembly with [Trinity](https://trinityrnaseq.github.io/)
+      
+      ![TrinityWorkflow](img/trinity_wf.jpg)
 
       ---
-      # Running Read alignment for expression
+      #Trinity applications
+      * Starting with short read data build an assembly of transcripts
+      * Can perform  _de novo_ assembly
+      of the the reads
+      * Or _Genome Guided_ which takes reads aligned to a genome first
+      * Both approaches are useful for building full length
+      transcripts out of short-read RNASeq
+      * Strand-specific RNASeq is also useful here can assemble
+      transcripts that come from overlapping regions, antisense transcripts
+
+      ---
+      #Trinity improves annotation
+      ![TrinityExample](img/TrinityAnnot.jpg)
+
+      
+      ---
+      # Gene Expression by RNASeq align to genome
 
       Alignments to genome need to be smarter than just read alignment
       as the genes with introns will require a split-alignment
+
+      Protocols:
+      * TopHat/[Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) (Tuxedo protocol)
+        * provide a gene annotations for splice sites or it can just
+        use GT-AG
+
+      * [GSNAP/GMAP](http://research-pub.gene.com/gmap/) - splice
+      aware short read aligner RNASeq or DNAseq aligner
+         * provide a gene annotations for splice sites
+
+      ---
+      #[Cufflinks](http://www.nature.com/nprot/journal/v7/n3/full/nprot.2012.016.html)
+      ![Cufflinks1](img/Cufflinks1.jpg) 
+
+      ---
+      #[Cufflinks](http://www.nature.com/nprot/journal/v7/n3/full/nprot.2012.016.html)
+      ![Cufflinks1](img/Cufflinks2.jpg) 
       
-      * Protocols  - TopHat/Cufflinks (Tuxedo protocol)
-      * GSNAP
-      * 
+      ---
+      #Other tools for transcript abundance estimation
+
+      * [Kalisto](https://pachterlab.github.io/kallisto/starting.html)
+      is superfast ["Near-optimal RNA-Seq quantification"](http://arxiv.org/abs/1505.02710)
+      * [Sailfish](http://www.cs.cmu.edu/~ckingsf/software/sailfish/)
+      is a similar approach ["Sailfish: Rapid Alignment-free
+      Quantification of Isoform
+      Abundance"](http://dx.doi.org/10.1038/nbt.2862)
+      * These too differ in they align reads to the transcripts not
+      the genome
+
+      ---
+      #Transcript assembly vs Gene expression
+
+      * Transcript assembly gives you an inventory of the transcripts
+      * It can be used to calculate the gene expression if you map the
+      individual reads back to these transcripts
+      * Cons: The assembly is fragmented and also typically not
+      annotated as genes - so problematic in emerging genomes
+      * Pros: FAST!! More accurate Transcript abundance estimate
+      
+
+      ---
+      #Tutorial
+
+      * Tophat analysis
+      * Go to your bigdata folder
+      * ln -s /bigdata/gen220/shared/data_files/RNASeq/yeast1/scripts .
+      
+      
+      ---
+      #Get data files
+      ```bash
+      $ scripts/get_genome.sh
+      ````
+      ```bash
+      $ wget ftp://ftp.yeastgenome.org/sequence/S288C_reference/genome_releases/S288C_reference_genome_R64-2-1_20150113.tgz
+      $ tar zxf S288C_reference_genome_R64-2-1_20150113.tgz
+      $ perl -i.bak -p -e 's/>(\S+)(.+)\[chromosome=([^\]]+)\]/>chr$3 $1$2/' S288C_reference_genome_R64-2-1_20150113/S288C_reference_sequence_R64-2-1_20150113.fsa
+      $ mkdir genome
+      $ mv S288C_reference_genome_R64-2-1_20150113/S288C_reference_sequence_R64-2-1_20150113.fsa genome/yeast_genome.fasta
+      $ ln -s /bigdata/gen220/shared/data_files/RNASeq/yeast1/ERR391753* .
+      $ count=`grep -n \#FASTA S288C_reference_genome_R64-2-1_20150113/*.gff`
+      $ head -n $count  S288C_reference_genome_R64-2-1_20150113/*.gff > genes.gff
+      ```
+
+      ---
+      #Index genome for tophat
+
+      See scripts/index.sh
+      
+      ```bash
+      $ module load bowtie2
+      $ bowtie2-build genome/yeast_genome.fasta genome/yeast
+      ```
+
+      ---
+      #Run Tophat2
+      See scripts/run_tophat.sh
+      ```bash
+      $ tophat2 --b2-very-fast -G genes.gff genome/yeast ERR391753_1.fastq.gz ERR391753_2.fastq.gz
+      ```
+
+      ---
+      #Run Cuffquant
+
+      See scripts/run_cuffquant.sh
+      
+      ```bash
+      #PBS -l nodes=1:ppn=12 -q batch
+      cuffquant -o yeast1.cuffquant -p 12 -u genes.gff tophat_out/accepted_hit.bam
+      ```
+      
     </textarea>
     <script src="js/remark.js" type="text/javascript">
     </script>
