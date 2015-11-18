@@ -48,8 +48,14 @@
       * [Taverna - http://www.taverna.org.uk/](http://www.taverna.org.uk/)
 
       ---
-      #Shell scripts for pipelines
-      Setup a script which lists the files to process
+      #GATK SNP calling - prepare data
+
+      ![GATK1](img/GATK_1.png)
+      
+      ---
+      #Shell scripts for pipelines: Data files
+      Setup a script which lists the files to process. In my case, 3
+      columns: Strain name, Read 1, Read 2
       ```text
       S1.ATCC42720 Samples/1_1_sequence.txt.gz Samples/1_2_sequence.txt.gz
       S2.U10A Samples/2_1_sequence.txt.gz Samples/2_2_sequence.txt.gz
@@ -58,9 +64,12 @@
       S5.U10D Samples/5_1_sequence.txt.gz Samples/5_2_sequence.txt.gz
       S6.U5C Samples/6_1_sequence.txt.gz Samples/6_2_sequence.txt.gz
       S7.U3E Samples/7_1_sequence.txt.gz Samples/7_2_sequence.txt.gz
+      ...
       ```
-      
-      ```bash
+
+      ---
+      #Script for alignment
+      ```shell
       #PBS  -l nodes=1:ppn=32,mem=24gb -j oe -N bwa
       module load bwa
       module load samtools
@@ -80,8 +89,11 @@
          CPU=$PBS_NUM_PPN
       fi
       echo "CPU is $CPU"
+      ```
+      ---
+      #Script - Part 2
+      ```bash
       LINE=$PBS_ARRAYID
-
       if [ ! $LINE ]; then
          LINE=$1  #take from cmdline
       fi
@@ -96,24 +108,105 @@
       READ1=`echo "$ROW" | awk '{print $2}'`
       READ2=`echo "$ROW" | awk '{print $3}'`
       INDIR=`dirname $READ1`
+      ```
 
+      ---
+      #Script - Part 3 - Actual Work
+      ```bash
       if [ ! -f $OUTPUT/$SAMPLE.DD.bam ]; then
-          if [ ! -f $OUTPUT/$SAMPLE.sam ]; then
-            $BWA mem -t $CPU $GENOMEIDX $INDIR/$SAMPLE.1.fq $INDIR/$SAMPLE.2.fq > $OUTPUT/$SAMPLE.sam
-          fi
-      
-          if [ ! -f $OUTPUT/$SAMPLE.RG.bam ]; then
-            java -jar $PICARD AddOrReplaceReadGroups \
-      I=$OUTPUT/$SAMPLE.sam O=$OUTPUT/$SAMPLE.RG.bam RGLB=$SAMPLE \
-      RGID=$SAMPLE RGSM=$SAMPLE RGPL=illumina \
-      RGCN=UCR_Cofactor RGDS="$SAMPLE.1.fq $SAMPLE.2.fq" \
-      CREATE_INDEX=true SO=coordinate 
-          fi
 
+      # Do the alignment if file doesn't exist
+       if [ ! -f $OUTPUT/$SAMPLE.sam ]; then
+         $BWA mem -t $CPU $GENOMEIDX $INDIR/$SAMPLE.1.fq \
+         $INDIR/$SAMPLE.2.fq > $OUTPUT/$SAMPLE.sam
+       fi
+
+       # Fix the Read Groups for the alignment
+       if [ ! -f $OUTPUT/$SAMPLE.RG.bam ]; then
+         java -jar $PICARD AddOrReplaceReadGroups I=$OUTPUT/$SAMPLE.sam \
+       O=$OUTPUT/$SAMPLE.RG.bam RGLB=$SAMPLE RGID=$SAMPLE RGSM=$SAMPLE \
+       RGPL=illumina RGCN=UCR_Cofactor \
+       RGDS="$SAMPLE.1.fq $SAMPLE.2.fq" CREATE_INDEX=true SO=coordinate
+
+      # mark Duplicates files
       java -jar $PICARD MarkDuplicates I=$OUTPUT/$SAMPLE.RG.bam \
       O=$OUTPUT/$SAMPLE.DD.bam METRICS_FILE=$SAMPLE.dedup.metrics \
       CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
+
       fi
+      ```
+
+      ---
+      #Do Realignment
+      
+      ```bash
+      # Make index
+      if [ ! -f $BAMDIR/$ROW.DD.bai ]; then
+        java -jar $PICARD BuildBamIndex I=$BAMDIR/$ROW.DD.bam
+      fi
+
+      if [ ! -f $BAMDIR/$ROW.intervals ]; then
+       java -Xmx$MEM -jar $GATK \
+       -T RealignerTargetCreator \
+       -R $GENOMEIDX \
+       -I $BAMDIR/$ROW.DD.bam \
+       -o $BAMDIR/$ROW.intervals
+      fi
+
+      if [ ! -f $BAMDIR/$ROW.realign.bam ]; then
+        java -Xmx$MEM -jar $GATK \
+        -T IndelRealigner \
+        -R $GENOMEIDX \
+        -I $BAMDIR/$ROW.DD.bam \
+        -targetIntervals $BAMDIR/$ROW.intervals \
+        -o $BAMDIR/$ROW.realign.bam
+      fi
+      ```
+
+      ---
+      #GATK SNP calling
+
+      ![GATK2](img/GATK_2.png)
+
+      ---
+      #HaplotypeCaller with GATK
+
+      ```bash
+
+      N=`ls $INDIR/*.realign.bam | sed -n ${PBS_ARRAYID}p`
+      O=`basename $N .realign.bam`
+      
+      if [ ! -f $OUTDIR/$O.g.vcf ]; then
+        java -Xmx32g -jar $GATK \
+        -T HaplotypeCaller \
+        -ERC GVCF \        
+        -ploidy 2 \
+        -I $N -R $GENOME \
+        -o $OUTDIR/$O.g.vcf -nct $CPU
+      fi
+      ```
+
+      ---
+      #HaplotypeCaller joint caller
+
+      [GATK Joint Caller](https://www.broadinstitute.org/gatk/guide/article?id=2803)      
+
+      ```bash
+      module load java
+      module load GATK
+      INDIR=Variants/ATCC_MTfix
+      OUT=Variants/C_lus.ATCCMTfix_noRef.vcf
+
+      N=`ls $INDIR/*.g.vcf | grep -v 'ATCC42720' | \
+       perl -p -e 's/\n/ /; s/(\S+)/-V $1/'`
+
+      java -Xmx$MEM -jar $GATK \
+      -T GenotypeGVCFs \
+      -R $GENOME \
+      $N \
+      -o $OUT \
+      -nt $CPU
+      ```
       
     </textarea>
     <script src="js/remark.js" type="text/javascript">
