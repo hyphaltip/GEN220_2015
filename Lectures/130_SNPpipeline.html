@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pipelines</title>
+        <meta http-equiv="Content-Type" content="text/html;
+						 charset=UTF-8"/>
+	<style type="text/css">
+	        @import
+	        url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+		      @import
+	        url(https://fonts.googleapis.com/css?family=Consolas:400,700,400italic);
+
+		body { font-family: 'Droid Serif'; }
+		h1, h2, h3 {
+		font-family: 'Yanone Kaffeesatz';
+		font-weight: normal;
+		}
+		.remark-code, .remark-inline-code { font-family:
+		'Consolas'; }
+	</style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+
+      # Analysis Pipelines with UNIX tools
+
+      ---
+      # Pipelines
+      
+      * Multiple steps to achieve analyses
+      * Often steps that have dependancies
+      * Want to restart and not have to re-run everything
+      * Use cluster queueing system (qsub)
+
+      ---
+      # Schematics
+
+      ![PHYling pipeline](img/PHYling_pipeline.png)
+            
+      ---
+      # Web-based pipelines
+
+      * [Galaxy - https://usegalaxy.org/](https://usegalaxy.org/)
+
+      * [Taverna - http://www.taverna.org.uk/](http://www.taverna.org.uk/)
+
+      ---
+      #Shell scripts for pipelines
+      Setup a script which lists the files to process
+      ```text
+      S1.ATCC42720 Samples/1_1_sequence.txt.gz Samples/1_2_sequence.txt.gz
+      S2.U10A Samples/2_1_sequence.txt.gz Samples/2_2_sequence.txt.gz
+      S3.U3G Samples/3_1_sequence.txt.gz Samples/3_2_sequence.txt.gz
+      S4.U3B Samples/4_1_sequence.txt.gz Samples/4_2_sequence.txt.gz
+      S5.U10D Samples/5_1_sequence.txt.gz Samples/5_2_sequence.txt.gz
+      S6.U5C Samples/6_1_sequence.txt.gz Samples/6_2_sequence.txt.gz
+      S7.U3E Samples/7_1_sequence.txt.gz Samples/7_2_sequence.txt.gz
+      ```
+      
+      ```bash
+      #PBS  -l nodes=1:ppn=32,mem=24gb -j oe -N bwa
+      module load bwa
+      module load samtools
+      module load java
+      module load picard
+
+      CPU=1
+      SAMPLEFILE=samples.info
+      BWA=bwa
+      GENOMEIDX=DBfolder/candida_lusitaniae_ATCC42720_w_CBS_6936_MT.fasta
+      OUTPUT=bam
+      QUAL=20
+
+      mkdir -p $OUTPUT
+
+      if [ $PBS_NUM_PPN ]; then
+         CPU=$PBS_NUM_PPN
+      fi
+      echo "CPU is $CPU"
+      LINE=$PBS_ARRAYID
+
+      if [ ! $LINE ]; then
+         LINE=$1  #take from cmdline
+      fi
+
+      if [ ! $LINE ]; then
+         echo "Need a number via PBS_ARRAYID or cmdline"
+         exit
+      fi
+
+      ROW=`head -n $LINE $SAMPLEFILE | tail -n 1`
+      SAMPLE=`echo "$ROW" | awk '{print $1}'`
+      READ1=`echo "$ROW" | awk '{print $2}'`
+      READ2=`echo "$ROW" | awk '{print $3}'`
+      INDIR=`dirname $READ1`
+
+      if [ ! -f $OUTPUT/$SAMPLE.DD.bam ]; then
+          if [ ! -f $OUTPUT/$SAMPLE.sam ]; then
+            $BWA mem -t $CPU $GENOMEIDX $INDIR/$SAMPLE.1.fq $INDIR/$SAMPLE.2.fq > $OUTPUT/$SAMPLE.sam
+          fi
+      
+          if [ ! -f $OUTPUT/$SAMPLE.RG.bam ]; then
+            java -jar $PICARD AddOrReplaceReadGroups \
+      I=$OUTPUT/$SAMPLE.sam O=$OUTPUT/$SAMPLE.RG.bam RGLB=$SAMPLE \
+      RGID=$SAMPLE RGSM=$SAMPLE RGPL=illumina \
+      RGCN=UCR_Cofactor RGDS="$SAMPLE.1.fq $SAMPLE.2.fq" \
+      CREATE_INDEX=true SO=coordinate 
+          fi
+
+      java -jar $PICARD MarkDuplicates I=$OUTPUT/$SAMPLE.RG.bam \
+      O=$OUTPUT/$SAMPLE.DD.bam METRICS_FILE=$SAMPLE.dedup.metrics \
+      CREATE_INDEX=true VALIDATION_STRINGENCY=SILENT
+      fi
+      
+    </textarea>
+    <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+  </html>
